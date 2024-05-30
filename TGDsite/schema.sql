@@ -30,7 +30,7 @@ CREATE TABLE usrsave (
     PRIMARY KEY (save_id, user_id)
 );
 
-
+-- insert 
 INSERT INTO guide (guide_name) VALUES
 ('k1.1.3'),
 ('k1.1.4'),
