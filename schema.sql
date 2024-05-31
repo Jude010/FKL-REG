@@ -1,8 +1,8 @@
 -- drop tables if they exist
+DROP TABLE IF EXISTS usrsave;
+DROP TABLE IF EXISTS saves;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS guide;
-DROP TABLE IF EXISTS saves;
-DROP TABLE IF EXISTS usrsave;
 
 -- create user table
 CREATE TABLE users (
