@@ -20,13 +20,13 @@ CREATE TABLE guide (
 -- create saves table
 CREATE TABLE saves (
     save_id SERIAL PRIMARY KEY,
-    guide_id REFERENCES guide(guide_id)
+    guide_id SERIAL REFERENCES guide(guide_id)
 );
 
 -- create usrsave table
 CREATE TABLE usrsave (
-    save_id REFERENCES saves(save_id),
-    user_id REFERENCES USER(user_id),
+    save_id SERIAL REFERENCES saves(save_id),
+    user_id SERIAL REFERENCES USER(user_id),
     PRIMARY KEY (save_id, user_id)
 );
 
