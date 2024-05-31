@@ -7,6 +7,6 @@ def get_db_conn():
         host="localhost",
         database="siteDB",
         user=os.environ['DB_USERNAME'],
-        password=os.environ['DB_USERNAME']
+        password=os.environ['DB_PASSWORD']
     )
     return conn
