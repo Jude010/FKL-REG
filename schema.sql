@@ -1,11 +1,11 @@
 -- drop tables if they exist
-DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS guide;
 DROP TABLE IF EXISTS saves;
 DROP TABLE IF EXISTS usrsave;
 
 -- create user table
-CREATE TABLE user (
+CREATE TABLE users (
     user_id SERIAL PRIMARY KEY,
     username TEXT UNIQUE NOT NULL,
     password TEXT UNIQUE NOT NULL
