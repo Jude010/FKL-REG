@@ -9,6 +9,6 @@ def get_db_conn():
         #user=os.environ["DB_USERNAME"],
         #password=os.environ['DB_PASSWORD']
         user='flask',
-        database='open'
+        password='open'
     )
     return conn
