@@ -35,3 +35,5 @@ def create_app(test_config=None):
         cur.close()
         conn.close()
         return render_template('index.html, guides=guides')
+    
+    return app
