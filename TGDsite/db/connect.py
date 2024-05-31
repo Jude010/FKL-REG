@@ -8,7 +8,7 @@ def get_db_conn():
         database="siteDB",
         #user=os.environ["DB_USERNAME"],
         #password=os.environ['DB_PASSWORD']
-        user="flask"
-        database="open"
+        user='flask',
+        database='open'
     )
     return conn
