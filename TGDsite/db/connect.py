@@ -6,7 +6,9 @@ def get_db_conn():
     conn = psycopg2.connect(
         host="localhost",
         database="siteDB",
-        user=os.environ['DB_USERNAME'],
-        password=os.environ['DB_PASSWORD']
+        #user=os.environ["DB_USERNAME"],
+        #password=os.environ['DB_PASSWORD']
+        user="flask"
+        database="open"
     )
     return conn
