@@ -1,17 +1,11 @@
 import os
 import psycopg2
+from TGDsite.db import connect
 
 from flask import Flask, render_template
 
-def get_db_conn():
-    #connect to postgres db using environment variables
-    conn = psycopg2.connect(
-        host="localhost",
-        database="siteDB",
-        user=os.environ['DB_USERNAME'],
-        password=os.environ['DB_USERNAME']
-    )
-    return conn
+
+
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
@@ -34,7 +28,7 @@ def create_app(test_config=None):
     
     @app.route('/')
     def index():
-        conn = get_db_conn()
+        conn = connect.get_db_conn()
         cur = conn.cursor()
         cur.execute('SELECT guide_name FROM guide;')
         guides = cur.fetchall()
