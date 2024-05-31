@@ -34,6 +34,6 @@ def create_app(test_config=None):
         guides = cur.fetchall()
         cur.close()
         conn.close()
-        return render_template('index.html, guides=guides')
+        return render_template('index.html', guides=guides)
     
     return app
