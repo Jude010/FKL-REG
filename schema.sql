@@ -25,8 +25,8 @@ CREATE TABLE saves (
 
 -- create usrsave table
 CREATE TABLE usrsave (
-    save_id REFERENCES saves(save_id)
-    user_id REFERENCES USER(user_id)
+    save_id REFERENCES saves(save_id),
+    user_id REFERENCES USER(user_id),
     PRIMARY KEY (save_id, user_id)
 );
 
