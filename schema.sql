@@ -64,4 +64,4 @@ INSERT INTO guide (guide_name, diagram) VALUES
 ('k2.6', NULL),
 ('k2.7', 'diagram 9'),
 ('k2.8', 'diagram 10'),
-('k2.9', NULL)
+('k2.9', 'diagram 11')
