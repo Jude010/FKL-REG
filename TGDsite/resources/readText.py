@@ -14,9 +14,3 @@ def readText(g_names):
         out[name] = g_text 
     
     return out
-
-var = ["k1.1.3","k1.1.4"]
-out = readText(var)
-print("a")
-print(out)
-print("b")

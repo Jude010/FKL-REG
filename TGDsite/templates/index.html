@@ -2,7 +2,7 @@
 
 {% block content %}
     <h1>{% block title %} codes {% endblock %}</h1>
-    {% for guide, text in texts %}
+    {% for guide, text in texts.items() %}
         <div class="guide">
             <h3>#{{guide}}</h3>
             <p>
