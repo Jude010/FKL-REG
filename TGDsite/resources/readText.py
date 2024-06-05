@@ -8,7 +8,7 @@ def readText(g_names):
     root = tree.getroot()
     out = {}
 
-    # for each name passed find the text associated and append it to a dictioany
+    # for each name passed find the text associated and append it to a dictionary
     for name in g_names :
         g_text = root.find(".//guide[@name='" + name + "']").text
         out[name] = g_text 

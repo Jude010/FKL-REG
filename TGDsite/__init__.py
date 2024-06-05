@@ -1,6 +1,7 @@
 import os
 import psycopg2
 from TGDsite.db import connect
+from TGDsite.resources import readText
 
 from flask import Flask, render_template
 
@@ -34,6 +35,7 @@ def create_app(test_config=None):
         guides = cur.fetchall()
         cur.close()
         conn.close()
-        return render_template('index.html', guides=guides)
+        text = readText(guides)
+        return render_template('index.html', guides=guides , text=text)
     
     return app
