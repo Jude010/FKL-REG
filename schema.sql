@@ -14,7 +14,8 @@ CREATE TABLE users (
 -- create guide table
 CREATE TABLE guide (
     guide_id SERIAL PRIMARY KEY,
-    guide_name VARCHAR(10) NOT NULL
+    guide_name VARCHAR(10) NOT NULL,
+    diagram varchar(20)
 );
 
 -- create saves table
@@ -31,36 +32,36 @@ CREATE TABLE usrsave (
 );
 
 -- insert 
-INSERT INTO guide (guide_name) VALUES
-('k1.1.3'),
-('k1.1.4'),
-('k1.1.6'),
-('k1.1.7'),
-('k1.1.8'),
-('k1.1.9'),
-('k1.1.10'),
-('k1.1.11'),
-('k1.1.12'),
-('k1.1.13'),
-('k1.1.14'),
-('k1.1.15'),
-('k1.1.16'),
-('k1.1.17'),
-('k1.1.18'),
-('k1.1.19'),
-('k1.1.20'),
-('k1.2.1'),
-('k1.2.2'),
-('k1.2.3'),
-('k1.2.4'),
-('k1.2.5'),
-('k1.2.6'),
-('k1.2.7'),
-('k2.2'),
-('k2.3'),
-('k2.4'),
-('k2.5'),
-('k2.6'),
-('k2.7'),
-('k2.8'),
-('k2.9')
+INSERT INTO guide (guide_name, diagram) VALUES
+('k1.1.3', NULL),
+('k1.1.4', 'table 1'),
+('k1.1.6', 'diagram 2'),
+('k1.1.7', 'diagram 1'),
+('k1.1.8', NULL),
+('k1.1.9', 'diagram 3'),
+('k1.1.10', NULL),
+('k1.1.11', NULL),
+('k1.1.12', 'diagram 4'),
+('k1.1.13', NULL),
+('k1.1.14', 'diagram 5'),
+('k1.1.15', NULL),
+('k1.1.16', NULL),
+('k1.1.17', 'dagram 6'),
+('k1.1.18', 'diagram 6'),
+('k1.1.19', NULL),
+('k1.1.20', 'diagram 6'),
+('k1.2.1', NULL),
+('k1.2.2', NULL),
+('k1.2.3', NULL),
+('k1.2.4', NULL),
+('k1.2.5', NULL),
+('k1.2.6', NULL),
+('k1.2.7', NULL),
+('k2.2', NULL),
+('k2.3', 'diagram 6'),
+('k2.4', 'diagram 7'),
+('k2.5', 'diagram 6'),
+('k2.6', NULL),
+('k2.7', 'diagram 9'),
+('k2.8', 'diagram 10'),
+('k2.9', NULL)
