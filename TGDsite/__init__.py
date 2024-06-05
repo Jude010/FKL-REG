@@ -36,6 +36,6 @@ def create_app(test_config=None):
         cur.close()
         conn.close()
         text = readText.readText(guides)
-        return render_template('index.html', guides=guides , text=text)
+        return render_template('index.html', texts=text)
     
     return app
