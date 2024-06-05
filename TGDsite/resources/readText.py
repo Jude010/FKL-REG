@@ -3,7 +3,7 @@ from pathlib import Path
 
 # function to read text from guidetext.xml using a list of names
 def readText(g_names):
-    path = Path('/resources/guideText.xml')
+    path = Path('guideText.xml')
     tree = ET.parse(path)
     root = tree.getroot()
     out = {}
