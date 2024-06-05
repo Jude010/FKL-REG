@@ -35,8 +35,9 @@ def create_app(test_config=None):
         guides = cur.fetchall()
         cur.close()
         conn.close()
-        text = readText.readText(guides)
-        print(text)
+        #text = readText.readText(guides)
+        text={1: "abc\nd",
+            2: "efg\nh"}
         return render_template('index.html', texts=text)
     
     return app

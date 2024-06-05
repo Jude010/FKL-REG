@@ -10,7 +10,13 @@ def readText(g_names):
 
     # for each name passed find the text associated and append it to a dictionary
     for name in g_names :
-        g_text = root.find(".//guide[@name='" + name[0] + "']").text
-        out[name[0]] = g_text 
+        g_text = root.find(".//guide[@name='" + name + "']").text
+        out[name] = g_text 
     
     return out
+
+var = ["k1.1.3","k1.1.4"]
+out = readText(var)
+print("a")
+print(out)
+print("b")
