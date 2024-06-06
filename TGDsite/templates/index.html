@@ -6,7 +6,9 @@
         <div class="guide">
             <h3>#{{guide}}</h3>
             <p>
+                {{% autoescape false %}}
                 {{text}}
+                {{% endautoescape %}}
             </p>
         </div>
     {% endfor %}
