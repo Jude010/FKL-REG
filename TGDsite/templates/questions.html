@@ -5,7 +5,8 @@
     {% for guide in guides %}
         <div>
             <input type="checkbox" id={{guide[0]}} name={{guide[0]}}>
-            {{guide[0]}}
+            <label for={{guide[0]}}>{{guide[0]}}</label>
         </div>
     {% endfor %}
+    <input type="submit" value="Submit">
 {% endblock %}
