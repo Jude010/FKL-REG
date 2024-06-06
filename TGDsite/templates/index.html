@@ -2,14 +2,9 @@
 
 {% block content %}
     <h1>{% block title %} Guidelines {% endblock %}</h1>
-    {% for guide, text in texts.items() %}
-        <div class="guide">
-            <h3>#{{guide}}</h3>
-            <p>
-                {% for para in text %}
-                    {{para}}<br>
-                {% endfor %}
-            </p>
+    {% for guide in guides %}
+        <div>
+            <input type="checkbox" id={{guide}} name={{guide}}>
         </div>
     {% endfor %}
 {% endblock %}
