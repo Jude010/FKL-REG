@@ -19,6 +19,6 @@ def guides():
     var = request.args
     print(var)
     for guide in request.args:
-        guides.append(guide[0])
+        guides.append(guide)
     text = readText.readText(guides)
     return render_template('guides.html' , text = text)
