@@ -2,11 +2,11 @@
 
 {% block content %}
     <h1>{% block title %} Guidelines {% endblock %}</h1>
-    {% for guide in guides %}
+    {% for code , body in text %}
         <div class="guide">
             <h3>#{{guide}}</h3>
             <p>
-                {% for para in text %}
+                {% for para in body %}
                     {{para}}<br>
                 {% endfor %}
             </p>
