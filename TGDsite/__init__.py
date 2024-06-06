@@ -29,7 +29,7 @@ def create_app(test_config=None):
     
     @app.route('/')
     def index():
-        return redirect(url_for('questions'))
+        return redirect(url_for('questions.index'))
     
     # connect to questions.py
     from . import questions
