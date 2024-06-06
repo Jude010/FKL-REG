@@ -17,4 +17,4 @@ def index():
 def guides():
     guides = request.args
     #text = readText.readText(guides)
-    return render_template('guides.html' , guides)
+    return render_template('guides.html' , guides= guides)
