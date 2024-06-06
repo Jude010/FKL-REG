@@ -3,7 +3,7 @@
 {% block content %}
     <h1>{% block title %} Guidelines {% endblock %}</h1>
     <form method="GET" action="{{url_for('questions.guides')}}">
-    {% for guide in guides %}
+    {% for name in names %}
         <div>
             <input type="checkbox" id={{guide[0]}} name={{guide[0]}}>
             <label for={{guide[0]}}>{{guide[0]}}</label>

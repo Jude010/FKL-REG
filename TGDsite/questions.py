@@ -10,11 +10,13 @@ def index():
     conn = connect.get_db_conn()
     cur = conn.cursor()
     cur.execute('SELECT guide_name FROM guide;')
-    guides = cur.fetchall()
-    return render_template('questions.html', guides=guides)
+    names = cur.fetchall()
+    return render_template('questions.html', names=names)
     
 @bp.route('/guides', methods=['GET'])
 def guides():
-    guides = request.args
-    #text = readText.readText(guides)
-    return render_template('guides.html' , guides= guides)
+    guides = [] 
+    for guide , var in request.args:
+        guides.append(guide)
+    text = readText.readText(guides)
+    return render_template('guides.html' , guides = guides)
