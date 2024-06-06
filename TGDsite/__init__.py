@@ -32,7 +32,7 @@ def create_app(test_config=None):
         conn = connect.get_db_conn()
         cur = conn.cursor()
         cur.execute('SELECT guide_name FROM guide;')
-        guides = cur.fetchall()
+        guides = cur.fetchall()[0]
         return render_template('index.html', guides=guides)
     
     @app.route('/guides')
@@ -40,7 +40,7 @@ def create_app(test_config=None):
         conn = connect.get_db_conn()
         cur = conn.cursor()
         cur.execute('SELECT guide_name FROM guide;')
-        guides = cur.fetchall()[0]
+        guides = cur.fetchall()
         cur.close()
         conn.close()
         text = readText.readText(guides)
