@@ -32,7 +32,7 @@ def create_app(test_config=None):
         conn = connect.get_db_conn()
         cur = conn.cursor()
         cur.execute('SELECT guide_name FROM guide;')
-        guides = cur.fetchall()[0]
+        guides = cur.fetchall()
         return render_template('index.html', guides=guides)
     
     @app.route('/guides')
