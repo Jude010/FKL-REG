@@ -6,7 +6,7 @@ from TGDsite.resources import readText
 bp = Blueprint('questions',__name__, url_prefix='/questions')
 
 @bp.route('/')
-def questions():
+def index():
     conn = connect.get_db_conn()
     cur = conn.cursor()
     cur.execute('SELECT guide_name FROM guide;')
