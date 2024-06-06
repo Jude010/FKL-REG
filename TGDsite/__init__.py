@@ -40,7 +40,7 @@ def create_app(test_config=None):
         conn = connect.get_db_conn()
         cur = conn.cursor()
         cur.execute('SELECT guide_name FROM guide;')
-        guides = cur.fetchall()[1]
+        guides = cur.fetchall()[0]
         cur.close()
         conn.close()
         text = readText.readText(guides)
