@@ -16,7 +16,7 @@ def index():
 @bp.route('/guides', methods=['GET'])
 def guides():
     guides = [] 
-    for guide , var in request.args:
-        guides.append(guide)
+    for guide in request.args:
+        guides.append(guide[0])
     text = readText.readText(guides)
     return render_template('guides.html' , guides = guides)
