@@ -17,8 +17,7 @@ def index():
 def guides():
     guides = [] 
     var = request.args
-    print(var)
-    for guide in request.args:
-        guides.append(guide.keys())
-    text = readText.readText(guides)
-    return render_template('guides.html' , text = text)
+    #for guide in var:
+    #    guides.append(list(guide.keys()))
+    #text = readText.readText(guides)
+    return render_template('guides.html' , text = var)
