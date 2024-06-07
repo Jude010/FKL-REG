@@ -4,7 +4,12 @@
     <h1>{% block title %} Project Questions - Stairs {% endblock %}</h1>
     <form method="POST" action="project_results">
         <h2>{{ project.name}}</h2>
-        {% for stair in project.stairs%}
+        {% for stair in range(project.stairs.length)%}
+            <div>
+                <h3>{{project.stairs[stair].name}}</h3><br>
+                <input type="text" id="name" >
+            </div>
+        {% endfor %}
         
     </form>
 {% endblock %}
