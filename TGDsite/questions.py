@@ -18,4 +18,4 @@ def guides():
     guides = [] 
     guide = request.args.keys()
     text = readText.readText(guides)
-    return render_template('guides.html' , text = text)
+    return render_template('guides.html' , text = guide)
