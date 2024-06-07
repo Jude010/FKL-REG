@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Project Questions - Stairs {% endblock %}</h1>
+    <form method="POST" action="project_results">
+        <h2>{{ project.name}}</h2>
+        {% for stair in project.stairs%}
+        
+    </form>
+{% endblock %}

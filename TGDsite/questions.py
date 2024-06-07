@@ -1,4 +1,4 @@
-from flask import Flask , render_template , Blueprint , request
+from flask import Flask , render_template , Blueprint , request ,session
 from TGDsite.db import connect
 from TGDsite.resources import readText , projects
 
@@ -20,6 +20,13 @@ def guides():
     text = readText.readText(guides)
     return render_template('guides.html' , text = text)
 
-@bp.route('/')
+@bp.route('/questions')
 def questions():
-    return render_template('')
+    return render_template('questions.html')
+
+@bp.route('/questions/stairs', methods=['POST'])
+def stair_questions():
+    results = request.form
+    project = projects.project(results['name'],results["non/domestic"], results["stairs"])
+    session['project'] = project
+    return render_template('stair_questions.html' , project = project)
