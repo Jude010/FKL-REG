@@ -2,7 +2,7 @@
 
 {% block content %}
 <div>
-    <button type="button" href="{{url_for('questions.guide_index')}}">Select Guides</button>
-    <button type="button" href="{{url_for('questions.questions')}}">Project Questions</button>
+    <a href="{{url_for('questions.guide_index')}}">Select Guides</a>
+    <a type="button" href="{{url_for('questions.questions')}}">Project Questions</a>
 </div>
 {% endblock %}
