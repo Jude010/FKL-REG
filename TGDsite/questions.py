@@ -5,13 +5,13 @@ from TGDsite.resources import readText , projects
 
 bp = Blueprint('questions',__name__, url_prefix='/questions')
 
-@bp.route('/')
+@bp.route('/guide_index')
 def index():
     conn = connect.get_db_conn()
     cur = conn.cursor()
     cur.execute('SELECT guide_name FROM guide;')
     names = cur.fetchall()
-    return render_template('questions.html', names=names)
+    return render_template('guide_index.html', names=names)
     
 @bp.route('/guides', methods=['GET'])
 def guides():
@@ -19,3 +19,7 @@ def guides():
     guides = request.args.keys()
     text = readText.readText(guides)
     return render_template('guides.html' , text = text)
+
+@bp.route('/')
+def index():
+    return render_template('')
