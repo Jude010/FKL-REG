@@ -21,5 +21,5 @@ def guides():
     return render_template('guides.html' , text = text)
 
 @bp.route('/')
-def index():
+def questions():
     return render_template('')
