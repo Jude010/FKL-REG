@@ -3,7 +3,7 @@ import psycopg2
 from TGDsite.db import connect
 from TGDsite.resources import readText
 
-from flask import Flask, redirect , url_for
+from flask import Flask, redirect , render_template
 
 
 
@@ -29,7 +29,7 @@ def create_app(test_config=None):
     
     @app.route('/')
     def index():
-        return redirect(url_for('questions.index'))
+        return render_template('index.html')
     
     # connect to questions.py
     from . import questions

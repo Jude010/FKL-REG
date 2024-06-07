@@ -1,6 +1,6 @@
 from flask import Flask , render_template , Blueprint , request
 from TGDsite.db import connect
-from TGDsite.resources import readText
+from TGDsite.resources import readText , projects
 
 
 bp = Blueprint('questions',__name__, url_prefix='/questions')
