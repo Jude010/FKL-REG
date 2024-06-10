@@ -11,8 +11,8 @@
                 <input type="text" id="name" name={{stair}} value={{project.stairs[stair].name}}><br>
                 <br>
                 <label for="internal">Internal/External</label>
-                <input type="radio" id="internal" name={{'internal' ~ stair}} value="internal">
-                <input type="radio" id="external" name={{'internal' ~ stair}} value="external">
+                <input type="radio" id="internal" name={{'internal' ~ stair}} value="internal" required>
+                <input type="radio" id="external" name={{'internal' ~ stair}} value="external" required>
             </div>
         {% endfor %} 
         <input type="hidden" name="project" value={{project}} >
