@@ -3,7 +3,7 @@ import psycopg2
 from TGDsite.db import connect
 from TGDsite.resources import readText
 
-from flask import Flask, redirect , render_template
+from flask import Flask, redirect , render_template ,session
 
 
 

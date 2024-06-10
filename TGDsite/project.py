@@ -8,7 +8,7 @@ bp = Blueprint('project',__name__, url_prefix='/project')
 @bp.route('/project_results', methods=['POST'])
 def project_results():
     results = request.form
-    project = results['project']
+    project = session['project']
     for i in range(project.stair_num()):
         project.stairs[i].name = results[i]
         project.stairs[i].inside = results["internal" + i]
