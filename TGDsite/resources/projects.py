@@ -21,7 +21,7 @@ class project:
         dict = {"name": self.name,
                 "privacy": self.privacy}
         
-        for i in range(self.stair_num):
+        for i in range(self.stair_num()):
             dict['stair' + i] = self.stairs[i].serialize()
         
         return dict
