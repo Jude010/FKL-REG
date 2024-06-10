@@ -13,6 +13,10 @@ class project:
 
     def stair_add(self, stair):
         self.stairs.append(stair)
+
+    def stair_num(self):
+        return len(self.stairs)
+
     
 
 
