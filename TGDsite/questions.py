@@ -28,5 +28,4 @@ def questions():
 def stair_questions():
     results = request.form
     project = projects.project(results['name'],results["non/domestic"], results["stairs"])
-    session['project'] = project
     return render_template('stair_questons.html' , project = project)
