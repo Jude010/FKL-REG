@@ -2,6 +2,12 @@
 
 {% block content %}
     <h1>{% block title %} Results {% endblock %}</h1>
+    <h2>{{project.name}}</h2>
+    {% for each stair in project.stairs %}
+    <div>
+        <h3>{{stair.name}}</h3><br>
+        {{stair.inside}}
+    </div>
     
         
     

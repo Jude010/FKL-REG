@@ -31,9 +31,11 @@ def create_app(test_config=None):
     def index():
         return render_template('index.html')
     
-    # connect to questions.py
+    # connect to blueprints
     from . import questions
+    from . import project
     app.register_blueprint(questions.bp)
+    app.register_blueprint(project.bp)
 
     
     
