@@ -17,7 +17,15 @@ class project:
     def stair_num(self):
         return len(self.stairs)
 
-    
+    def serialize(self):
+        dict = {"name": self.name,
+                "privacy": self.privacy}
+        
+        for i in range(len(self.stair_num)):
+            dict['stair' + i] = self.stairs[i]
+        
+        return dict
+
 
 
 
@@ -25,4 +33,9 @@ class stair:
     def __init__(self , name) -> None:
         self.inside = ''
         self.name = name
+
+    def serialize(self):
+        return {"name": self.name,
+                "inside": self.inside}
+
     
