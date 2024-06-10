@@ -10,6 +10,7 @@
                 <input type="text" id="name" name="name" value={{project.stairs[stair].name}}>
             </div>
         {% endfor %} 
-        <input type="submit" 
+        <input type="hidden" value={{project}} id="project">
+        <input type="submit" value="submit" href="project_results.html">
     </form>
 {% endblock %}
