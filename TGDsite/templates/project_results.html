@@ -3,7 +3,7 @@
 {% block content %}
     <h1>{% block title %} Results {% endblock %}</h1>
     <h2>{{project.name}}</h2>
-    {% for i in project['stair_num'] %}
+    {% for i in range(project['stair_num']) %}
     <div>
         <h3>{{project[stair ~ i][name]}}</h3><br>
         {{project[stair ~ i][inside]}}
