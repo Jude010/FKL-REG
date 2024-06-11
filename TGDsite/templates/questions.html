@@ -4,15 +4,20 @@
     <h1>{% block title %} Project Questions {% endblock %}</h1>
     <form method="POST" action="{{url_for('questions.stair_questions')}}">
         <label for="name">Project name</label>
-        <input type="text" id="name" name="name" required><br>
-        <h3>Domestic or Non-Domestic</h3><br>
-        <input type="radio" id="domestic" name="non/domestic" value="domestic" required>
-        <label for="domestic">domestic</label>
-        <input type="radio" id="non" name="non/domestic" value="non" required>
-        <label for="non">non-domestic</label>
+        <input type="text" id="name" name="name" required>
         <br>
-        <input type="number" id="stairs" name="stairs" min="0" value="0">
+        <h3>Domestic or Non-Domestic</h3>
+        <br>
+        <label for="domestic">domestic</label>
+        <input type="radio" id="domestic" name="non/domestic" value="domestic" required>
+        <br>
+        <label for="non">non-domestic</label>
+        <input type="radio" id="non" name="non/domestic" value="non" required>
+        <br><br>
+        <label for="floors">Numbe of Floors</label>
+        <input type="number" id="floors" name="floors" value="0" min="1" required>
         <label for="stairs">Number of stairs</label><br><br>
+        <input type="number" id="stairs" name="stairs" min="0" value="0" required>
         <input type="submit" value="submit" >
     </form>
 {% endblock %}

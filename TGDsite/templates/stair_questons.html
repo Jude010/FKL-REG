@@ -10,9 +10,12 @@
                 <label for="name">Name</label><br>
                 <input type="text" id="name" name={{stair}} value={{project.stairs[stair].name}}><br>
                 <br>
-                <label for="internal">Internal/External</label>
+                <label for="internal">Internal/External</label><br>
                 <input type="radio" id="internal" name={{'internal' ~ stair}} value="internal" required>
                 <input type="radio" id="external" name={{'internal' ~ stair}} value="external" required>
+                <br>
+                <label for="steps">Number of Steps</label>
+                <input type="number" id="steps" name={{'steps' ~ stair}} value="5" required>
             </div>
         {% endfor %} 
         <input type="hidden" name="project" value={{project}} >

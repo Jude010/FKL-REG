@@ -12,4 +12,5 @@ def project_results():
     for i in range(project['stair_num']):
         project["stair" + str(i)]['name'] = results[str(i)]
         project["stair" + str(i)]['inside'] = results["internal" + str(i)]
+        project["stair" + str(i)]['steps'] = results["steps" + str(i) ]
     return render_template('project_results.html', project = project)

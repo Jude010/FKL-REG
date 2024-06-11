@@ -2,11 +2,13 @@
 
 {% block content %}
     <h1>{% block title %} Results {% endblock %}</h1>
-    <h2>{{project.name}}</h2>
+    <h2>{{project['name']}}</h2><br>
+    <div>floors:{{project['floors']}}</div>
     {% for i in range(project['stair_num']) %}
     <div>
         <h3>{{project['stair' ~ i]['name']}}</h3><br>
-        {{project['stair' ~ i]['inside']}}
+        {{project['stair' ~ i]['inside']}} <br>
+        Steps:{{project['stair' ~ i]['steps']}}
     </div>
     {% endfor %}
 {% endblock %}
