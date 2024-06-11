@@ -10,6 +10,6 @@ def project_results():
     results = request.form
     project = session['project']
     for i in range(project['stair_num']):
-        project["stair" + str(i + 1)]['name'] = results[str(i)]
-        project["stair" + str(i + 1)]['inside'] = results["internal" + str(i)]
+        project["stair" + str(i)]['name'] = results[str(i)]
+        project["stair" + str(i)]['inside'] = results["internal" + str(i)]
     return render_template('project_results.html', project = project)
