@@ -5,8 +5,8 @@
     <h2>{{project.name}}</h2>
     {% for i in range(project['stair_num']) %}
     <div>
-        <h3>{{project[stair ~ i][name]}}</h3><br>
-        {{project[stair ~ i][inside]}}
+        <h3>{{project['stair' ~ i]['name']}}</h3><br>
+        {{project['stair' ~ i]['inside']}}
     </div>
     {% endfor %}
 {% endblock %}
