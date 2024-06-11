@@ -15,9 +15,11 @@
                 <input type="radio" id="external" name={{'internal' ~ stair}} value="external" required>
                 <br>
                 <label for="steps">Number of Steps</label>
+                <br>
                 <input type="number" id="steps" name={{'steps' ~ stair}} value="5" required>
             </div>
         {% endfor %} 
+        <br>
         <input type="hidden" name="project" value={{project}} >
         <input type="submit" value="submit">
     </form>
