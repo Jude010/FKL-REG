@@ -22,7 +22,7 @@ class project:
                 "privacy": self.privacy}
         
         for i in range(self.stair_num()):
-            dict['stair' + i] = self.stairs[i].serialize()
+            dict['stair' + str(i)] = self.stairs[i].serialize()
         
         return dict
 
