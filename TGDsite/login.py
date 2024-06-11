@@ -8,3 +8,8 @@ bp = Blueprint('login',__name__, url_prefix="/login")
 def login():
 
     return render_template('login.html')
+
+@bp.route("/login", methods=['POST'] )
+def login_test():
+    
+    

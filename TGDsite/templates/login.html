@@ -2,6 +2,14 @@
 
 {% block content %}
     <h1>{% block Title %} - LOGIN - {% endblock %}</h1>
-    
+    <form method="POST" action="{{url_for(login.login_test)}}">
+        <label for="username">Username</label><br>
+        <input type="text" id="username" name="username" required>
+        <br><br>
+        <label for="password">Password</label><br>
+        <input type="password" id="password" name="password" required>
+        <br><br>
+        <input type="submit" value="submit">
+    </form>
 
 {% endblock %}
