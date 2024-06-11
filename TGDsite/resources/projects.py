@@ -19,7 +19,9 @@ class project:
 
     def serialize(self):
         dict = {"name": self.name,
-                "privacy": self.privacy}
+                "privacy": self.privacy,
+                "stair_num": self.stair_num()
+                }
         
         for i in range(self.stair_num()):
             dict['stair' + str(i)] = self.stairs[i].serialize()
