@@ -3,10 +3,10 @@
 {% block content %}
     <h1>{% block title %} Results {% endblock %}</h1>
     <h2>{{project.name}}</h2>
-    {% for each stair in project.stairs %}
+    {% for each i in project['stair_num'] %}
     <div>
-        <h3>{{stair.name}}</h3><br>
-        {{stair.inside}}
+        <h3>{{project[stair ~ i][name]}}</h3><br>
+        {{project[stair ~ i][inside]}}
     </div>
     
         
