@@ -5,11 +5,9 @@
     <h2>{{project['name']}}</h2>
     <div>floors:{{project['floors']}}
     {% for i in range(project['stair_num']) %}
-        <div>
-            <h3>{{project['stair' ~ i]['name']}}</h3>
-            {{project['stair' ~ i]['inside']}} <br>
-            Steps:{{project['stair' ~ i]['steps']}}
-        </div>
+        <h3>{{project['stair' ~ i]['name']}}</h3>
+        {{project['stair' ~ i]['inside']}} <br>
+        Steps:{{project['stair' ~ i]['steps']}}
     {% endfor %}
     </div>
 {% endblock %}
