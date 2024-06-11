@@ -1,6 +1,6 @@
 from flask import Flask , render_template , Blueprint , request ,session
 from TGDsite.db import connect
-from TGDsite.resources import readText , projects
+from TGDsite.resources import project_parts, readText
 
 
 bp = Blueprint('questions',__name__, url_prefix='/questions')
@@ -11,6 +11,7 @@ def guide_index():
     cur = conn.cursor()
     cur.execute('SELECT guide_name FROM guide;')
     names = cur.fetchall()
+    conn.close()
     return render_template('guide_index.html', names=names)
     
 @bp.route('/guides', methods=['GET'])
@@ -27,6 +28,6 @@ def questions():
 @bp.route('/questions/stairs', methods=['POST'])
 def stair_questions():
     results = request.form
-    project = projects.project(results['name'],results["non/domestic"], results["stairs"])
+    project = project_parts.project(results['name'],results["non/domestic"], results["stairs"])
     session['project'] = project.serialize()
     return render_template('stair_questons.html' , project = project)

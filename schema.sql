@@ -3,6 +3,8 @@ DROP TABLE IF EXISTS usrsave;
 DROP TABLE IF EXISTS saves;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS guide;
+DROP TABLE IF EXISTS stairs;
+DROP TABLE IF EXISTS project;
 
 -- create user table
 CREATE TABLE users (
@@ -18,18 +20,36 @@ CREATE TABLE guide (
     diagram varchar(20)
 );
 
--- create saves table
-CREATE TABLE saves (
-    save_id SERIAL PRIMARY KEY,
-    guide_id SERIAL REFERENCES guide(guide_id)
+-- create project table
+CREATE TABLE project (
+    proj_id SERIAL PRIMARY KEY,
+    p_name VARCHAR (50),
+    floors NUMERIC,
+    privacy VARCHAR(20)
 );
 
--- create usrsave table
-CREATE TABLE usrsave (
-    save_id SERIAL REFERENCES saves(save_id),
-    user_id SERIAL REFERENCES USERS(user_id),
-    PRIMARY KEY (save_id, user_id)
+--create table stairs
+CREATE TABLE stairs (
+    stair_id SERIAL PRIMARY KEY,
+    s_name VARCHAR(50),
+    steps NUMERIC
 );
+
+-- create saves table
+CREATE TABLE saves (
+    user_id SERIAL REFERENCES users(user_id),
+    proj_id SERIAL REFERENCES project(proj_id),
+    PRIMARY KEY (user_id, proj_id)
+);
+
+-- create proj_stair table
+CREATE TABLE proj_stair (
+    stair_id SERIAL REFERENCES stairs(stair_id),
+    proj_id SERIAL REFERENCES project(proj_id),
+    PRIMARY KEY (stair_id, proj_id)
+);
+
+--
 
 -- insert 
 INSERT INTO guide (guide_name, diagram) VALUES
