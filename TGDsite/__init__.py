@@ -34,8 +34,10 @@ def create_app(test_config=None):
     # connect to blueprints
     from . import questions
     from . import project
+    from . import login
     app.register_blueprint(questions.bp)
     app.register_blueprint(project.bp)
+    app.register_blueprint(login.bp)
 
     
     
