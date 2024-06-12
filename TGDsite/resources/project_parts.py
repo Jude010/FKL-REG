@@ -1,14 +1,14 @@
 
 
 class project:
-    def __init__(self, name, privacy , number=0, floors=1):
+    def __init__(self, name, privacy , stair_no=0, floors=1):
         self.stairs = []
         self.privacy = privacy
         self.name = name
         self.floors = floors
 
         # initalise a number of stairs equal to number and names them stair1 to stair(number)
-        for i in range(int(number)):
+        for i in range(int(stair_no)):
             self.stairs.append(stair("stair" + str(i+1)))
 
 

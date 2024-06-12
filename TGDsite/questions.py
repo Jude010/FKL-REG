@@ -28,6 +28,6 @@ def questions():
 @bp.route('/questions/stairs', methods=['POST'])
 def stair_questions():
     results = request.form
-    project = project_parts.project(results['name'],results["non/domestic"], results["stairs"])
+    project = project_parts.project(results['name'],results["non/domestic"], results["stairs"],results['floors'])
     session['project'] = project.serialize()
     return render_template('stair_questons.html' , project = project)

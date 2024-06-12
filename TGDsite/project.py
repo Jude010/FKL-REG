@@ -1,4 +1,4 @@
-from flask import Flask , render_template , Blueprint , request ,session
+from flask import redirect , render_template , Blueprint , request ,session , url_for
 from TGDsite.db import connect
 from TGDsite.resources import project_parts, readText
 
@@ -14,4 +14,39 @@ def project_results():
         project["stair" + str(i)]['inside'] = results["internal" + str(i)]
         project["stair" + str(i)]['steps'] = results["steps" + str(i) ]
     return render_template('project_results.html', project = project)
+
+@bp.route("/save_project")
+def save_project():
+    conn = connect.get_db_conn()
+    cur = conn.cursor()
+    project = session['project']
+    user = session['user']
+
+    #insert the project info from session into the DB
+    p_id = cur.execute("INSERT INTO project (p_name , floors,  privacy) VALUES ('" 
+                + str(project['name']) + "', '"
+                + str(project['floors']) + "', '"
+                + str(project['privacy']) + "') RETURNING proj_id;")
+    
+    #insert the stairs info from session into the DB and associate with the project
+    for stair in project['stairs']:
+        s_id = cur.execute("INSERT INTO stairs (s_name, steps, internal) VALUES ('"
+                    + str(stair['name']) + "', '"
+                    + str(stair['steps']) + "', '"
+                    + str(stair['inside']) + "') RETURNING stair_id;")
+        
+        cur.execute("INSERT INTO proj_stair (stair_id , proj_id) VALUES ('"
+                     + s_id[0] +"','" + p_id[0] + "');")
+        
+    u_id = cur.execute("SELECT user_id FROM users WHERE users.username LIKE '" + user + "';")
+    
+    cur.execute("INSERT INTO saves (user_id , proj_id) VALUES '" + u_id[0] + "', '" + p_id[0] + "';")
+
+    return redirect(url_for('project.display'))
+
+@bp.route("/display")
+def display():
+    return None
+
+
 
