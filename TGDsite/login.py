@@ -11,5 +11,14 @@ def login():
 
 @bp.route("/login", methods=['POST'] )
 def login_test():
-    
-    
+    results = request.form
+    conn = connect.get_db_conn()
+    cur = conn.cursor()
+    cur.execute("SELECT password FROM users WHERE username LIKE '" + results['username'] + "'")
+    pswrd = cur.fetchone()
+    conn.close()
+    if pswrd == results['password']:
+        session['user'] = results['username']
+        return render_template('index.html')
+    else :
+        return render_template('login.html', fail = True)
