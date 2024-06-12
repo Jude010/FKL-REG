@@ -17,7 +17,7 @@ def login_test():
     cur.execute("SELECT password FROM users WHERE username LIKE '" + results['username'] + "'")
     pswrd = cur.fetchone()
     conn.close()
-    if pswrd == results['password']:
+    if pswrd[0] == results['password']:
         session['user'] = results['username']
         return render_template('index.html')
     else :
