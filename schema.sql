@@ -49,7 +49,8 @@ CREATE TABLE proj_stair (
     PRIMARY KEY (stair_id, proj_id)
 );
 
---
+--add test user
+INSERT INTO users (username, password) VALUES ('test' , 'open');
 
 -- insert 
 INSERT INTO guide (guide_name, diagram) VALUES
