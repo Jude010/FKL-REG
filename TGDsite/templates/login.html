@@ -9,6 +9,10 @@
         <label for="password">Password</label><br>
         <input type="password" id="password" name="password" required>
         <br><br>
+        {% if fail %}
+        <div>Username or password incorrect</div>
+        <br><br>
+        {% endif%}
         <input type="submit" value="submit">
     </form>
 
