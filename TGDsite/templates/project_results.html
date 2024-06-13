@@ -17,6 +17,22 @@
         {% else %}
         >800
         {% endif %}
+        <br><br>
+        Rise:{% if project['stair' ~ i]['part_m'] %}
+        &lt=175mm 
+        {% else %}
+        opimal: 175mm max: 220mm
+        {% endif %}
+        <br><br>
+        Going: 
+        {% if project['stair' ~ i]['part_m'] %}
+        &gt= 280mm
+        {% else %}
+        optimal: 250mm min:220mm
+        {% endif %}
+        <br><br>
+        Gait(2r+g): opimal: 600 min: 550 max: 700
+        <br><br>
     {% endfor %}
     </div>
 {% endblock %}
