@@ -3,7 +3,8 @@
 {% block content %}
     <h1>{% block title %} Results {% endblock %}</h1>
     <h2>{{project['name']}}</h2>
-    <div>floors:{{project['floors']}}
+    <div>floors:{{project['floors']}}<br>
+    {{project['privacy']}}
     {% for i in range(project['stair_num']) %}
         <h3>{{project['stair' ~ i]['name']}}</h3>
         {{project['stair' ~ i]['inside']}} <br>
