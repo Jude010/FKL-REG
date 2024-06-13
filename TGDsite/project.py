@@ -13,7 +13,8 @@ def project_results():
         project["stair" + str(i)]['name'] = results[str(i)]
         project["stair" + str(i)]['inside'] = results["internal" + str(i)]
         project["stair" + str(i)]['rise'] = results["rise" + str(i) ]
-        project["stair" + str(i)]['part_m'] = results["part_m" + str(i)]
+        if "part_m" + str(i) in results.keys():
+            project["stair" + str(i)]['part_m'] = True
     return render_template('project_results.html', project = project)
 
 @bp.route("/save_project")
