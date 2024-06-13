@@ -37,12 +37,14 @@ class stair:
     def __init__(self , name) -> None:
         self.inside = ''
         self.name = name
-        self.steps = 0
+        self.rise = 0
+        self.part_m = False
 
     # convert to dict for session purposes
     def serialize(self):
         return {"name": self.name,
                 "inside": self.inside,
-                "steps": self.steps}
+                "rise": self.rise,
+                "part_m": self.part_m}
 
     

@@ -12,7 +12,7 @@ def project_results():
     for i in range(project['stair_num']):
         project["stair" + str(i)]['name'] = results[str(i)]
         project["stair" + str(i)]['inside'] = results["internal" + str(i)]
-        project["stair" + str(i)]['steps'] = results["steps" + str(i) ]
+        project["stair" + str(i)]['rise'] = results["rise" + str(i) ]
     return render_template('project_results.html', project = project)
 
 @bp.route("/save_project")
@@ -30,9 +30,9 @@ def save_project():
     
     #insert the stairs info from session into the DB and associate with the project
     for stair in project['stairs']:
-        s_id = cur.execute("INSERT INTO stairs (s_name, steps, internal) VALUES ('"
+        s_id = cur.execute("INSERT INTO stairs (s_name, rise, internal) VALUES ('"
                     + str(stair['name']) + "', '"
-                    + str(stair['steps']) + "', '"
+                    + str(stair['rise']) + "', '"
                     + str(stair['inside']) + "') RETURNING stair_id;")
         
         cur.execute("INSERT INTO proj_stair (stair_id , proj_id) VALUES ('"

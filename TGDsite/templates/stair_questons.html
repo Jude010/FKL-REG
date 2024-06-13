@@ -14,9 +14,12 @@
                 <input type="radio" id="internal" name={{'internal' ~ stair}} value="internal" required>
                 <input type="radio" id="external" name={{'internal' ~ stair}} value="external" required>
                 <br>
-                <label for="steps">Number of Steps</label>
+                <label for="steps">Total rise</label>
                 <br>
-                <input type="number" id="steps" name={{'steps' ~ stair}} value="5" required>
+                <input type="number" id="steps" name={{'rise' ~ stair}} value="1000" required>
+                <br><br>
+                <label for="part_m">Part M</label>
+                <input type="checkbox" id="part_m" name={{'part_m' ~ stair}}>
             </div>
         {% endfor %} 
         <br>

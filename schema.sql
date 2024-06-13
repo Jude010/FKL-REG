@@ -32,7 +32,7 @@ CREATE TABLE project (
 CREATE TABLE stairs (
     stair_id SERIAL PRIMARY KEY,
     s_name VARCHAR(50),
-    steps NUMERIC,
+    rise NUMERIC,
     internal VARCHAR(10)
 );
 
