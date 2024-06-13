@@ -10,7 +10,12 @@
         {{project['stair' ~ i]['inside']}} <br>
         Total Rise:{{project['stair' ~ i]['rise']}}mm<br>
         {% if project['stair' ~ i]['part_m'] %}
-        Part M
+        Part M<br>
+        {% endif %}
+        Width:{% if project['stair' ~ i]['part_m'] %}
+        >900mm
+        {% else %}
+        >800
         {% endif %}
     {% endfor %}
     </div>
