@@ -8,7 +8,7 @@
         <h3>{{project['stair' ~ i]['name']}}</h3>
         {{project['stair' ~ i]['inside']}} <br>
         Total Rise:{{project['stair' ~ i]['steps']}}mm<br>
-        {% if project['stair' ~ i]['part_m'] %}
+        {% if project['stair' ~ i]['part_m'] == True %}
         Part M
         {% endif %}
     {% endfor %}
