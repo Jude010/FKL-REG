@@ -35,7 +35,7 @@ def save_project():
                     + str(stair['name']) + "', '"
                     + str(stair['rise']) + "', '"
                     + str(stair['inside']) + "', '"
-                    + str(stair['']) 
+                    + str(stair['part_m']) 
                     + "') RETURNING stair_id;")
         
         cur.execute("INSERT INTO proj_stair (stair_id , proj_id) VALUES ('"
