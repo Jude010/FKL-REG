@@ -7,7 +7,9 @@
     {% for i in range(project['stair_num']) %}
         <h3>{{project['stair' ~ i]['name']}}</h3>
         {{project['stair' ~ i]['inside']}} <br>
-        Steps:{{project['stair' ~ i]['steps']}}
+        Total Rise:{{project['stair' ~ i]['steps']}}mm<br>
+        {% if project['stair' ~ i]['part_m'] %}
+
     {% endfor %}
     </div>
 {% endblock %}

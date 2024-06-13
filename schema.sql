@@ -33,6 +33,7 @@ CREATE TABLE stairs (
     stair_id SERIAL PRIMARY KEY,
     s_name VARCHAR(50),
     rise NUMERIC,
+    part_m BOOLEAN,
     internal VARCHAR(10)
 );
 
