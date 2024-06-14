@@ -63,19 +63,46 @@
         {% else %}
             {% if project['stair' ~ i]['part_m'] %}
                 {# INTERNAL PUBLIC PART_M #}
+                Max Rise: 1800mm<br>
                 Width: 1200mm min between walls, upstands, strings <br>
                        1000mm min between handrails
                 <br><br>
                 Rise(R): 150 - 180 mm<br>
                 Going(G): 250 - 300 mm<br>
                 Gait(2R + G): 550 - 700 optimal:600
+                <br><br>
+                Open Risers: NO<br>
+                Tapered Treads: NO<br>
+                <br><br>
+                Headrroom: >= 2100mm<br>
+                Handrail: Both sides
+                Handrail Height: Flight: Min: 900mm Max: 1000mm<br>
+                                 Landing: Min: 900mm Max: 1000mm<br>
+                <br>
+                Guarding: Where rise >600mm<br>
             {% else %}
             {# INTERNAL PUBLIC NON PART_M #}
+                Max risers: 16<br>
                 Width: 800mm
                 <br><br>
                 Rise(R): Optimal:150mm Max:190mm<br>
                 Going(G): Optimal:300 Min:280mm<br>
-                Gait(2R + G): 550 - 700 optimal:600
+                Gait(2R + G): 550 - 700 optimal:600<br>
+                <br>
+                Open Risers: min 16mm nosing overlap, max 100mm gap between Treads
+                <br>
+                Tapered Treads: NO
+                <br>
+                Headroom: >= 2000mm
+                <br>
+                Handrails: >3 Risers : Provide Handrails<br>
+                           &lt= 1000mm rise : one side only<br>
+                           > 1000mm rise : both sides
+                <br>
+                Handrail height: Pitch line of flight: min: 900mm max: 1000mm<br>
+                                 Intermediate landing: min: 900mm max: 1100mm
+                <br>
+                Guarding: Where rise >600mm<br>
             {% endif %}
         {% endif %}
     {% endfor %}
