@@ -12,27 +12,44 @@
         {% if project['stair' ~ i]['part_m'] %}
         Part M<br>
         {% endif %}
-        Width:{% if project['stair' ~ i]['part_m'] %}
-        >900mm
+        {% if project['privacy'] == 'domestic' %}
+            Width:{% if project['stair' ~ i]['part_m'] %}
+                >900mm
+            {% else %}
+                >800
+            {% endif %}
+            <br><br>
+            Rise(R):{% if project['stair' ~ i]['part_m'] %}
+                &lt=175mm 
+            {% else %}
+                opimal: 175mm max: 220mm
+            {% endif %}
+            <br><br>
+            Going(G): 
+            {% if project['stair' ~ i]['part_m'] %}
+                &gt= 280mm
+            {% else %}
+                optimal: 250mm min:220mm
+            {% endif %}
+            <br><br>
+            Gait(2R+G): opimal: 600 min: 550 max: 700
+            <br><br>
         {% else %}
-        >800
+            {% if project['stair' ~ i]['part_m'] %}
+                Width: 1200mm min between walls, upstands, strings <br>
+                       1000mm min between handrails
+                <br><br>
+                Rise(R): 150 - 180 mm<br>
+                Going(G): 250 - 300 mm<br>
+                Gait(2R + G): 550 - 700 optimal:600
+            {% else %}
+                Width: 800mm
+                <br><br>
+                Rise(R): Optimal:150mm Max:190mm<br>
+                Going(G): Optimal:300 Min:280mm<br>
+                Gait(2R + G): 550 - 700 optimal:600
+            {% endif %}
         {% endif %}
-        <br><br>
-        Rise:{% if project['stair' ~ i]['part_m'] %}
-        &lt=175mm 
-        {% else %}
-        opimal: 175mm max: 220mm
-        {% endif %}
-        <br><br>
-        Going: 
-        {% if project['stair' ~ i]['part_m'] %}
-        &gt= 280mm
-        {% else %}
-        optimal: 250mm min:220mm
-        {% endif %}
-        <br><br>
-        Gait(2R+G): opimal: 600 min: 550 max: 700
-        <br><br>
     {% endfor %}
     </div>
 {% endblock %}

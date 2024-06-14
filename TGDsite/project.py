@@ -32,7 +32,7 @@ def save_project():
     
     #insert the stairs info from session into the DB and associate with the project
     for stair in project['stairs']:
-        s_id = cur.execute("INSERT INTO stairs (s_name, rise, internal) VALUES ('"
+        s_id = cur.execute("INSERT INTO stairs (s_name, rise, internal , part_m) VALUES ('"
                     + str(stair['name']) + "', '"
                     + str(stair['rise']) + "', '"
                     + str(stair['inside']) + "', '"
