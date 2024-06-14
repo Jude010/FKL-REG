@@ -8,26 +8,55 @@
     {% for i in range(project['stair_num']) %}
         <h3>{{project['stair' ~ i]['name']}}</h3>
         {{project['stair' ~ i]['inside']}} <br>
-        Total Rise:{{project['stair' ~ i]['rise']}}mm<br>
         {% if project['stair' ~ i]['part_m'] %}
-        Part M<br>
+        Part M<br><br>
+
+        Total Rise:{{project['stair' ~ i]['rise']}}mm<br>
         {% endif %}
         {% if project['privacy'] == 'domestic' %}
             {% if project['stair' ~ i]['part_m'] %}
-                Width: >900mm
+                Width: >900mm<br>
+                Max Rise: 1800mm
                 <br><br>
                 Rise(R): &lt=175mm<br>
-                Going(G): &gt= 280mm
+                Going(G): &gt= 280mm<br>
                 Gait(2R+G): opimal: 600 min: 550 max: 700
+                <br><br>
+                Open Risers: Allowed
+                <br>
+                Tapered Treads: Avoid
+                <br>
+                Headroom: 2000mm
+                <br><br>
+                Handrails: >3 Risers Provide continuous on both sides
+                <br>
+                Handrail height: Pitch line of flight: min: 900mm max: 1000mm<br>
+                                 Intermediate landing: min: 900mm max: 1100mm
+                <br>
+                Guarding: Where rise > 600mm
             <br><br>
-
             {% else %}
-                Width: >800mm
+                Width: >800mm<br>
+                Max Risers: 16
                 <br><br>
                 Rise(R): opimal: 175mm max: 220mm <br>
                 Going(G): optimal: 250mm min:220mm <br>
                 Gait(2R+G): opimal: 600 min: 550 max: 700
-            <br><br>
+                <br><br>
+                Open Risers: Allowed
+                <br>
+                Tapered Treads: Avoid
+                <br>
+                Headroom: 2000mm
+                <br><br>
+                Handrails: >3 Risers : Provide Handrails<br>
+                           &lt<= 1000mm rise : one side only<br>
+                           > 1000mm rise : both sides
+                <br>
+                Handrail height: Pitch line of flight: min: 900mm max: 1000mm<br>
+                                 Intermediate landing: min: 900mm max: 1100mm
+                <br>
+                Guarding: Where rise > 600mm
             {% endif %}
         {% else %}
             {% if project['stair' ~ i]['part_m'] %}
