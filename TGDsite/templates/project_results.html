@@ -12,11 +12,12 @@
         Part M<br><br>
 
         Total Rise:{{project['stair' ~ i]['rise']}}mm<br>
+        Minimum flights: {{project['stair' ~ i]['min_f']}}
         {% endif %}
         {% if project['stair' ~ i]['inside'] == internal %}
             {% if project['privacy'] == 'domestic' %}
                 {% if project['stair' ~ i]['part_m'] %}
-                    {# INTERNAL DOMESTIC PART_M#}
+                    {# INTERNAL DOMESTIC PART_M #}
                     Width: >900mm<br>
                     Max Rise: 1800mm
                     <br><br>

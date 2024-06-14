@@ -1,6 +1,6 @@
 from flask import redirect , render_template , Blueprint , request ,session , url_for
 from TGDsite.db import connect
-from TGDsite.resources import project_parts, readText
+from TGDsite.resources import project_parts, readText , tools
 
 
 bp = Blueprint('project',__name__, url_prefix='/project')
@@ -15,6 +15,10 @@ def project_results():
         project["stair" + str(i)]['rise'] = results["rise" + str(i) ]
         if "part_m" + str(i) in results.keys():
             project["stair" + str(i)]['part_m'] = True
+        else:
+            project["stair" + str(i)]['part_m'] = False
+
+        project["stair" + str(i)]['min_f'] = tools.calc_flights(project["stair" + str(i)],project["privacy"])
     return render_template('project_results.html', project = project)
 
 @bp.route("/save_project")
