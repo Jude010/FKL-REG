@@ -13,27 +13,22 @@
         Part M<br>
         {% endif %}
         {% if project['privacy'] == 'domestic' %}
-            Width:{% if project['stair' ~ i]['part_m'] %}
-                >900mm
-            {% else %}
-                >800
-            {% endif %}
-            <br><br>
-            Rise(R):{% if project['stair' ~ i]['part_m'] %}
-                &lt=175mm 
-            {% else %}
-                opimal: 175mm max: 220mm
-            {% endif %}
-            <br><br>
-            Going(G): 
             {% if project['stair' ~ i]['part_m'] %}
-                &gt= 280mm
+                Width: >900mm
+                <br><br>
+                Rise(R): &lt=175mm<br>
+                Going(G): &gt= 280mm
+                Gait(2R+G): opimal: 600 min: 550 max: 700
+            <br><br>
+
             {% else %}
-                optimal: 250mm min:220mm
-            {% endif %}
+                Width: >800mm
+                <br><br>
+                Rise(R): opimal: 175mm max: 220mm <br>
+                Going(G): optimal: 250mm min:220mm <br>
+                Gait(2R+G): opimal: 600 min: 550 max: 700
             <br><br>
-            Gait(2R+G): opimal: 600 min: 550 max: 700
-            <br><br>
+            
         {% else %}
             {% if project['stair' ~ i]['part_m'] %}
                 Width: 1200mm min between walls, upstands, strings <br>
