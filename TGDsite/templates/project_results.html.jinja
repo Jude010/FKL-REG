@@ -17,9 +17,9 @@
         <tr><td>Total Rise</td><td>{{project['stair' ~ i]['rise']}}mm</td></tr>
         <tr><td>Minimum flights</td><td>{{project['stair' ~ i]['min_f']}}</td></tr>
         
-        {% if project['stair' ~ i]['inside'] == internal %}
+        {% if project['stair' ~ i]['inside'] == 'internal' %}
             {% if project['privacy'] == 'domestic' %}
-                {% if project['stair' ~ i]['part_m'] == 'True' %}
+                {% if project['stair' ~ i]['part_m']%}
                     {# INTERNAL DOMESTIC PART_M #}
                     <tr><td>Width</td><td>>900mm</td></tr>
                     <tr><td>Max Rise</td><td>1800mm</td></tr>
