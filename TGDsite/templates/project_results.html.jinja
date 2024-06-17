@@ -13,33 +13,26 @@
         {% if project['stair' ~ i]['part_m'] %}
             Part M<br><br>
         {% endif %}
-        Total Rise:{{project['stair' ~ i]['rise']}}mm<br>
-        Minimum flights: {{project['stair' ~ i]['min_f']}}<br>
+        <table>
+        <tr><td>Total Rise</td><td>{{project['stair' ~ i]['rise']}}mm</td></tr>
+        <tr><td>Minimum flights</td><td>{{project['stair' ~ i]['min_f']}}</td></tr>
         
         {% if project['stair' ~ i]['inside'] == internal %}
             {% if project['privacy'] == 'domestic' %}
                 {% if project['stair' ~ i]['part_m'] %}
                     {# INTERNAL DOMESTIC PART_M #}
-                    Width: >900mm<br>
-                    Max Rise: 1800mm
-                    <br><br>
-                    Rise(R): &lt=175mm<br>
-                    Going(G): &gt= 280mm<br>
-                    Gait(2R+G): opimal: 600 min: 550 max: 700
-                        <br><br>
-                    Open Risers: Allowed
-                    <br>
-                    Tapered Treads: Avoid
-                    <br>
-                    Headroom: 2000mm
-                    <br><br>
-                    Handrails: >3 Risers Provide continuous on both sides
-                    <br>
-                    Handrail height: Pitch line of flight: min: 900mm max: 1000mm<br>
-                                     Intermediate landing: min: 900mm max: 1100mm
-                    <br>
-                    Guarding: Where rise > 600mm
-                    <br><br>
+                    <tr><td>Width</td><td>>900mm</td></tr>
+                    <tr><td>Max Rise</td><td>1800mm</td></tr>
+                    <tr><td>Rise(R)</td><td>&lt=175mm</td></tr>
+                    <tr><td>Going(G)</td><td>&gt= 280mm</td></tr>
+                    <tr><td>Gait(2R+G)</td><td>opimal: 600 min: 550 max: 700</td></tr>
+                    <tr><td>Open Risers</td><td>Allowed</td></tr>
+                    <tr><td>Tapered Treads</td><td>Avoid</td></tr>
+                    <tr><td>Headroom</td><td>2000mm</td></tr>
+                    <tr><td>Handrails</td><td>>3 Risers Provide continuous on both sides</td></tr>
+                    <tr><td>Handrail height</td><td>Pitch line of flight: min: 900mm max: 1000mm</td></tr>
+                    <tr><td>               </td><td>Intermediate landing: min: 900mm max: 1100mm</td></tr>
+                    <tr><td> Guarding: Where rise > 600mm</td></tr>
                 {% else %}
                     {# INTERNAL DOMESTIC NON PART_M #}
                     Width: >800mm<br>
@@ -210,6 +203,7 @@
                 {% endif %}
             {% endif %}
         {% endif %}
+        </table>
     {% endfor %}
     </div>
 {% endblock %}
