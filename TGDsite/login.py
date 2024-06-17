@@ -19,6 +19,6 @@ def login_test():
     conn.close()
     if pswrd[0] == results['password']:
         session['user'] = results['username']
-        return render_template('index.html')
+        return render_template('index.html.jinja')
     else :
-        return render_template('login.html', fail = True)
+        return render_template('login.html.jinja', fail = True)

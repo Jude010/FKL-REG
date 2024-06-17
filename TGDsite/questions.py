@@ -12,22 +12,22 @@ def guide_index():
     cur.execute('SELECT guide_name FROM guide;')
     names = cur.fetchall()
     conn.close()
-    return render_template('guide_index.html', names=names)
+    return render_template('guide_index.html.jinja', names=names)
     
 @bp.route('/guides', methods=['GET'])
 def guides():
     guides = [] 
     guides = request.args.keys()
     text = readText.readText(guides)
-    return render_template('guides.html' , text = text)
+    return render_template('guides.html.jinja' , text = text)
 
 @bp.route('/questions')
 def questions():
-    return render_template('questions.html')
+    return render_template('questions.html.jinja')
 
 @bp.route('/questions/stairs', methods=['POST'])
 def stair_questions():
     results = request.form
     project = project_parts.project(results['name'],results["non/domestic"], results["stairs"],results['floors'])
     session['project'] = project.serialize()
-    return render_template('stair_questons.html' , project = project)
+    return render_template('stair_questons.html.jinja' , project = project)
