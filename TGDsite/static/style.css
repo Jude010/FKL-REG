@@ -7,5 +7,6 @@ body {
     text-align: center;
 }
 .link{
+    border: 5px solid brown;
     border: radius 5%;
 }
