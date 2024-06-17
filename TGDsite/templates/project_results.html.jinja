@@ -18,7 +18,7 @@
         <tr><td>Minimum flights</td><td>{{project['stair' ~ i]['min_f']}}</td></tr>
         
         {% if project['stair' ~ i]['inside'] == internal %}
-            {% if project['privacy'] == 'domestic' %}
+            {% if project['privacy'] = 'domestic' %}
                 {% if project['stair' ~ i]['part_m'] %}
                     {# INTERNAL DOMESTIC PART_M #}
                     <tr><td>Width</td><td>>900mm</td></tr>
