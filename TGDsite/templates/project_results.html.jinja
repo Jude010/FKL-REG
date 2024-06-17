@@ -13,7 +13,7 @@
         {% if project['stair' ~ i]['part_m'] %}
             Part M<br><br>
         {% endif %}
-        <table>
+        <table id="">
         <tr><td>Total Rise</td><td>{{project['stair' ~ i]['rise']}}mm</td></tr>
         <tr><td>Minimum flights</td><td>{{project['stair' ~ i]['min_f']}}</td></tr>
         
@@ -32,7 +32,7 @@
                     <tr><td>Handrails</td><td>>3 Risers Provide continuous on both sides</td></tr>
                     <tr><td>Handrail height</td><td>Pitch line of flight: min: 900mm max: 1000mm</td></tr>
                     <tr><td>               </td><td>Intermediate landing: min: 900mm max: 1100mm</td></tr>
-                    <tr><td> Guarding: Where rise > 600mm</td></tr>
+                    <tr><td> Guarding</td><td>Where rise > 600mm</td></tr>
                 {% else %}
                     {# INTERNAL DOMESTIC NON PART_M #}
                     Width: >800mm<br>
