@@ -11,11 +11,11 @@
         <h3>{{project['stair' ~ i]['name']}}</h3>
         {{project['stair' ~ i]['inside']}} <br>
         {% if project['stair' ~ i]['part_m'] %}
-        Part M<br><br>
-
+            Part M<br><br>
+        {% endif %}
         Total Rise:{{project['stair' ~ i]['rise']}}mm<br>
         Minimum flights: {{project['stair' ~ i]['min_f']}}<br>
-        {% endif %}
+        
         {% if project['stair' ~ i]['inside'] == internal %}
             {% if project['privacy'] == 'domestic' %}
                 {% if project['stair' ~ i]['part_m'] %}
