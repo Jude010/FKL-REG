@@ -3,11 +3,10 @@
 {% block header %}<h1> Project Questions </h1>{% endblock %}
 {% block content %}
     
-    <form method="POST" action="{{url_for('questions.stair_questions')}}">
+    <form method="POST" action="{{url_for('questions.stair_questions')}}" class="questions">
+        <br>
         <label for="name">Project name</label>
         <input type="text" id="name" name="name" required>
-        <br>
-        <h3>Domestic or Non-Domestic</h3>
         <br>
         <label for="domestic">domestic</label>
         <input type="radio" id="domestic" name="non/domestic" value="domestic" required>
