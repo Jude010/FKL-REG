@@ -37,7 +37,7 @@ Vagrant.configure("2") do |config|
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
   # your network.
-  # config.vm.network "public_network"
+  config.vm.network "public_network"
 
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
@@ -52,7 +52,7 @@ Vagrant.configure("2") do |config|
   # shown above.
   # config.vm.synced_folder ".", "/vagrant", disabled: true
 	
-	config.vm.boot_timeout = 600
+	config.vm.boot_timeout = 800
   # Provider-specific configuration so you can fine-tune various
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
@@ -79,6 +79,7 @@ Vagrant.configure("2") do |config|
 	apt update
 	apt upgrade -y
 	apt install git
+	apt install net-tools
 	apt install -y python-is-python3 python3-pip
 	apt install -y python3-flask
 	apt install -y python3-psycopg2
@@ -90,5 +91,6 @@ Vagrant.configure("2") do |config|
 	sudo -u postgres psql -c "ALTER ROLE flask WITH LOGIN ;"
 	sudo -u postgres psql -c "CREATE DATABASE siteDB WITH OWNER = flask;"
 	sudo PGPASSWORD=open psql -h localhost -d sitedb -U flask -p 5432 -f schema.sql
+	ip a
   SHELL
 end

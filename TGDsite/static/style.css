@@ -11,10 +11,10 @@ body {
 .link{
     display: inline-block;
     padding: 15px 30px;
-    border: 5px solid brown;
+    
     border-radius: 15% ;
     text-align: center;
-    background-color: aqua;
+    background-color: brown;
 }
 
 #results{
