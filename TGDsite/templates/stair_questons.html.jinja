@@ -8,7 +8,7 @@
         <h2>{{ project.name}}</h2>
         {% for stair in range(project.stair_num())%}
             <div>
-                <h3>{{project.stairs[stair].name}}</h3><br>
+                <h3>{{project.stairs[stair].name}}</h3>
                 <label for="name">Name</label><br>
                 <input type="text" id="name" name={{stair}} value={{project.stairs[stair].name}}><br>
                 <br>
@@ -27,5 +27,6 @@
         <br>
         <input type="hidden" name="project" value={{project}}
         <input type="submit" value="submit">
+        <br><br>
     </form>
 {% endblock %}
