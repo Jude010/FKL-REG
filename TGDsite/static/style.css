@@ -69,9 +69,14 @@ header{
 }
 
 .foot_l {
-    text-align: left;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .foot_r {
-    text-align: right;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
+
