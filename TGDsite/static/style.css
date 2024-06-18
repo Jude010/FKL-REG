@@ -83,3 +83,10 @@ header{
     right: 0;
 }
 
+footer{
+    position: relative;
+    bottom:0;
+    left: 50%;
+    right: 50%;
+}
+
