@@ -6,7 +6,7 @@ body {
 .content{
     background-color: cornsilk;
     text-align: center;
-    width: 100% ;
+    
 }
 .link{
     display: inline-block;
@@ -38,9 +38,9 @@ td{
 }
 
 footer{
-    height: 10%;
+    padding-top: 15%;
 }
 
 header{
-    height: 15%;
+    padding-top: 10%;
 }
