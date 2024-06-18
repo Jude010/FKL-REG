@@ -2,18 +2,21 @@
 
 {% block title %}TGD-Menu{% endblock %}
 {% block header %}
-    <h1 class="title">TGD-Menu</h1>
+    <h1 class="title">TECHNOCAL GUIDENCE TOOL</h1><br>
+    <h2>
+    PART K + PART M<br>
+    STAIR DEMONSTRATION</h2>
 {% endblock %}
 {% block content %}
 
 <div>
-    <a class="button
-    " href="{{url_for('questions.guide_index')}}">Select Guides</a><br>   
+    
+    <a class="button" href="{{url_for('questions.questions')}}">NEW PROJECT</a><br></div>   
 </div>
 {% endblock %}
 {% block footer %}
+<div class="foot_l">
+<a  href="{{url_for('questions.guide_index')}}">Select Guides</a>
 <div>
-<a  href="{{url_for('questions.questions')}}">Project Questions</a><br></div>
-<div>
-<a  href="{{url_for('login.login')}}">Login</a></div>
+<a  class="foot_r"href="{{url_for('login.login')}}">Login</a></div>
 {% endblock %}
