@@ -25,6 +25,7 @@ body {
 
 .button:visited{
     text-decoration: none;
+    text-emphasis: none;
 }
 
 .button:hover{
@@ -75,7 +76,7 @@ header{
     left: 0;
 }
 
-.foot_r {
+.foot_r {  
     display: inline-block;
     position: absolute;
     bottom: 0;
