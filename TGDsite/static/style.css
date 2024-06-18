@@ -23,3 +23,16 @@ body {
     display: inline-table;
     align-self: center;
 }
+
+td{
+    border-style: solid;
+    border-color: brown;
+}
+
+.left{
+    text-align: left;
+}
+
+.right{
+    text-align: right;
+}

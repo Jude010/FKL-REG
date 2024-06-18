@@ -14,147 +14,147 @@
             Part M<br><br>
         {% endif %}
         <table id="results">
-        <tr><td>Total Rise</td><td>{{project['stair' ~ i]['rise']}}mm</td></tr>
-        <tr><td>Minimum flights</td><td>{{project['stair' ~ i]['min_f']}}</td></tr>
+        <tr><td>Total Rise</td><td class="right">{{project['stair' ~ i]['rise']}}mm</td></tr>
+        <tr><td>Minimum flights</td><td class="right">{{project['stair' ~ i]['min_f']}}</td></tr>
         
         {% if project['stair' ~ i]['inside'] == 'internal' %}
             {% if project['privacy'] == 'domestic' %}
                 {% if project['stair' ~ i]['part_m']%}
-                    {# INTERNAL DOMESTIC PART_M #}
-                    <tr><td>Width</td><td>>900mm</td></tr>
-                    <tr><td>Max Rise</td><td>1800mm</td></tr>
-                    <tr><td>Rise(R)</td><td>&lt=175mm</td></tr>
-                    <tr><td>Going(G)</td><td>&gt= 280mm</td></tr>
-                    <tr><td>Gait(2R+G)</td><td>opimal: 600 min: 550 max: 700</td></tr>
-                    <tr><td>Open Risers</td><td>Allowed</td></tr>
-                    <tr><td>Tapered Treads</td><td>Avoid</td></tr>
-                    <tr><td>Headroom</td><td>2000mm</td></tr>
-                    <tr><td>Handrails</td><td>>3 Risers Provide continuous on both sides</td></tr>
-                    <tr><td>Handrail height</td><td>Pitch line of flight: min: 900mm max: 1000mm</td></tr>
-                    <tr><td>               </td><td>Intermediate landing: min: 900mm max: 1100mm</td></tr>
-                    <tr><td> Guarding</td><td>Where rise > 600mm</td></tr>
+                    {# INTERNAL DOMESTIC PART_M #}<td class="left">
+                    <tr><td class="left">Width</td><td class="right">>900mm</td></tr>
+                    <tr><td class="left">Max Rise</td><td class="right">1800mm</td></tr>
+                    <tr><td class="left">Rise(R)</td><td class="right">&lt=175mm</td></tr>
+                    <tr><td class="left">Going(G)</td><td class="right">&gt= 280mm</td></tr>
+                    <tr><td class="left">Gait(2R+G)</td><td class="right">opimal: 600 min: 550 max: 700</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right">Allowed</td></tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right">Avoid</td></tr>
+                    <tr><td class="left">Headroom</td><td class="right">2000mm</td></tr>
+                    <tr><td class="left">Handrails</td><td class="right">>3 Risers Provide continuous on both sides</td></tr>
+                    <tr><td class="left">Handrail height</td><td class="right">Pitch line of flight: min: 900mm max: 1000mm</td></tr>
+                    <tr><td class="left">               </td><td class="right">Intermediate landing: min: 900mm max: 1100mm</td></tr>
+                    <tr><td class="left"> Guarding</td><td class="right">Where rise > 600mm</td></tr>
                 {% else %}
                     {# INTERNAL DOMESTIC NON PART_M #}
-                    <tr><td>Width</td><td> >800mm</td></tr>
-                    <tr><td>Max Risers</td><td> 16</td></tr>
-                    <tr><td>Rise(R)</td><td>opimal: 175mm max: 220mm</td></tr>
-                    <tr><td>Going(G)</td><td>optimal: 250mm min:220mm</td></tr>
-                    <tr><td>Gait(2R+G)</td><td>opimal: 600 min: 550 max: 700</td></tr>
-                    <tr><td>Open Risers</td><td>Allowed</td></tr>
-                    <tr><td>Tapered Treads</td><td>Avoid</td></tr>
-                    <tr><td>Headroom</td><td>2000mm</td></tr>
-                    <tr><td>Handrails</td><td>>3 Risers : Provide Handrails</td></tr>
-                    <tr><td>         </td><td> &lt= 1000mm rise : one side only</td></tr>
-                    <tr><td>         </td><td>> 1000mm rise : both sides</td></tr>
-                    <tr><td>Handrail height</td><td> Pitch line of flight: min: 900mm max: 1000mm</td></tr>
-                    <tr><td>                </td><td> Intermediate landing: min: 900mm max: 1100mm</td></tr>
-                    <tr><td>Guarding</td><td>Where rise > 600mm</td></tr>
+                    <tr><td class="left">Width</td><td class="right"> >800mm</td></tr>
+                    <tr><td class="left">Max Risers</td><td class="right"> 16</td></tr>
+                    <tr><td class="left">Rise(R)</td><td class="right">opimal: 175mm max: 220mm</td></tr>
+                    <tr><td class="left">Going(G)</td><td class="right">optimal: 250mm min:220mm</td></tr>
+                    <tr><td class="left">Gait(2R+G)</td><td class="right">opimal: 600 min: 550 max: 700</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right">Allowed</td></tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right">Avoid</td></tr>
+                    <tr><td class="left">Headroom</td><td class="right">2000mm</td></tr>
+                    <tr><td class="left">Handrails</td><td class="right">>3 Risers : Provide Handrails</td></tr>
+                    <tr><td class="left">         </td><td class="right"> &lt= 1000mm rise : one side only</td></tr>
+                    <tr><td class="left">         </td><td class="right">> 1000mm rise : both sides</td></tr>
+                    <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td></tr>
+                    <tr><td class="left">                </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td></tr>
+                    <tr><td class="left">Guarding</td><td class="right">Where rise > 600mm</td></tr>
                 {% endif %}
             {% else %}
                 {% if project['stair' ~ i]['part_m'] %}
                     {# INTERNAL PUBLIC PART_M #}
-                    <tr><td>Max Rise</td><td> 1800mm</td></tr>
-                    <tr><td>Width</td><td> 1200mm min between walls, upstands, strings</td></tr>
-                    <tr><td>      </td><td>1000mm min between handrails</td></tr>
-                    <tr><td>Rise(R)</td><td> 150 - 180 mm</td></tr>
-                    <tr><td>Going(G)</td><td> 250 - 300 mm</td></tr>
-                    <tr><td>Gait(2R + G)</td><td> 550 - 700 optimal:600</td></tr>
-                    <tr><td>Open Risers</td><td> NO</td></tr>
-                    <tr><td>Tapered Treads</td><td> NO</td></tr>
-                    <tr><td>Headrroom</td><td> >= 2100mm</td></tr>
-                    <tr><td>Handrail</td><td> Both sides</td></tr>
-                    <tr><td>Handrail Height</td><td> Flight: Min: 900mm Max: 1000mm</td></tr>
-                    <tr><td>               </td><td> Landing: Min: 900mm Max: 1000mm</td></tr>
-                    <tr><td>Guarding</td><td> Where rise >600mm</td></tr>
-                    <tr><td>Visibility</td><td> All step nosing to incorporate permanently contrasting material on the tread.</td></tr>
-                    <tr><td>          </td><td> Illumanence at tread level to be at least 100 lux</td></tr>
+                    <tr><td class="left">Max Rise</td><td class="right"> 1800mm</td></tr>
+                    <tr><td class="left">Width</td><td class="right"> 1200mm min between walls, upstands, strings</td></tr>
+                    <tr><td class="left">      </td><td class="right">1000mm min between handrails</td></tr>
+                    <tr><td class="left">Rise(R)</td><td class="right"> 150 - 180 mm</td></tr>
+                    <tr><td class="left">Going(G)</td><td class="right"> 250 - 300 mm</td></tr>
+                    <tr><td class="left">Gait(2R + G)</td><td class="right"> 550 - 700 optimal:600</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right"> NO</td></tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right"> NO</td></tr>
+                    <tr><td class="left">Headrroom</td><td class="right"> >= 2100mm</td></tr>
+                    <tr><td class="left">Handrail</td><td class="right"> Both sides</td></tr>
+                    <tr><td class="left">Handrail Height</td><td class="right"> Flight: Min: 900mm Max: 1000mm</td></tr>
+                    <tr><td class="left">              </td><td class="right"> Landing: Min: 900mm Max: 1000mm</td></tr>
+                    <tr><td class="left">Guarding</td><td class="right"> Where rise >600mm</td></tr>
+                    <tr><td class="left">Visibility</td><td class="right"> All step nosing to incorporate permanently contrasting material on the tread.</td></tr>
+                    <tr><td class="left">          </td><td class="right"> Illumanence at tread level to be at least 100 lux</td></tr>
                 {% else %}
                     {# INTERNAL PUBLIC NON PART_M #}
-                    <tr><td>Max risers</td><td> 16</td></tr>
-                    <tr><td>Width</td><td> 800mm</td></tr>
-                    <tr><td>Rise(R)</td><td> Optimal:150mm Max:190mm</td></tr>
-                    <tr><td>Going(G)</td><td> Optimal:300 Min:280mm</td></tr>
-                    <tr><td>Gait(2R + G)</td><td> 550 - 700 optimal:600</td></tr>
-                    <tr><td>Open Risers</td><td> min 16mm nosing overlap, max 100mm gap between Treads</td></tr>
-                    <tr><td>Tapered Treads</td><td> NO</td></tr>
-                    <tr><td>Headroom</td><td> >= 2000mm</td></tr>
-                    <tr><td>Handrails</td><td> >3 Risers : Provide Handrails</td></tr>
-                    <tr><td>         </td><td> &lt= 1000mm rise : one side only</td></tr>
-                    <tr><td>         </td><td> > 1000mm rise : both sides</td></tr>
-                    <tr><td>Handrail height</td><td> Pitch line of flight: min: 900mm max: 1000mm</td></tr>
-                    <tr><td>               </td><td> Intermediate landing: min: 900mm max: 1100mm</td></tr>
-                    <tr><td>Guarding</td><td> Where rise >600mm</td></tr>
+                    <tr><td class="left">Max risers</td><td class="right"> 16</td></tr>
+                    <tr><td class="left">Width</td><td class="right"> 800mm</td></tr>
+                    <tr><td class="left">Rise(R)</td><td class="right"> Optimal:150mm Max:190mm</td></tr>
+                    <tr><td class="left">Going(G)</td><td class="right"> Optimal:300 Min:280mm</td></tr>
+                    <tr><td class="left">Gait(2R + G)</td><td class="right"> 550 - 700 optimal:600</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right"> min 16mm nosing overlap, max 100mm gap between Treads</td></tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right"> NO</td></tr>
+                    <tr><td class="left">Headroom</td><td class="right"> >= 2000mm</td></tr>
+                    <tr><td class="left">Handrails</td><td class="right"> >3 Risers : Provide Handrails</td></tr>
+                    <tr><td class="left">         </td><td class="right"> &lt= 1000mm rise : one side only</td></tr>
+                    <tr><td class="left">         </td><td class="right"> > 1000mm rise : both sides</td></tr>
+                    <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td></tr>
+                    <tr><td class="left">               </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td></tr>
+                    <tr><td class="left">Guarding</td><td class="right"> Where rise >600mm</td></tr>
                 {% endif %}
             {% endif %}
         {% else %}
             {% if project['privacy'] == 'domestic' %}
                 {% if project['stair' ~ i]['part_m'] %}
                     {# EXTERNAL DOMESTIC PART_M #}
-                    <tr><td>Width</td><td> >900mm</td></tr>
-                    <tr><td>Max Rise</td><td> 1800mm</td></tr>
-                    <tr><td>Rise(R)</td><td> &lt=175mm</td></tr>
-                    <tr><td>Going(G)</td><td> &gt= 280mm</td></tr>
-                    <tr><td>Gait(2R+G)</td><td> opimal: 600 min: 550 max: 700</td></tr>
-                    <tr><td>Open Risers</td><td> min 16mm nosing overlap, max 100mm gap between Treads</td></tr>
-                    <tr><td>Tapered Treads</td><td> Avoid</td></tr>
-                    <tr><td>Headroom</td><td> 2000mm</td></tr>
-                    <tr><td>Handrails</td><td> >3 Risers Provide continuous on both sides</td></tr>
-                    <tr><td>         </td><td>  Going >= 750 handrails need not be provided</td></tr>
-                    <tr><td>Handrail height</td><td> Pitch line of flight: min: 900mm max: 1000mm</td></tr>
-                    <tr><td>               </td><td> Intermediate landing: min: 900mm max: 1100mm</td></tr>
-                    <tr><td>Guarding</td><td> Where rise > 600mm</td></tr>
+                    <tr><td class="left">Width</td><td class="right"> >900mm</td></tr>
+                    <tr><td class="left">Max Rise</td><td class="right"> 1800mm</td></tr>
+                    <tr><td class="left">Rise(R)</td><td class="right"> &lt=175mm</td></tr>
+                    <tr><td class="left">Going(G)</td><td class="right"> &gt= 280mm</td></tr>
+                    <tr><td class="left">Gait(2R+G)</td><td class="right"> opimal: 600 min: 550 max: 700</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right"> min 16mm nosing overlap, max 100mm gap between Treads</td></tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right"> Avoid</td></tr>
+                    <tr><td class="left">Headroom</td><td class="right"> 2000mm</td></tr>
+                    <tr><td class="left">Handrails</td><td class="right"> >3 Risers Provide continuous on both sides</td></tr>
+                    <tr><td class="left">         </td><td class="right">  Going >= 750 handrails need not be provided</td></tr>
+                    <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td></tr>
+                    <tr><td class="left">               </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td></tr>
+                    <tr><td class="left">Guarding</td><td class="right"> Where rise > 600mm</td></tr>
                 {% else %}
                     {# EXTERNAL DOMESTIC NON PART_M #}
-                    <tr><td>Width</td><td> >800mm</td></tr>
-                    <tr><td>Max Risers</td><td> 16</td></tr>
-                    <tr><td>Rise(R)</td><td> opimal: 175mm max: 220mm</td></tr>
-                    <tr><td>Going(G)</td><td> optimal: 250mm min:220mm</td></tr>
-                    <tr><td>Gait(2R+G)</td><td> opimal: 600 min: 550 max: 700</td></tr>
-                    <tr><td>Open Risers</td><td> min 16mm nosing overlap, max 100mm gap between Treads</td></tr>
-                    <tr><td>Tapered Treads</td><td> Avoid</td></tr>
-                    <tr><td>Headroom</td><td> 2100mm</td></tr>
-                    <tr><td>Handrails</td><td> >3 Risers : Provide Handrails</td></tr>
-                    <tr><td>         </td><td> &lt= 1000mm rise : one side only</td></tr>
-                    <tr><td>         </td><td> > 1000mm rise : both sides</td></tr>
-                    <tr><td>Handrail height</td><td> Pitch line of flight: min: 900mm max: 1000mm</td></tr>
-                    <tr><td>               </td><td> Intermediate landing: min: 900mm max: 1100mm</td></tr>
-                    <tr><td>Guarding</td><td> Where rise > 600mm</td></tr>
+                    <tr><td class="left">Width</td><td class="right"> >800mm</td></tr>
+                    <tr><td class="left">Max Risers</td><td class="right"> 16</td></tr>
+                    <tr><td class="left">Rise(R)</td><td class="right"> opimal: 175mm max: 220mm</td></tr>
+                    <tr><td class="left">Going(G)</td><td class="right"> optimal: 250mm min:220mm</td></tr>
+                    <tr><td class="left">Gait(2R+G)</td><td class="right"> opimal: 600 min: 550 max: 700</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right"> min 16mm nosing overlap, max 100mm gap between Treads</td></tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right"> Avoid</td></tr>
+                    <tr><td class="left">Headroom</td><td class="right"> 2100mm</td></tr>
+                    <tr><td class="left">Handrails</td><td class="right"> >3 Risers : Provide Handrails</td></tr>
+                    <tr><td class="left">         </td><td class="right"> &lt= 1000mm rise : one side only</td></tr>
+                    <tr><td class="left">         </td><td class="right"> > 1000mm rise : both sides</td></tr>
+                    <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td></tr>
+                    <tr><td class="left">               </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td></tr>
+                    <tr><td class="left">Guarding</td><td class="right"> Where rise > 600mm</td></tr>
                 {% endif %}
             {% else %}
                 {% if project['stair' ~ i]['part_m'] %}
                     {# EXTERNAL PUBLIC PART_M #}
-                    <tr><td>Max Rise</td><td> 1500mm or 18 risers where going >= 350mm</td></tr>
-                    <tr><td>Width</td><td> 1200mm min between walls, upstands, strings </td></tr>
-                    <tr><td>     </td><td> 1000mm min between handrails</td></tr>
-                    <tr><td>Rise(R)</td><td> 150 - 180 mm</td></tr>
-                    <tr><td>Going(G)</td><td> 300 - 450 mm</td></tr>
-                    <tr><td>Gait(2R + G)</td><td> 550 - 700 optimal:600</td></tr>
-                    <tr><td>Open Risers</td><td> NO</td></tr>
-                    <tr><td>Tapered Treads</td><td> NO</td></tr>
-                    <tr><td>Headrroom</td><td> >= 2100mm</td></tr>
-                    <tr><td>Handrail</td><td> Both sides all stairs regardless of risers</td></tr>
-                    <tr><td>Handrail Height</td><td> Flight: Min: 900mm Max: 1000mm</td></tr>
-                    <tr><td>               </td><td> Landing: Min: 900mm Max: 1100mm</td></tr>
-                    <tr><td>Guarding</td><td> Where rise >600mm</td></tr>
-                    <tr><td>Visibility</td><td> All step nosing to incorporate permanently contrasting material on the tread.</td></tr>
-                    <tr><td>          </td><td> Illumanence at tread level to be at least 100 lux</td></tr>
-                    <tr><td>Tactile hazard warning surfaces</td><td> top and bottom landings</td></tr>
+                    <tr><td class="left">Max Rise</td><td class="right"> 1500mm or 18 risers where going >= 350mm</td></tr>
+                    <tr><td class="left">Width</td><td class="right"> 1200mm min between walls, upstands, strings </td></tr>
+                    <tr><td class="left">     </td><td class="right"> 1000mm min between handrails</td></tr>
+                    <tr><td class="left">Rise(R)</td><td class="right"> 150 - 180 mm</td></tr>
+                    <tr><td class="left">Going(G)</td><td class="right"> 300 - 450 mm</td></tr>
+                    <tr><td class="left">Gait(2R + G)</td><td class="right"> 550 - 700 optimal:600</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right"> NO</td></tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right"> NO</td></tr>
+                    <tr><td class="left">Headrroom</td><td class="right"> >= 2100mm</td></tr>
+                    <tr><td class="left">Handrail</td><td class="right"> Both sides all stairs regardless of risers</td></tr>
+                    <tr><td class="left">Handrail Height</td><td class="right"> Flight: Min: 900mm Max: 1000mm</td></tr>
+                    <tr><td class="left">               </td><td class="right"> Landing: Min: 900mm Max: 1100mm</td></tr>
+                    <tr><td class="left">Guarding</td><td class="right"> Where rise >600mm</td></tr>
+                    <tr><td class="left">Visibility</td><td class="right"> All step nosing to incorporate permanently contrasting material on the tread.</td></tr>
+                    <tr><td class="left">          </td><td class="right"> Illumanence at tread level to be at least 100 lux</td></tr>
+                    <tr><td class="left">Tactile hazard warning surfaces</td><td class="right"> top and bottom landings</td></tr>
                 {% else %}
                     {# EXTERNAL PUBLIC NON PART_M #}
-                    <tr><td>Max risers</td><td> 16 or 18 where going >= 350</td></tr>
-                    <tr><td>Width</td><td> 800mm</td></tr>
-                    <tr><td>Rise(R)</td><td> Optimal:150mm Max:180mm</td></tr>
-                    <tr><td>Going(G)</td><td> Optimal:300 Min:280mm</td></tr>
-                    <tr><td>Gait(2R + G)</td><td> 550 - 700 optimal:600</td></tr>
-                    <tr><td>Open Risers</td><td> min 16mm nosing overlap, max 100mm gap between Treads</td></tr>
-                    <tr><td>Tapered Treads</td><td> NO</td></tr>
-                    <tr><td>Headroom</td><td> >= 2000mm</td></tr>
-                    <tr><td>Handrails</td><td> >3 Risers : Provide Handrails</td></tr>
-                    <tr><td>         </td><td> &lt= 1000mm rise : one side only</td></tr>
-                    <tr><td>         </td><td> > 1000mm rise : both sides</td></tr>
-                    <tr><td>Handrail height</td><td> Pitch line of flight: min: 900mm max: 1000mm</td></tr>
-                    <tr><td>               </td><td> Intermediate landing: min: 900mm max: 1100mm</td></tr>
-                    <tr><td>Guarding</td><td> Where rise >600mm</td></tr>
+                    <tr><td class="left">Max risers</td><td class="right"> 16 or 18 where going >= 350</td></tr>
+                    <tr><td class="left">Width</td><td class="right"> 800mm</td></tr>
+                    <tr><td class="left">Rise(R)</td><td class="right"> Optimal:150mm Max:180mm</td></tr>
+                    <tr><td class="left">Going(G)</td><td class="right"> Optimal:300 Min:280mm</td></tr>
+                    <tr><td class="left">Gait(2R + G)</td><td class="right"> 550 - 700 optimal:600</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right"> min 16mm nosing overlap, max 100mm gap between Treads</td></tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right"> NO</td></tr>
+                    <tr><td class="left">Headroom</td><td class="right"> >= 2000mm</td></tr>
+                    <tr><td class="left">Handrails</td><td class="right"> >3 Risers : Provide Handrails</td></tr>
+                    <tr><td class="left">         </td><td class="right"> &lt= 1000mm rise : one side only</td></tr>
+                    <tr><td class="left">         </td><td class="right"> > 1000mm rise : both sides</td></tr>
+                    <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td></tr>
+                    <tr><td class="left">               </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td></tr>
+                    <tr><td class="left">Guarding</td><td class="right"> Where rise >600mm</td></tr>
                 {% endif %}
             {% endif %}
         {% endif %}
