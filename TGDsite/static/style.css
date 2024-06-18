@@ -51,7 +51,7 @@ header{
     margin-bottom: 2%;
 }
 
-#title{
+.title{
     font: helvetica;
     font-size: 24pt;
 }
