@@ -1,10 +1,10 @@
 body {
-    background-color: brown;
+    background-color: rgb(204,204,204);
     text-align: center;
     
 }
 .content{
-    background-color: cornsilk;
+    background-color: rgb(204,204,204);
     text-align: center;
     
 }
@@ -14,20 +14,20 @@ body {
     
     border-radius: 5% ;
     text-align: center;
-    background-color: brown;
+    background-color: rgb(204,204,204);
     margin: 2%;
 }
 
 #results{
     border-style: solid;
-    border-color: brown;
+    border-color: rgb(204,204,204);
     display: inline-table;
     align-self: center;
 }
 
 td{
     border-style: solid;
-    border-color: brown;
+    border-color: rgb(204,204,204);
 }
 
 .left{
