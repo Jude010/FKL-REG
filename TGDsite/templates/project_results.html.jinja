@@ -11,8 +11,9 @@
         <h3>{{project['stair' ~ i]['name']}}</h3>
         {{project['stair' ~ i]['inside']}} <br>
         {% if project['stair' ~ i]['part_m'] %}
-            Part M<br><br>
+            Part M
         {% endif %}
+        <br><br>
         <table id="results">
         <tr><td class="left">Total Rise</td><td class="right">{{project['stair' ~ i]['rise']}}mm</td></tr>
         <tr><td class="left">Minimum flights</td><td class="right">{{project['stair' ~ i]['min_f']}}</td></tr>
