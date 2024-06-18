@@ -14,8 +14,8 @@
             Part M<br><br>
         {% endif %}
         <table id="results">
-        <tr><td>Total Rise</td><td class="right">{{project['stair' ~ i]['rise']}}mm</td></tr>
-        <tr><td>Minimum flights</td><td class="right">{{project['stair' ~ i]['min_f']}}</td></tr>
+        <tr><td class="left">Total Rise</td><td class="right">{{project['stair' ~ i]['rise']}}mm</td></tr>
+        <tr><td class="left">Minimum flights</td><td class="right">{{project['stair' ~ i]['min_f']}}</td></tr>
         
         {% if project['stair' ~ i]['inside'] == 'internal' %}
             {% if project['privacy'] == 'domestic' %}
