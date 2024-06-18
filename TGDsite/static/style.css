@@ -17,7 +17,7 @@ body {
     background-color: aqua;
 }
 
-.results{
+#results{
     border-style: solid;
     border-color: brown;
     display: inline-table;
