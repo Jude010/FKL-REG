@@ -1,6 +1,6 @@
 {% extends 'base.html.jinja' %}
 
-{% block header %}<h1> NEW PROJECT </h1>{% endblock %}
+{% block header %}<h1 class="title"> NEW PROJECT </h1>{% endblock %}
 {% block content %}
     
     <form method="POST" action="{{url_for('questions.stair_questions')}}" class="questions">

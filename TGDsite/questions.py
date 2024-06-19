@@ -21,7 +21,7 @@ def guides():
     text = readText.readText(guides)
     return render_template('guides.html.jinja' , text = text)
 
-@bp.route('/questions/stairs', methods=['POST'])
+@bp.route('/new_project', methods=['POST'])
 def stair_questions():
     results = request.form
     project = project_parts.project(results['name'],results["non/domestic"], results["stairs"],results['floors'])
@@ -29,5 +29,12 @@ def stair_questions():
     return render_template('stair_questons.html.jinja' , project = project)
 
 @bp.route('/new_project')
-def new_project():
+def new_project():# to new project
     return render_template("new_project.html.jinja")
+
+@bp.route('/new_project')
+def domestic():# to domestic/non domestic
+    results = request.form
+    project = project_parts.project(results['name'],None, results["stairs"],results['floors'])
+    session['project'] = project.serialize()
+    return render_template('domestic.html.jinja' , project = session['project'])
