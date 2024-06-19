@@ -21,15 +21,15 @@ def guides():
     text = readText.readText(guides)
     return render_template('guides.html.jinja' , text = text)
 
-@bp.route('/new_project', methods=['POST'])
-def stair_questions():
-    return render_template('stair_questons.html.jinja')
+#@bp.route('/new_project', methods=['POST'])
+#def stair_questions():
+#    return render_template('stair_questons.html.jinja')
 
 @bp.route('/new_project')
 def new_project():# to new project
     return render_template("new_project.html.jinja")
 
-@bp.route('/new_project' methods=['POST'])
+@bp.route('/new_project', methods=['POST'])
 def domestic():# to domestic/non domestic
     results = request.form
     project = project_parts.project(results['name'],None, results["stairs"],results['floors'])
