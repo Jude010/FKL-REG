@@ -5,11 +5,12 @@
     
     <form method="POST" action="{{url_for('questions.stair_questions')}}" class="questions">
         <br>
-        <label for="name">Project name</label>
+        <label for="name">Project name</label><br>
         <input type="text" id="name" name="name" required>
         <br><br>
         <label for="floors">Number of Floors</label><br>
-        <input type="number" id="floors" name="floors" value="1" min="1" required><br><br>
+        <input type="number" id="floors" name="floors" value="1" min="1" required>
+        <br><br>
         <label for="stairs">Number of stairs</label><br>
         <input type="number" id="stairs" name="stairs" min="0" value="0" required>
         <br><br>
