@@ -28,7 +28,7 @@ def domestic():# to domestic/non domestic
     session['project'] = project.serialize()
     return render_template('domestic.html.jinja' , project = project)
 
-@bp.route('/stairs', methods=['POST'])
+@bp.route('/name', methods=['POST'])
 def stair_questions():
     return render_template('stair_questons.html.jinja')
 
