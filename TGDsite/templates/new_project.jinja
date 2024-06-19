@@ -1,18 +1,12 @@
 {% extends 'base.html.jinja' %}
 
-{% block header %}<h1> Project Questions </h1>{% endblock %}
+{% block header %}<h1> NEW PROJECT </h1>{% endblock %}
 {% block content %}
     
     <form method="POST" action="{{url_for('questions.stair_questions')}}" class="questions">
         <br>
         <label for="name">Project name</label>
         <input type="text" id="name" name="name" required>
-        <br><br>
-        <label for="domestic">domestic</label>
-        <input type="radio" id="domestic" name="non/domestic" value="domestic" required>
-        <br>
-        <label for="non">non-domestic</label>
-        <input type="radio" id="non" name="non/domestic" value="non" required>
         <br><br>
         <label for="floors">Number of Floors</label><br>
         <input type="number" id="floors" name="floors" value="1" min="1" required><br><br>
