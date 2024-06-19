@@ -29,7 +29,7 @@ def stair_questions():
 def new_project():# to new project
     return render_template("new_project.html.jinja")
 
-@bp.route('/new_project')
+@bp.route('/new_project' methods=['POST'])
 def domestic():# to domestic/non domestic
     results = request.form
     project = project_parts.project(results['name'],None, results["stairs"],results['floors'])
