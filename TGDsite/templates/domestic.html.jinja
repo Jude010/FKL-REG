@@ -4,10 +4,10 @@
 {% block content %}
 <form method="post" action="{{url_for('questions.stair_questions')}}" class="questions">
 <label for="domestic">domestic</label>
-        <input type="radio" id="domestic" name="non/domestic" value="domestic" required>
+        <input type="radio" id="domestic" name="domestic" value="domestic" required>
         <br>
         <label for="non">non-domestic</label>
-        <input type="radio" id="non" name="non/domestic" value="non" required>
+        <input type="radio" id="non" name="domestic" value="non" required>
         <br>
         <input type="submit">
 </form>
