@@ -88,3 +88,8 @@ footer{
     display: inline-block;
     width: 100%;
 }
+
+.l_text{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+}

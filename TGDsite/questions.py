@@ -32,6 +32,6 @@ def stair_questions():
     session['project'] = project.serialize()
     return render_template('stair_questons.html.jinja' , project = project)
 
-@bproute('/newProject')
+@bp.route('/newProject')
 def new_project():
     return render_template()
