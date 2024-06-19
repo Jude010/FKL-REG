@@ -28,6 +28,7 @@ class project:
         for i in range(self.stair_num()):
             dict['stair' + str(i)] = self.stairs[i].serialize()
         
+            dict['size'] = self.stair_num()
         return dict
 
 
