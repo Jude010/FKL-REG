@@ -23,7 +23,7 @@ def guides():
 
 @bp.route('/new_project', methods=['POST'])
 def stair_questions():
-    return render_template('stair_questons.html.jinja' , project = project)
+    return render_template('stair_questons.html.jinja' ,)
 
 @bp.route('/new_project')
 def new_project():# to new project
