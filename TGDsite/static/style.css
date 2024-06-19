@@ -16,20 +16,21 @@ body {
 .button{
     display: inline-block;
     padding: 15px 30px;
-.button:visited{
     
     border-radius: 5% ;
     text-align: center;
     background-color: rgb(255,255,255);
     margin: 2%;
+    text-decoration: none;
 }
 
+.button:visited{
     text-decoration: none;
-    text-emphasis: none;
 }
 
 .button:hover{
     background-color: rgb(224,224,224);
+    text-decoration: none;
 }
 
 #results{
