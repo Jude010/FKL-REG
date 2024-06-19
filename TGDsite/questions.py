@@ -31,3 +31,7 @@ def stair_questions():
     project = project_parts.project(results['name'],results["non/domestic"], results["stairs"],results['floors'])
     session['project'] = project.serialize()
     return render_template('stair_questons.html.jinja' , project = project)
+
+@bproute('/newProject')
+def new_project():
+    return render_template()
