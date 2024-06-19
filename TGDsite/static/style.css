@@ -16,6 +16,7 @@ body {
 .button{
     display: inline-block;
     padding: 15px 30px;
+.button:visited{
     
     border-radius: 5% ;
     text-align: center;
@@ -23,7 +24,6 @@ body {
     margin: 2%;
 }
 
-.button:visited{
     text-decoration: none;
     text-emphasis: none;
 }
