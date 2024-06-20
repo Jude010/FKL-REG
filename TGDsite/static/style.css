@@ -99,11 +99,13 @@ input[type=number] {
 }
 
 .radio {
-    display: block;
+    display: inline-block;
     position: relative;
     cursor: pointer;
     user-select: none;
     padding: 35px;
+    padding-left: 35px;
+    padding-right: 35px;
     background-color: white;
 }
 
