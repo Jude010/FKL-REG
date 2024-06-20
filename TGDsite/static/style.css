@@ -103,9 +103,7 @@ input[type=number] {
     position: relative;
     cursor: pointer;
     user-select: none;
-    padding: 35px;
-    padding-left: 35px;
-    padding-right: 35px;
+    block-size: 100px;
     background-color: white;
 }
 
@@ -115,4 +113,12 @@ input[type=number] {
     opacity:0;
     cursor: pointer;
 
+}
+
+.radio:hover{
+    background-color: rgb(224,224,224);
+}
+
+.radio input:checked{
+    background-color: rgb(224,224,224);
 }
