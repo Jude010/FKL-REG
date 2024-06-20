@@ -3,12 +3,12 @@
 {% block header %}<h1 class="title"> {{project['name']}} </h1>{% endblock %}
 {% block content %}
 <form method="post" action="{{url_for('questions.stair_questions')}}" class="questions">
-        <label for="domestic">domestic
-            <input type="radio" id="domestic" class="radio" name="domestic" value="domestic" required>
+        <label for="domestic" class="radio">domestic
+            <input type="radio" class="checkmark"  name="domestic" value="domestic" required>
         </label>
          OR 
-        <label for="non">non-domestic
-            <input type="radio" id="non" class="radio" name="domestic" value="non" required>
+        <label for="non" class="radio">non-domestic
+            <input type="radio" class="checkmark"  name="domestic" value="non" required>
         </label>
         <br>
         <input type="submit">

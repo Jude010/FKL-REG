@@ -101,4 +101,16 @@ input[type=number] {
 .radio {
     display: block;
     position: relative;
+    cursor: pointer;
+    user-select: none;
+    padding: 35px;
+    background-color: white;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    opacity:0;
+    cursor: pointer;
+
 }
