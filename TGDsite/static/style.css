@@ -103,7 +103,7 @@ input[type=number] {
     position: relative;
     cursor: pointer;
     user-select: none;
-    block-size: 100px;
+    margin:10px;
     background-color: white;
 }
 
@@ -119,6 +119,6 @@ input[type=number] {
     background-color: rgb(224,224,224);
 }
 
-.radio input:checked{
+.radio input:checked ~{
     background-color: rgb(224,224,224);
 }
