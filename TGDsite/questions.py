@@ -31,7 +31,7 @@ def domestic():# to domestic/non domestic
 @bp.route('/name', methods=['POST'])
 def stair_questions():
     results = request.form
-    session['project']['privacy'] = results['domestic']
+    session['project']['privacy'] = results['privacy']
     project = session['project']
     return render_template('stair_questons.html.jinja' , project = project)
 
