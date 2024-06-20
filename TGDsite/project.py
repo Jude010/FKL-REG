@@ -10,15 +10,15 @@ def project_results():
     results = request.form
     project = session['project']
     for i in range(project['stair_num']):
-        project['stairs']["stair_" + str(i)]['name'] = results[str(i)]
-        project['stairs']["stair_" + str(i)]['inside'] = results["internal" + str(i)]
-        project['stairs']["stair_" + str(i)]['rise'] = results["rise" + str(i) ]
+        project['stairs'][str(i)]['name'] = results[str(i)]
+        project['stairs'][str(i)]['inside'] = results["internal" + str(i)]
+        project['stairs'][str(i)]['rise'] = results["rise" + str(i) ]
         if "part_m" + str(i) in results.keys():
-            project['stairs']["stair_" + str(i)]['part_m'] = True
+            project['stairs'][str(i)]['part_m'] = True
         else:
-            project['stairs']["stair_" + str(i)]['part_m'] = False
+            project['stairs'][str(i)]['part_m'] = False
 
-        project['stairs']["stair_" + str(i)]['min_f'] = tools.calc_flights(project['stairs']["stair_" + str(i)],project["privacy"])
+        project['stairs'][str(i)]['min_f'] = tools.calc_flights(project['stairs'][str(i)],project["privacy"])
     return render_template('project_results.html.jinja', project = project)
 
 @bp.route("/save_project")
