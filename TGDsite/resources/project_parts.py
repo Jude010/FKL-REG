@@ -20,17 +20,18 @@ class project:
 
     # convert into dict for session purposes
     def serialize(self):
+        temp={}
         dict = {"name": self.name,
                 "privacy": self.privacy,
                 "stair_num": self.stair_num(),
                 "floors": self.floors
                 }
         for i in range(self.stair_num()):
-            dict['stair' + str(i)] = self.stairs[i].serialize()
+            temp[str(i)] = self.stairs[i].serialize()
         
-            dict['size'] = self.stair_num()
-        return dict
+        dict['stairs'] = temp
 
+        return dict
 
 
 
