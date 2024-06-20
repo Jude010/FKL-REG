@@ -8,19 +8,19 @@
     <div>floors:{{project['floors']}}<br>
     {{project['privacy']}}
     {% for i in range(project['stair_num']) %}
-        <h3>{{project['stair_' ~ i]['name']}}</h3>
-        {{project['stair_' ~ i]['inside']}} <br>
-        {% if project['stair_' ~ i]['part_m'] %}
+        <h3>{{project['stairs'][i|string]['name']}}</h3>
+        {{project['stairs'][i|string]['inside']}} <br>
+        {% if project['stairs'][i|string]['part_m'] %}
             Part M
         {% endif %}
         <br><br>
         <table id="results">
-        <tr><td class="left">Total Rise</td><td class="right">{{project['stair_' ~ i]['rise']}}mm</td></tr>
-        <tr><td class="left">Minimum flights</td><td class="right">{{project['stair_' ~ i]['min_f']}}</td></tr>
+        <tr><td class="left">Total Rise</td><td class="right">{{project['stairs'][i|string]['rise']}}mm</td></tr>
+        <tr><td class="left">Minimum flights</td><td class="right">{{project['stairs'][i|string]['min_f']}}</td></tr>
         
-        {% if project['stair_' ~ i]['inside'] == 'internal' %}
+        {% if project['stairs'][i|string]['inside'] == 'internal' %}
             {% if project['privacy'] == 'domestic' %}
-                {% if project['stair_' ~ i]['part_m']%}
+                {% if project['stairs'][i|string]['part_m']%}
                     {# INTERNAL DOMESTIC PART_M #}
                     <tr><td class="left">Width</td><td class="right">>900mm</td></tr>
                     <tr><td class="left">Max Rise</td><td class="right">1800mm</td></tr>
@@ -52,7 +52,7 @@
                     <tr><td class="left">Guarding</td><td class="right">Where rise > 600mm</td></tr>
                 {% endif %}
             {% else %}
-                {% if project['stair_' ~ i]['part_m'] %}
+                {% if project['stairs'][i|string]['part_m'] %}
                     {# INTERNAL PUBLIC PART_M #}
                     <tr><td class="left">Max Rise</td><td class="right"> 1800mm</td></tr>
                     <tr><td class="left">Width</td><td class="right"> 1200mm min between walls, upstands, strings</td></tr>
@@ -89,7 +89,7 @@
             {% endif %}
         {% else %}
             {% if project['privacy'] == 'domestic' %}
-                {% if project['stair_' ~ i]['part_m'] %}
+                {% if project['stairs'][i|string]['part_m'] %}
                     {# EXTERNAL DOMESTIC PART_M #}
                     <tr><td class="left">Width</td><td class="right"> >900mm</td></tr>
                     <tr><td class="left">Max Rise</td><td class="right"> 1800mm</td></tr>
@@ -122,7 +122,7 @@
                     <tr><td class="left">Guarding</td><td class="right"> Where rise > 600mm</td></tr>
                 {% endif %}
             {% else %}
-                {% if project['stair_' ~ i]['part_m'] %}
+                {% if project['stairs'][i|string]['part_m'] %}
                     {# EXTERNAL PUBLIC PART_M #}
                     <tr><td class="left">Max Rise</td><td class="right"> 1500mm or 18 risers where going >= 350mm</td></tr>
                     <tr><td class="left">Width</td><td class="right"> 1200mm min between walls, upstands, strings </td></tr>
