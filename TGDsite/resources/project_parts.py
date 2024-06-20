@@ -9,7 +9,7 @@ class project:
 
         # initalise a number of stairs equal to number and names them stair1 to stair(number)
         for i in range(int(stair_no)):
-            self.stairs.append(stair("stair" + str(i+1)))
+            self.stairs.append(stair("stair " + str(i)))
 
 
     def stair_add(self, stair):
