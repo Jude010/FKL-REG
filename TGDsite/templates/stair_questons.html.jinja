@@ -8,9 +8,9 @@
         <h2>{{ project.name}}</h2>
         {% for stair in range(project['stair_num']) %}
             <div>
-                <h3>{{project['stairs']['stair']['name']}}</h3>
+                <h3>{{project['stairs'][stair]['name']}}</h3>
                 <label for="name">Name</label><br>
-                <input type="text" id="name" name={{stair}} value={{project['stairs']['stair']['name']}}><br>
+                <input type="text" id="name" name={{stair}} value={{project['stairs'][stair]['name']}}><br>
                 <br>
                 <label for="internal">Internal/External</label><br>
                 <input type="radio" id="internal" name={{'internal' ~ stair}} value="internal" required>
