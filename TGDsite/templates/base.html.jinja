@@ -6,7 +6,7 @@
         <title>{% block title%}{% endblock %}</title>
     </head>
     <header>
-    <a href="index.html.jinja">TGD</a>
+    <a href="{{url_for(.index)}}">TGD</a>
         {% block header %}{% endblock %}
     </header>
     <body>
