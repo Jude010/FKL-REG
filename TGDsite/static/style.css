@@ -112,10 +112,7 @@ input[type=number] {
 }
 
 .checkmark {
-    position: absolute;
-    top: 0;
-    opacity:0;
-    cursor: pointer;
+    display:none;
 
 }
 
@@ -123,6 +120,6 @@ input[type=number] {
     background-color: rgb(224,224,224);
 }
 
-.checkmark input:checked + .radio{
+.checkmark:checked ~ .radio{
     background-color: rgb(224,224,224);
 }
