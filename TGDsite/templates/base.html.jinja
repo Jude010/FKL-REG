@@ -2,11 +2,11 @@
 
 <html>
     <head>
-        <link class="h_link" rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+        <link  rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
         <title>{% block title%}{% endblock %}</title>
     </head>
     <header>
-    <a href="/">TGD</a>
+    <a class="h_link" href="/">TGD</a>
         {% block header %}{% endblock %}
     </header>
     <body>
