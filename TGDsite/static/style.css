@@ -120,6 +120,10 @@ input[type=number] {
     background-color: rgb(224,224,224);
 }
 
-input[type='radio']:checked ~ .radio{
+#domestic:checked ~ #dom-lab{
+    background-color: rgb(224,224,224);
+}
+
+#non:checked ~ #non-lab{
     background-color: rgb(224,224,224);
 }
