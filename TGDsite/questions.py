@@ -25,6 +25,7 @@ def guides():
 def domestic():# to domestic/non domestic
     results = request.form
     project = project_parts.project(results['name'],'bla', results["stairs"],results['floors'])
+    session['projet'] = None
     session['project'] = project.serialize()
     return render_template('domestic.html.jinja' , project = project)
 
