@@ -7,7 +7,7 @@
     
     <form method="POST" action="{{url_for('project.project_results')}}"> 
         {% for stair in range(project['stair_num']) %}
-            <div>
+            <div class="center">
                 <h3>{{project['stairs'][stair|string]['name']}}</h3>
                 <label for="name">Name</label><br>
                 <input type="text" id="name" name={{stair}} value={{project['stairs'][stair|string]['name']}}><br>
