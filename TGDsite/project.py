@@ -1,6 +1,7 @@
 from flask import redirect , render_template , Blueprint , request ,session , url_for
 from TGDsite.db import connect
 from TGDsite.resources import project_parts, readText , tools
+import datetime
 
 
 bp = Blueprint('project',__name__, url_prefix='/project')
@@ -9,6 +10,7 @@ bp = Blueprint('project',__name__, url_prefix='/project')
 def project_results():
     results = request.form
     project = session['project']
+    date = datetime.date().today
     for i in range(project['stair_num']):
         project['stairs'][str(i)]['name'] = results[str(i)]
         project['stairs'][str(i)]['inside'] = results["internal" + str(i)]
@@ -19,7 +21,7 @@ def project_results():
             project['stairs'][str(i)]['part_m'] = False
 
         project['stairs'][str(i)]['min_f'] = tools.calc_flights(project['stairs'][str(i)],project["privacy"])
-    return render_template('project_results.html.jinja', project = project)
+    return render_template('project_results.html.jinja', project = project , date=date)
 
 @bp.route("/save_project")
 def save_project():
