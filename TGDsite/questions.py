@@ -33,7 +33,7 @@ def stair_questions():
     results = request.form
     session['project']['privacy'] = results['privacy']
     project = session['project']
-    return render_template('stair_questons.html.jinja' , project = project)
+    return render_template('stair_questons.html.jinja' , project = project , privacy=results['privacy'])
 
 @bp.route('/name')
 def new_project():# to new project

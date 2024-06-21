@@ -5,7 +5,7 @@
 {% block content %}
     
     <form method="POST" action="{{url_for('project.project_results')}}">
-        <h2>{{ project.name}}</h2>
+        <h2>{{ project.name}} {{project.domestic}}</h2>
         {% for stair in range(project['stair_num']) %}
             <div>
                 <h3>{{project['stairs'][stair|string]['name']}}</h3>
