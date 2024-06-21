@@ -10,7 +10,7 @@ bp = Blueprint('project',__name__, url_prefix='/project')
 def project_results():
     results = request.form
     project = session['project']
-    date = datetime.today
+    date = datetime.date().today()
     for i in range(project['stair_num']):
         project['stairs'][str(i)]['name'] = results[str(i)]
         project['stairs'][str(i)]['inside'] = results["internal" + str(i)]
