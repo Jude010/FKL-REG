@@ -120,10 +120,10 @@ input[type=number] {
     background-color: rgb(224,224,224);
 }
 
-#domestic:checked ~ #dom-lab{
+#domestic:checked + #dom-lab{
     background-color: rgb(224,224,224);
 }
 
-#non:checked ~ #non-lab{
+#non:checked + #non-lab{
     background-color: rgb(224,224,224);
 }
