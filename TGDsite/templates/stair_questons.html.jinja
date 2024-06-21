@@ -3,7 +3,7 @@
 
 {% block header %}<H1> Project Questions - Stairs </H1>{% endblock %}
 {% block content %}
-    <h2>{{ project.name}} {{project.domestic}}</h2>
+    <h2>{{ project.name}}</h2>
     
     <form method="POST" action="{{url_for('project.project_results')}}"> 
         {% for stair in range(project['stair_num']) %}
