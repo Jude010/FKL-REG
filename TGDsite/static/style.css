@@ -123,6 +123,6 @@ input[type=number] {
     background-color: rgb(224,224,224);
 }
 
-.checkmark input:checked ~ .radio{
+.checkmark input:checked + .radio{
     background-color: rgb(224,224,224);
 }
