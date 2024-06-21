@@ -140,3 +140,8 @@ input[type=number] {
     left: 50%;
     right: 50%;
 }
+
+.h_link {
+    text-decoration: none;
+    text-align: left;
+}
