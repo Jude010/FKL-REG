@@ -33,6 +33,8 @@ class project:
 
         return dict
 
+    # 
+
 
 
 class stair:
@@ -41,6 +43,7 @@ class stair:
         self.name = name
         self.rise = 0
         self.part_m = False
+
 
     # convert to dict for session purposes
     def serialize(self):
