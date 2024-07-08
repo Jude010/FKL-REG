@@ -14,6 +14,7 @@ def create_app(test_config=None):
         SECRET_KEY = 'test'
     )
 
+
     if test_config == None:
         #load from config file if it exits when not testing
         app.config.from_pyfile('config.py', silent=True)
