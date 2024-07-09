@@ -6,7 +6,10 @@
         <title>{% block title%}{% endblock %}</title>
     </head>
     <header>
-    <a class="h_link" href="/">TGD</a>
+        <a class="h_link" href="/">TGD</a>
+        {% if session['user'] is defined %}
+            <div id="user">User:{{session['user']}}</div>
+        {% endif %}
         {% block header %}{% endblock %}
     </header>
     <body>
