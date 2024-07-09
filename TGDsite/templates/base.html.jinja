@@ -8,7 +8,7 @@
     <header>
         <a class="h_link" href="/">TGD</a>
         {% if session['user'] is defined %}
-            <div id="user">User:{{session['user']}}</div>
+            <div id="user">User:{{session['user']}}  </div>
         {% endif %}
         {% block header %}{% endblock %}
     </header>

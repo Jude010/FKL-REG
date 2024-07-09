@@ -22,3 +22,30 @@ def login_action():
         return render_template('index.html.jinja')
     else :
         return render_template('login.html.jinja', fail = True)
+    
+@bp.route("/register")
+def register():
+    return render_template('register.html.jinja' , fail = False)
+
+@bp.route("/register" , methods=['POST'])
+def register_action():
+    results = request.form
+    conn = connect.get_db_conn()
+    cur = conn.cursor()
+    cur.execute("SELECT username FROM users")
+    users = []
+    temp = cur.fetchall()
+    for i in temp :
+        users.append(i[0])
+
+
+    if( results['username'] in users):
+        cur.close()
+        conn.close()
+        return render_template('register.html.jinja' , fail = True)
+    else:
+        cur.execute('INSERT INTO users (username , password) VALUES ' + results['username'] + "' ,'" + results['password'] + "';")
+        session['user'] = results['username']
+        cur.close()
+        conn.close()
+        return render_template('index.html.jinja')
