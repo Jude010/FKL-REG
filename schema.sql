@@ -23,7 +23,7 @@ CREATE TABLE guide (
 -- create project table
 CREATE TABLE project (
     proj_id SERIAL PRIMARY KEY,
-    p_name VARCHAR (50),
+    name VARCHAR (50),
     floors NUMERIC,
     privacy VARCHAR(20)
 );
@@ -31,10 +31,10 @@ CREATE TABLE project (
 --create table stairs
 CREATE TABLE stairs (
     stair_id SERIAL PRIMARY KEY,
-    s_name VARCHAR(50),
+    name VARCHAR(50),
     rise NUMERIC,
     part_m BOOLEAN,
-    internal VARCHAR(10)
+    inside VARCHAR(10)
 );
 
 -- create saves table
