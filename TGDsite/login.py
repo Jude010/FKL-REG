@@ -7,10 +7,10 @@ bp = Blueprint('login',__name__, url_prefix="/login")
 @bp.route("/login")
 def login():
 
-    return render_template('login.html', fail = False)
+    return render_template('login.html.jinja', fail = False)
 
 @bp.route("/login", methods=['POST'] )
-def login_test():
+def login_action():
     results = request.form
     conn = connect.get_db_conn()
     cur = conn.cursor()
