@@ -28,6 +28,13 @@ CREATE TABLE project (
     privacy VARCHAR(20)
 );
 
+-- create signatures table
+CREATE TABLE signatures(
+    sig_id SERIAL PRIMARY KEY,
+    sig VARCHAR(50)
+    date_ VARCHAR(10)
+)
+
 --create table stairs
 CREATE TABLE stairs (
     stair_id SERIAL PRIMARY KEY,

@@ -168,8 +168,10 @@
         <p>The above infromation has been incorporated into <br>
         the design and cross referenced with relevent<br>
          technical guidence documents to ensure compliance</p><br>
-         Date : {{date}}  Checked by : <input type="text" required><br>
+         Date : {{date}}  Checked by : <input type="text" name="signature" required><br>
+         <input type="hidden" name="date" value={{date}}>
         <input type="submit" value="submit" name="submit">
     </form>
+    <br>
 {% endblock %}
 

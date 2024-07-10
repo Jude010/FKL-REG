@@ -14,8 +14,6 @@ def create_app(test_config=None):
         SECRET_KEY = 'test'
     )
 
-    app.jinja_env.globals.update( save_to_db=save.save_to_db)
-
     if test_config == None:
         #load from config file if it exits when not testing
         app.config.from_pyfile('config.py', silent=True)
