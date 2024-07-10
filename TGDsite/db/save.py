@@ -9,6 +9,9 @@ def save_to_db(project , user , signature , date):
     cur.execute("INSERT INTO project (name , privacy , floors) values ('" + project['name'] + "' ,'" + project['privacy'] + "' ,'"  + project['floors'] + "') RETURNING proj_id;")
     pid = cur.fetchone[0]
 
+    # insert signature date and pid into signatures DB
+    cur.execute("INSERT INTO signatures (sig , date , proj_id) VALUES ('" + signature + "' ,'" + date  + "' ,'" + pid + "')")
+
     # fetch current user_id from users DB and insert it and new project id into saves
     cur.execute("SELECT user_id FROM users WHERE username LIKE '" + user + "';")
     cur.execute("INSERT INTO saves (user_id , proj_id)")

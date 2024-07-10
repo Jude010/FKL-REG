@@ -33,6 +33,7 @@ CREATE TABLE signatures(
     sig_id SERIAL PRIMARY KEY,
     sig VARCHAR(50)
     date_ VARCHAR(10)
+    proj_id serial REFERENCES project(proj_id)
 )
 
 --create table stairs
