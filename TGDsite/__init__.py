@@ -1,6 +1,6 @@
 import os
 import psycopg2
-from TGDsite.db import connect
+from TGDsite.db import connect , save
 from TGDsite.resources import readText
 
 from flask import Flask, redirect , render_template ,session
@@ -14,6 +14,7 @@ def create_app(test_config=None):
         SECRET_KEY = 'test'
     )
 
+    app.jinja_env.globals.update( save_to_db=save.save_to_db)
 
     if test_config == None:
         #load from config file if it exits when not testing
@@ -43,3 +44,5 @@ def create_app(test_config=None):
     
     
     return app
+
+
