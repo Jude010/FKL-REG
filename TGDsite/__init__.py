@@ -1,6 +1,6 @@
 import os
 import psycopg2
-from TGDsite.db import connect , save
+#from TGDsite.db import connect , save
 from TGDsite.resources import readText
 
 from flask import Flask, redirect , render_template ,session
