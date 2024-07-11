@@ -37,4 +37,7 @@ login x
 
 register x
 
-save \ 
+save - test - /
+
+load - saves list
+       save display
