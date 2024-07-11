@@ -1,5 +1,5 @@
 from flask import Blueprint ,render_template , session
-from db import connect 
+from TGDsite.db import connect 
 
 bp = Blueprint('saves' , __name__ , url_prefix='/saves')
 
