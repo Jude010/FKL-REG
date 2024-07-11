@@ -1,5 +1,5 @@
 from flask import redirect , render_template , Blueprint , request ,session , url_for
-from TGDsite.db import connect , save
+from TGDsite.db import save
 from TGDsite.resources import project_parts, readText , tools
 import datetime
 
