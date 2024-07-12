@@ -164,7 +164,7 @@
     {% endfor %}
     </div>
     <br>
-    <form method="POST">
+    <form href="{{url_for('project.save_project')}}" method="POST">
         <p>The above infromation has been incorporated into <br>
         the design and cross referenced with relevent<br>
          technical guidence documents to ensure compliance</p><br>
