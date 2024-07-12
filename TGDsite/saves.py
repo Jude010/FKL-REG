@@ -13,6 +13,8 @@ def load_saves():
     cur.execute("SELECT p.name FROM project p INNER JOIN saves s ON p.proj_id = s.proj_id INNER JOIN users u ON s.user_id = u.user_id WHERE username = '" + user + "'")
     names = cur.fetchall()
 
+    conn.close()
+
     return render_template('load_saves.html.jinja' , names = names)
 
 @bp.route('/display_save', methods=['POST'])

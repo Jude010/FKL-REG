@@ -62,6 +62,10 @@ CREATE TABLE proj_stair (
 --add test user
 INSERT INTO users (username, password) VALUES ('test' , 'open');
 
+--add test project
+INSERT INTO project (name , floors , privacy) SELECT ('test', '1' , 'private');
+INSERT INTO saves (user_id , proj_id) SELECT user_id , proj_id FROM project p , users u WHERE (username LIKE 'test') AND (name LIKE 'test');
+
 -- insert 
 INSERT INTO guide (guide_name, diagram) VALUES
 ('k1.1.3', NULL),
