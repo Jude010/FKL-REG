@@ -1,4 +1,4 @@
-import connect
+from . import connect
 
 def save_to_db(project , user , signature , date):
     #save project to db
