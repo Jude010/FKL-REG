@@ -11,10 +11,8 @@ def load_saves():
 
     # fetch all project names associated with current user
     #cur.execute("SELECT p.name FROM project p INNER JOIN saves s ON p.proj_id = s.proj_id INNER JOIN users u ON s.user_id = u.user_id WHERE username = '" + user + "';")
-    #cur.execute("SELECT * FROM saves")
-    #names = cur.fetchall()
-    names = []
-    names = ['TEST' , '2' , '3']
+    cur.execute("SELECT * FROM saves")
+    names = cur.fetchall()
     conn.close()
 
     return render_template('load_saves.html.jinja' , names = names)
