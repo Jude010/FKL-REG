@@ -5,7 +5,7 @@ bp = Blueprint('saves' , __name__ , url_prefix='/saves')
 
 @bp.route('/load_saves')
 def load_saves():
-    user = session['username']
+    user = session['user']
     conn = connect.get_db_conn()
     cur = conn.cursor()
 
