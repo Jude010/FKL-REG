@@ -29,8 +29,9 @@ def project_results():
 def save_project():
     results = request.form
     save.save_to_db(session['project'],session['user'],results['signature'],results['date'])
+    date = datetime.date.today()
 
-    return redirect(url_for('project.project_results'))
+    return render_template('project_results.html.jinja', project = session['project'] , date=date)
 
 
 
