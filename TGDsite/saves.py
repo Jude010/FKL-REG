@@ -14,7 +14,7 @@ def load_saves():
     #cur.execute("SELECT * FROM saves")
     #names = cur.fetchall()
     names = []
-    names[0] = 'TEST'
+    names = ['TEST' , '2' , '3']
     conn.close()
 
     return render_template('load_saves.html.jinja' , names = names)
