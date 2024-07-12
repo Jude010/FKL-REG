@@ -15,7 +15,7 @@ def load_saves():
 
     return render_template('load_saves.html.jinja' , names = names)
 
-@bp.route('/display_save', method=['POST'])
+@bp.route('/display_save', methods=['POST'])
 def display_save():
     
     return None
