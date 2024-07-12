@@ -35,9 +35,11 @@ def create_app(test_config=None):
     from . import questions
     from . import project
     from . import login
+    from . import saves
     app.register_blueprint(questions.bp)
     app.register_blueprint(project.bp)
     app.register_blueprint(login.bp)
+    app.register_blueprint(saves.bp)
 
     
     
