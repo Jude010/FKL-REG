@@ -21,8 +21,8 @@ def project_results():
             project['stairs'][str(i)]['part_m'] = False
 
         project['stairs'][str(i)]['min_f'] = tools.calc_flights(project['stairs'][str(i)],project["privacy"])
-        session[project] = None
-        session[project] = project
+        session['project'] = None
+        session['project'] = project
     return render_template('project_results.html.jinja', project = project , date=date)
 
 @bp.route("/save_project", methods=['POST'])
