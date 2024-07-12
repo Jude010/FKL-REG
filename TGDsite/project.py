@@ -28,7 +28,7 @@ def save_project():
     results = request.form
     save.save_to_db(session['project'],session['user'],results['signature'],results['date'])
 
-    return redirect(url_for('project.display'))
+    return redirect(url_for('project.project_results'))
 
 
 
