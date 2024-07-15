@@ -8,7 +8,7 @@
 {% block content %}
     {% for i in names %}
         <div class="center">
-        <h3>{{i[0]}}</h3><br>
+        <h3>{{i}}</h3><br>
         <a href="{{url_for('saves.display_save')}}">Load</a>
         </div><br>
     {% endfor %}
