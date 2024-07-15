@@ -61,7 +61,7 @@ CREATE TABLE proj_stair (
 );
 
 --add test user
-INSERT INTO users (username, password) VALUES ('test' , 'open');
+INSERT INTO users (username, password) VALUES 'test' , 'open';
 
 --add test project
 INSERT INTO project (pname , floors , privacy) SELECT 'test', '1' , 'private';
