@@ -65,7 +65,7 @@ INSERT INTO users (username, password) VALUES ('test' , 'open');
 
 --add test project
 INSERT INTO project (pname , floors , privacy) SELECT 'test', '1' , 'private';
-INSERT INTO saves (user_id , proj_id) VALUES (SELECT user_id FROM users u  WHERE (u.username LIKE 'test')) ,   (SELECT proj_id FROM project p WHERE (p.name LIKE 'test'));
+INSERT INTO saves (user_id , proj_id) VALUES (SELECT user_id FROM users u  WHERE (u.username LIKE 'test')) , (SELECT proj_id FROM project p WHERE (p.name LIKE 'test'));
 
 -- insert 
 INSERT INTO guide (guide_name, diagram) VALUES
