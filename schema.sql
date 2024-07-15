@@ -4,6 +4,7 @@ DROP TABLE IF EXISTS saves;
 DROP TABLE IF EXISTS users;
 DROP TABLE IF EXISTS guide;
 DROP TABLE IF EXISTS stairs;
+DROP TABLE IF EXISTS signatures;
 DROP TABLE IF EXISTS project;
 
 -- create user table
@@ -60,7 +61,7 @@ CREATE TABLE proj_stair (
 );
 
 --add test user
-INSERT INTO users (username, password) VALUES ('test') , ('open');
+INSERT INTO users (username, password) VALUES ('test' , 'open');
 
 --add test project
 INSERT INTO project (pname , floors , privacy) SELECT 'test', '1' , 'private';
