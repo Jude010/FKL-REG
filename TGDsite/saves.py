@@ -15,6 +15,8 @@ def load_saves():
     names = cur.fetchall()
     conn.close()
 
+    names.append(['a','b','c'])
+
     return render_template('load_saves.html.jinja' , names = names)
 
 @bp.route('/display_save', methods=['POST'])
