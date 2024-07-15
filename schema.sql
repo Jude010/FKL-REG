@@ -23,7 +23,7 @@ CREATE TABLE guide (
 -- create project table
 CREATE TABLE project (
     proj_id SERIAL PRIMARY KEY,
-    name VARCHAR (50),
+    pname VARCHAR (50),
     floors NUMERIC,
     privacy VARCHAR(20)
 );
