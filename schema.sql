@@ -65,7 +65,7 @@ INSERT INTO users (username, password) VALUES ('test' , 'open');
 
 --add test project
 INSERT INTO project (pname , floors , privacy) VALUEs ('test', '1' , 'private');
-INSERT INTO saves (user_id , proj_id ) SELECT u.user_id , p.proj_id FROM users u , project p WHERE u.username = 'test'  , p.pname = 'test';
+INSERT INTO saves (user_id , proj_id ) (SELECT u.user_id FROM users u WHERE u.username = 'test' UNION ALL p.proj_id FROM project p WHERE p.pname = 'test');
 
 -- insert 
 INSERT INTO guide (guide_name, diagram) VALUES
