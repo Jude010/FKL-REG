@@ -26,7 +26,7 @@ CREATE TABLE project (
     proj_id SERIAL PRIMARY KEY,
     pname VARCHAR (50),
     floors NUMERIC,
-    privacy VARCHAR(20)
+    privacy VARCHAR(20),
     user serial REFERENCES user(user_id)
 );
 
