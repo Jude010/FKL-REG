@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS guide;
 DROP TABLE IF EXISTS stairs;
 DROP TABLE IF EXISTS signatures;
 DROP TABLE IF EXISTS project;
-DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users CASCADE;
 
 -- create user table
 CREATE TABLE users (
