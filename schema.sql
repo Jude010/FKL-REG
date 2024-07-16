@@ -7,20 +7,6 @@ DROP TABLE IF EXISTS stairs;
 DROP TABLE IF EXISTS signatures;
 DROP TABLE IF EXISTS project;
 
--- create save function
-CREATE OR REPLACE PROCEDURE save_project(
-    p_id INT, 
-    u_id INT
-)
-LANGUAGE plpgsql
-AS $$
-BEGIN
-
-    INSERT INTO saves (user_id, proj_id) VALUES (u_id , p_id)
-
-END; $$
-
-
 -- create user table
 CREATE TABLE users (
     user_id SERIAL PRIMARY KEY,
