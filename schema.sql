@@ -58,7 +58,7 @@ CREATE TABLE proj_stair (
 INSERT INTO users (username, password) VALUES ('test' , 'open');
 
 --add test project
-INSERT INTO project (pname , floors , privacy , user_id ) (SELECT (user_id 'test', '1' , 'private') FROM users  WHERE username = "test");
+INSERT INTO project (pname , floors , privacy , user_id ) (SELECT (user_id, 'test', '1' , 'private') FROM users  WHERE username = "test");
 
 -- insert 
 INSERT INTO guide (guide_name, diagram) VALUES
