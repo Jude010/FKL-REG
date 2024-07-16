@@ -15,7 +15,6 @@ def load_saves():
     names = cur.fetchall()
     conn.close()
 
-    names.extend(['a','b','c'])
 
     return render_template('load_saves.html.jinja' , names = names)
 
