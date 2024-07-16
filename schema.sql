@@ -61,10 +61,10 @@ CREATE TABLE proj_stair (
 );
 
 --add test user
-INSERT INTO users (username, password) VALUES ("test" , "open");
+INSERT INTO users (username, password) VALUES ('test' , 'open');
 
 --add test project
-INSERT INTO project (pname , floors , privacy) VALUEs ("test", "1" , "private");
+INSERT INTO project (pname , floors , privacy) VALUEs ('test', '1' , 'private');
 INSERT INTO saves (user_id , proj_id ) SELECT u.user_id , p.proj_id FROM users u , project p WHERE u.username && p.pname LIKE "test";
 
 -- insert 
