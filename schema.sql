@@ -6,6 +6,7 @@ DROP TABLE IF EXISTS guide;
 DROP TABLE IF EXISTS stairs;
 DROP TABLE IF EXISTS signatures;
 DROP TABLE IF EXISTS project;
+DROP TABLE IF EXISTS users;
 
 -- create user table
 CREATE TABLE users (
