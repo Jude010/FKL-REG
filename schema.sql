@@ -27,6 +27,7 @@ CREATE TABLE project (
     pname VARCHAR (50),
     floors NUMERIC,
     privacy VARCHAR(20)
+    user serial REFERENCES user(user_id)
 );
 
 -- create signatures table
@@ -46,13 +47,6 @@ CREATE TABLE stairs (
     inside VARCHAR(10)
 );
 
--- create saves table
-CREATE TABLE saves (
-    user_id SERIAL REFERENCES users(user_id),
-    proj_id SERIAL REFERENCES project(proj_id),
-    PRIMARY KEY (user_id, proj_id)
-);
-
 -- create proj_stair table
 CREATE TABLE proj_stair (
     stair_id SERIAL REFERENCES stairs(stair_id),
@@ -64,8 +58,7 @@ CREATE TABLE proj_stair (
 INSERT INTO users (username, password) VALUES ('test' , 'open');
 
 --add test project
-INSERT INTO project (pname , floors , privacy) VALUES ('test', '1' , 'private');
-INSERT INTO saves (SELECT u.user_id FROM users u WHERE u.username = 'test' UNION ALL SELECT p.proj_id FROM project p WHERE p.pname = 'test');
+INSERT INTO project (pname , floors , privacy , user ) SELECT (user_id 'test', '1' , 'private') FROM users WHERE username = "test";
 
 -- insert 
 INSERT INTO guide (guide_name, diagram) VALUES
