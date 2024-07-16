@@ -27,7 +27,7 @@ CREATE TABLE project (
     pname VARCHAR (50),
     floors NUMERIC,
     privacy VARCHAR(20),
-    user serial REFERENCES user(user_id)
+    user_id SERIAL REFERENCES user(user_id)
 );
 
 -- create signatures table
