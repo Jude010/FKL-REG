@@ -75,10 +75,10 @@ CREATE TABLE proj_stair (
 );
 
 --add test user
-INSERT INTO users (username, password) VALUES 'test' , 'open';
+INSERT INTO users (username, password) VALUES "test" , "open";
 
 --add test project
-INSERT INTO project (pname , floors , privacy) VALUE 'test', '1' , 'private';
+INSERT INTO project (pname , floors , privacy) VALUEs "test", "1" , "private";
 CALL save_project(SELECT user_id FROM users WHERE username LIKE "test",SELECT proj_id FROM project WHERE pname LIKE "test");
 
 -- insert 
