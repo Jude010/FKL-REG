@@ -6,15 +6,11 @@ def save_to_db(project , user , signature , date):
     cur = conn.cursor()
 
     # insert project details into DB and recieve new project ID
-    cur.execute("INSERT INTO project (name , privacy , floors) values ('" + project['name'] + "' ,'" + project['privacy'] + "' ,'"  + project['floors'] + "') RETURNING proj_id;")
+    cur.execute("INSERT INTO project (name , privacy , floors) SELECT '" + project['name'] + "' ,'" + project['privacy'] + "' ,'"  + project['floors'] + "' user_id FROM users  WHERE username = '" + user + "' RETURNING proj_id ;")
     pid = cur.fetchone[0]
 
     # insert signature date and pid into signatures DB
     cur.execute("INSERT INTO signatures (sig , date , proj_id) VALUES ('" + signature + "' ,'" + date  + "' ,'" + pid + "')")
-
-    # fetch current user_id from users DB and insert it and new project id into saves
-    cur.execute("SELECT user_id FROM users WHERE username LIKE '" + user + "';")
-    cur.execute("INSERT INTO saves (user_id , proj_id)")
 
     # for each stair in project inser data into db and connect the project id and stair id in DB
     for i in range(project['stair_num']) :
