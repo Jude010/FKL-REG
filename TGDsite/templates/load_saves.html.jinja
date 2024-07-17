@@ -9,7 +9,10 @@
     {% for i in names %}
         <div class="center">
         <h3>{{i[0]}}</h3><br>
-        <a href="{{url_for('saves.display_save')}}">Load</a>
+        <form action="{{url_for('saves.display_save')}}" method="post">
+            <input type="hidden" value={{i[1]}} name="id">
+            <input type="submit" value="LOAD">
+        </form>
         </div><br>
     {% endfor %}
 {% endblock%}
