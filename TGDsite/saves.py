@@ -27,7 +27,7 @@ def display_save():
     project= {}
 
     #fetch all project details using project id from POST
-    cur.execute("SELECT pname ,floors ,privacy FROM project p WHERE proj_id = '" + request['id'] + "';" )
+    cur.execute("SELECT pname ,floors ,privacy FROM project p WHERE proj_id = '" + results['id'] + "';" )
     proj = cur.fetchall()
 
     #insert project details into a dict
@@ -36,7 +36,7 @@ def display_save():
     project['privacy'] = proj[2]
 
     #fetch all stair id from db associated with project
-    cur.execute("SELECT stair_id WHERE proj_id = '" + request['id'] + "';" )
+    cur.execute("SELECT stair_id WHERE proj_id = '" + results['id'] + "';" )
     stairs = cur.fetchall()
 
     count = 0
