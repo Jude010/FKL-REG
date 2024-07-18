@@ -39,5 +39,5 @@ register x
 
 save - test - /
 
-load - saves list
+load - saves list x
        save display

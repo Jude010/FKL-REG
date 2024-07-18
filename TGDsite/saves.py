@@ -24,12 +24,32 @@ def display_save():
     user = session['user']
     conn = connect.get_db_conn()
     cur = conn.cursor()
+    project= {}
 
     #fetch all project details using project id from POST
     cur.execute("SELECT pname ,floors ,privacy FROM project p WHERE proj_id = '" + request['id'] + "';" )
     proj = cur.fetchall()
 
+    #insert project details into a dict
+    project['name'] = proj[0]
+    project['floors'] = proj[1]
+    project['privacy'] = proj[2]
+
+    #fetch all stair id from db associated with project
     cur.execute("SELECT stair_id WHERE proj_id = '" + request['id'] + "';" )
+    stairs = cur.fetchall()
 
+    count = 0
+    for i in stairs :
+        cur.execute("SELECT name , rise, part_m , inside FROM stairs WHERE  stair_id = '" + i[0] +  "';")
+        st = cur.fetchall
+        stair = { "name":st[0] ,
+                  "rise":st[1] ,
+                  "part_m":st[2] ,
+                  "inside":st[3]}
+        
+        project['stairs']['count'] = stair
 
-    return render_template('load_project.html.jinja')
+        count += 1
+
+    return render_template('load_project.html.jinja' , project=project)
