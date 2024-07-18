@@ -31,9 +31,9 @@ def display_save():
     proj = cur.fetchall()
 
     #insert project details into a dict
-    project['name'] = proj[0]
-    project['floors'] = proj[1]
-    project['privacy'] = proj[2]
+    project['name'] = proj[0][0]
+    project['floors'] = proj[0][1]
+    project['privacy'] = proj[0][2]
 
     #fetch all stair id from db associated with project
     cur.execute("SELECT stair_id WHERE proj_id = '" + results['id'] + "';" )
