@@ -52,4 +52,6 @@ def display_save():
 
         count += 1
 
+    project['stair_num'] = count
+
     return render_template('load_project.html.jinja' , project=project)
