@@ -40,4 +40,4 @@ register x
 save - test - /
 
 load - saves list x
-       save display
+       save display /
