@@ -36,7 +36,7 @@ def display_save():
     project['privacy'] = proj[0][2]
 
     #fetch all stair id from db associated with project
-    cur.execute("SELECT stair_id WHERE proj_id = '" + results['id'] + "';" )
+    cur.execute("SELECT stair_id FROM proj_stair WHERE proj_id = '" + results['id'] + "';" )
     stairs = cur.fetchall()
 
     count = 0
