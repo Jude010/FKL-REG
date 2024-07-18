@@ -4,7 +4,6 @@
 
 {% block header %}<h1> Results </h1>{% endblock %}
 {% block content %}
-    
     {{ project_display(project) }}
     <br>
     <form href="{{url_for('project.save_project')}}" method="POST">
