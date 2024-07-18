@@ -31,7 +31,7 @@ def save_project():
     save.save_to_db(session['project'],session['user'],results['signature'],results['date'])
     date = datetime.date.today()
 
-    return render_template('project_results.html.jinja', project = session['project'] , date=date)
+    return render_template('load_project.html.jinja')
 
 
 
