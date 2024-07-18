@@ -60,6 +60,7 @@ def display_save():
 @bp.route("/save_project", methods=['POST'])
 def save_project():
     results = request.form
-    save.save_to_db(session['project'],session['user'],results['signature'],results['date'])
+    project = results['project']
+    save.save_to_db(project ,session['user'],results['signature'],results['date'])
 
     return render_template('load_project.html.jinja' , project = session['project'])
