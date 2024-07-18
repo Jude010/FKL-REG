@@ -1,5 +1,5 @@
 from flask import redirect , render_template , Blueprint , request ,session , url_for
-from TGDsite.db import save
+
 from TGDsite.resources import project_parts, readText , tools
 import datetime
 
@@ -25,13 +25,6 @@ def project_results():
         session['project'] = project
     return render_template('project_results.html.jinja', project = project , date=date)
 
-@bp.route("/save_project", methods=['POST'])
-def save_project():
-    results = request.form
-    save.save_to_db(session['project'],session['user'],results['signature'],results['date'])
-    date = datetime.date.today()
-
-    return render_template('load_project.html.jinja' , project = session['project'])
 
 
 

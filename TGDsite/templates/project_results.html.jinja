@@ -6,7 +6,7 @@
 {% block content %}
     {{ project_display(project) }}
     <br>
-    <form href={{url_for('project.save_project')}} method="POST">
+    <form action="{{url_for('saves.save_project')}}" method="POST">
         <p>The above infromation has been incorporated into <br>
         the design and cross referenced with relevent<br>
          technical guidence documents to ensure compliance</p><br>

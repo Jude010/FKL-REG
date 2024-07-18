@@ -1,5 +1,6 @@
 from flask import Blueprint ,render_template , session , request
 from TGDsite.db import connect 
+from TGDsite.db import save
 
 bp = Blueprint('saves' , __name__ , url_prefix='/saves')
 
@@ -55,3 +56,10 @@ def display_save():
     project['stair_num'] = count
 
     return render_template('load_project.html.jinja' , project=project)
+
+@bp.route("/save_project", methods=['POST'])
+def save_project():
+    results = request.form
+    save.save_to_db(session['project'],session['user'],results['signature'],results['date'])
+
+    return render_template('load_project.html.jinja' , project = session['project'])
