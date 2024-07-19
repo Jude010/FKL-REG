@@ -41,6 +41,7 @@ def display_save():
     stairs = cur.fetchall()
 
     count = 0
+    t_stairs = []
     for i in stairs :
         cur.execute("SELECT name , rise, part_m , inside FROM stairs WHERE  stair_id = '" + str(i[0]) +  "';")
         st = cur.fetchall()
@@ -50,10 +51,12 @@ def display_save():
                   "part_m":st[0][2] ,
                   "inside":st[0][3]}
         
-        project['stairs']['count'] = stair
+        
+        t_stairs['count'] = stair
 
         count += 1
 
+    project['stairs'] = t_stairs
     project['stair_num'] = count
 
     return render_template('load_project.html.jinja' , project=project)
