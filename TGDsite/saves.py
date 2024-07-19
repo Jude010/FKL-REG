@@ -45,10 +45,10 @@ def display_save():
         cur.execute("SELECT name , rise, part_m , inside FROM stairs WHERE  stair_id = '" + str(i[0]) +  "';")
         st = cur.fetchall()
         print(st)
-        stair = { "name":st[0] ,
-                  "rise":st[1] ,
-                  "part_m":st[2] ,
-                  "inside":st[3]}
+        stair = { "name":st[0][0] ,
+                  "rise":st[0][1] ,
+                  "part_m":st[0][2] ,
+                  "inside":st[0][3]}
         
         project['stairs']['count'] = stair
 
