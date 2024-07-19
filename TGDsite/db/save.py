@@ -4,7 +4,8 @@ def save_to_db(project , user , signature , date):
     #save project to db
     conn = connect.get_db_conn()
     cur = conn.cursor()
-
+    cur.execute("SELECT * FROM users;")
+    print(cur.fetchall)
     # insert project details into DB and recieve new project ID
     cur.execute("INSERT INTO project (pname , privacy , floors) SELECT '" + project['name'] + "' ,'" + project['privacy'] + "' ,'"  + project['floors'] + "' user_id FROM users  WHERE username = '" + user + "' RETURNING proj_id ;")
     pid = cur.fetchone()[0]
