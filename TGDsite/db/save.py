@@ -7,7 +7,7 @@ def save_to_db(project , user , signature , date):
 
     # insert project details into DB and recieve new project ID
     cur.execute("INSERT INTO project (pname , privacy , floors) SELECT '" + project['name'] + "' ,'" + project['privacy'] + "' ,'"  + project['floors'] + "' user_id FROM users  WHERE username = '" + user + "' RETURNING proj_id ;")
-    pid = cur.fetchone[0]
+    pid = cur.fetchone()[0]
 
     # insert signature date and pid into signatures DB
     cur.execute("INSERT INTO signatures (sig , date , proj_id) VALUES ('" + signature + "' ,'" + date  + "' ,'" + pid + "')")
