@@ -41,7 +41,7 @@ def display_save():
     stairs = cur.fetchall()
 
     count = 0
-    t_stairs = []
+    t_stairs = {}
     for i in stairs :
         cur.execute("SELECT name , rise, part_m , inside FROM stairs WHERE  stair_id = '" + str(i[0]) +  "';")
         st = cur.fetchall()
