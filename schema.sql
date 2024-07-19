@@ -58,6 +58,7 @@ INSERT INTO users (username, password) VALUES ('test' , 'open');
 
 --add test project
 INSERT INTO project (pname , floors , privacy , user_id ) SELECT  'test', '1' , 'private' , user_id FROM users  WHERE username = 'test';
+INSERT INTO project (pname , floors , privacy , user_id ) SELECT  'test2', '1' , 'private' , user_id FROM users  WHERE username = 'test';
 
 -- insert 
 INSERT INTO guide (guide_name, diagram) VALUES
