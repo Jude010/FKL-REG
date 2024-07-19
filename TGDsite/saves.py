@@ -61,6 +61,7 @@ def display_save():
 def save_project():
     results = request.form
     project = results['project']
+    print(project)
     save.save_to_db(project ,session['user'],results['signature'],results['date'])
 
     return render_template('load_project.html.jinja' , project = session['project'])
