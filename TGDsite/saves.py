@@ -11,8 +11,8 @@ def load_saves():
     cur = conn.cursor()
 
     # fetch all project names associated with current user
-    #cur.execute("SELECT pname , proj_id FROM project p INNER JOIN users u ON p.user_id = u.user_id WHERE u.username = '" + user + "';")
-    cur.execute("SELECT pname , proj_id FROM project;")
+    cur.execute("SELECT pname , proj_id FROM project p INNER JOIN users u ON p.user_id = u.user_id WHERE u.username = '" + user + "';")
+    #cur.execute("SELECT pname , proj_id FROM project;")
     names = cur.fetchall()
     conn.close()
 

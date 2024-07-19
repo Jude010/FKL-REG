@@ -55,10 +55,11 @@ CREATE TABLE proj_stair (
 
 --add test user
 INSERT INTO users (username, password) VALUES ('test' , 'open');
+INSERT INTO users (username, password) VALUES ('test2' , 'open2');
 
 --add test project
 INSERT INTO project (pname , floors , privacy , user_id ) SELECT  'test', '1' , 'private' , user_id FROM users  WHERE username = 'test';
-INSERT INTO project (pname , floors , privacy , user_id ) SELECT  'test2', '1' , 'private' , user_id FROM users  WHERE username = 'test';
+INSERT INTO project (pname , floors , privacy , user_id ) SELECT  'test2', '1' , 'private' , user_id FROM users  WHERE username = 'test2';
 
 -- insert 
 INSERT INTO guide (guide_name, diagram) VALUES
