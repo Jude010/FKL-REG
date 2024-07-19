@@ -15,7 +15,7 @@ def save_to_db(project , user , signature , date):
     # for each stair in project inser data into db and connect the project id and stair id in DB
     for i in range(project['stair_num']) :
         stair = project['stairs'][str(i)]
-        cur.execute("INSERT INTO stairs (name , rise , part_m inside) values ('" + stair['name'] + "' ,'" + stair['rise']  + "' ,'" + str(stair['part_m']) + "' ,'" + stair['inside'] + "') RETURNING stair_id;")
+        cur.execute("INSERT INTO stairs (name , rise , part_m, inside) values ('" + stair['name'] + "' ,'" + stair['rise']  + "' ,'" + str(stair['part_m']) + "' ,'" + stair['inside'] + "') RETURNING stair_id;")
         sid = cur.fetchone[0]
         cur.execute("INSERT INTO proj_stair (stair_id , proj_id) values ('" + sid + "' ,'" + pid + "')")
 
