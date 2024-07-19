@@ -44,6 +44,7 @@ def display_save():
     for i in stairs :
         cur.execute("SELECT name , rise, part_m , inside FROM stairs WHERE  stair_id = '" + str(i[0]) +  "';")
         st = cur.fetchall()
+        print(st)
         stair = { "name":st[0] ,
                   "rise":st[1] ,
                   "part_m":st[2] ,
