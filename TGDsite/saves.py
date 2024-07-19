@@ -52,7 +52,7 @@ def display_save():
                   "inside":st[0][3]}
         
         
-        t_stairs['count'] = stair
+        t_stairs[str(count)] = stair
 
         count += 1
 
