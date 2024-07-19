@@ -10,7 +10,7 @@ def save_to_db(project , user , signature , date):
     pid = cur.fetchone()[0]
 
     # insert signature date and pid into signatures DB
-    cur.execute("INSERT INTO signatures (sig , date , proj_id) VALUES ('" + signature + "' ,'" + date  + "' ,'" + pid + "')")
+    cur.execute("INSERT INTO signatures (sig , date , proj_id) VALUES ('" + signature + "' ,'" + str(date)  + "' ,'" + str(pid) + "')")
 
     # for each stair in project inser data into db and connect the project id and stair id in DB
     for i in range(project['stair_num']) :
