@@ -62,14 +62,18 @@ def display_save():
     cur.execute("SELECT sig , date FROM signatures WHERE proj_id = '" + str(results['id']) + "';" )
     sigs = cur.fetchall()
 
-    t_sigs = {}
+    count = 0
+
+    project['sigs'] = {}
     for i in sigs :
+        t_sigs = {}
         t_sigs['sig'] = i[0]
         t_sigs['date'] = i[1]
-
+        project['sigs'][str(count)] = t_sigs
+        count += 1
     
-    project['sigs'] = t_sigs 
-
+     
+    project['sig_num'] = count 
 
     conn.close
     return render_template('load_project.html.jinja' , project=project)
