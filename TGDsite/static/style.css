@@ -85,7 +85,8 @@ header{
 }
 
 footer{
-    display: inline-block;
+    display:  block;
+    bottom: 0;
     width: 100%;
 }
 
@@ -135,7 +136,7 @@ input[type=number] {
 
 .f_link {
     display: inline-block;
-    position: fixed;
+    position: absolute;
     bottom: 0%;
     left: 50%;
     right: 50%;
