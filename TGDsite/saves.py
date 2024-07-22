@@ -1,6 +1,6 @@
 from flask import Blueprint ,render_template , session , request
 from TGDsite.db import connect 
-from TGDsite.db import save
+from TGDsite.db import save_to_db
 
 bp = Blueprint('saves' , __name__ , url_prefix='/saves')
 
@@ -82,7 +82,7 @@ def display_save():
 def save_project():
     results = request.form
     project = session['project']
-    save.save_to_db(project ,session['user'],results['signature'],results['date'])
+    save_to_db.save_to_db(project ,session['user'],results['signature'],results['date'])
 
     project['sigs'] =   { '0': 
                         { 'sig':  results['signature'],

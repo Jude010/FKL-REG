@@ -1,7 +1,7 @@
 {% extends 'base.html.jinja' %}
 {% from 'macros.html.jinja' import project_display %}
 
-{% block title %}TGD-Saves{% endblock %}
+{% block title %}TGD-Load Project{% endblock %}
 {% block header %}
     <h1 class="title">SAVES</h1>
 {% endblock %}
@@ -9,8 +9,8 @@
 {% block content %}
     {{ project_display(project) }}
     <br>
-    {% for i in range(project['sig_num']|int) %}
-        <div>Signed by:{{project['sigs'][i]['sig']}}  on:{{project['sigs'][i]['date']}}</div>
+    {% for i in range(project['sig_num']|int) + 1%}
+        <div>Signed by:{{project['sigs'][i - 1]['sig']}}  on:{{project['sigs'][i - 1]['date']}}</div>
         <br><br>
     {% endfor %}
 {% endblock%}
