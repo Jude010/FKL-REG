@@ -8,4 +8,9 @@
     
 {% block content %}
     {{ project_display(project) }}
+    <br>
+    {% for i in project['sigs'] %}
+        <div>Signed by:{{i['sig']}}  on:{{i['date']}}</div>
+        <br><br>
+    {% endfor %}
 {% endblock%}

@@ -59,6 +59,19 @@ def display_save():
     project['stairs'] = t_stairs
     project['stair_num'] = count
 
+    cur.execute("SELECT sig , date FROM signatures WHERE proj_id = '" + str(results['id']) + "';" )
+    sigs = cur.fetchall()
+
+    t_sigs = {}
+    for i in sigs :
+        t_sigs['sig'] = i[0]
+        t_sigs['date'] = i[1]
+
+    
+    project['sigs'] = t_sigs 
+
+
+    conn.close
     return render_template('load_project.html.jinja' , project=project)
 
 @bp.route("/save_project", methods=['POST'])
