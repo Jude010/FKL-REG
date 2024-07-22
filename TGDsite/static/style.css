@@ -134,7 +134,7 @@ input[type=number] {
 }
 
 .f_link {
-    display:block;
+    display: inline-block;
     position: absolute;
     bottom: 0%;
     left: 50%;
