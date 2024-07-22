@@ -88,5 +88,5 @@ def save_project():
                         { 'sig':  results['signature'],
                           'date': results['date']  }}
     
-    project['sig_num'] = 0
+    project['sig_num'] = 1
     return render_template('load_project.html.jinja' , project = session['project'])
