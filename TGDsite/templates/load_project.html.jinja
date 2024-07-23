@@ -10,7 +10,7 @@
     {{ project_display(project) }}
     <br>
     {% for i in range(project['sig_num'])%}
-        <div>Signed by:{{project['sigs'][i]['sig']}}  on:{{project['sigs'][i]['date']}}</div>
+        <div>Signed by:{{project['sigs'][i|string]['sig']}}  on:{{project['sigs'][i|string]['date']}}</div>
         <br><br>
     {% endfor %}
 {% endblock%}
