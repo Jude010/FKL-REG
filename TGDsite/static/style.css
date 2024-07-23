@@ -141,7 +141,7 @@ input[type=number] {
 }
 
 .h_link {
-    display: inline-block;
+    display: block;
     left: 0%;
     top: 0%;
     text-decoration: none;
