@@ -84,7 +84,7 @@ def save_project():
     project = session['project']
     save_to_db.save_to_db(project ,session['user'],results['signature'],results['date'])
 
-    project['sigs'] =   { '0': 
+    project['sigs'] =   { 0: 
                         { 'sig':  results['signature'],
                           'date': results['date']  }}
     
