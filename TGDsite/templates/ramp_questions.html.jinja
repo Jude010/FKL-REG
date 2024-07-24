@@ -1,0 +1,36 @@
+{% extends 'base.html.jinja' %}
+
+
+{% block header %}<H1> Project Questions - Ramps </H1>{% endblock %}
+{% block content %}
+    <h2>{{ project.name}}</h2>
+    
+    <form method="POST" action="{{url_for('project.project_results')}}"> 
+        {% for ramp in range(project['ramp_num']) %}
+            <div class="center">
+                <h3>{{project['ramps'][ramp|string]['name']}}</h3>
+                <label for="name">Name</label><br>
+                <input type="text" id="name" name={{ramp}} value={{project['ramps'][ramp|string]['name']}}><br>
+                <br>
+                <label for="internal">Internal/External</label><br>
+                <input type="radio" id="internal" name={{'internal' ~ ramp}} value="internal" required>
+                <input type="radio" id="external" name={{'internal' ~ ramp}} value="external" required>
+                <br>
+                <label for="rise">Total rise</label>
+                <br>
+                <input type="number" id="rise" name={{'rise' ~ ramp}} value="300" required>
+                <br><br>
+                <label for="width">Total rise</label>
+                <br>
+                <input type="number" id="width" name={{'width' ~ ramp}} value="1000"  min="800"required>
+                <br><br>
+                <label for="part_m">Part M</label>
+                <input type="checkbox" id="part_m" name={{'part_m' ~ ramp}}>
+            </div>
+            <br>
+        {% endfor %} 
+        <br>
+        <input type="submit" value="NEXT">
+        <br><br>
+    </form>
+{% endblock %}

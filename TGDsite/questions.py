@@ -1,6 +1,6 @@
 from flask import Flask , render_template , Blueprint , request ,session
 from TGDsite.db import connect
-from TGDsite.resources import project_parts, readText
+from TGDsite.resources import project_parts, readText , tools
 
 
 bp = Blueprint('questions',__name__, url_prefix='/new_project')
@@ -24,7 +24,7 @@ def guides():
 @bp.route('/domestic', methods=['POST'])
 def domestic():# to domestic/non domestic
     results = request.form
-    project = project_parts.project(results['name'],'bla', results["stairs"],results['floors'])
+    project = project_parts.project(results['name'],'bla', results["stairs"],results['floors'], results['ramps'])
     session['projet'] = None
     session['project'] = project.serialize()
     return render_template('domestic.html.jinja' , project = project)
@@ -37,6 +37,23 @@ def stair_questions():
     session['project'] = None
     session['project'] = project
     return render_template('stair_questons.html.jinja' , project = project)
+
+@bp.route('/ramps', method=['POST'])
+def ramp_questions():
+    results = request.form
+    project = session['project']
+    for i in range(project['stair_num']):
+        project['stairs'][str(i)]['name'] = results[str(i)]
+        project['stairs'][str(i)]['inside'] = results["internal" + str(i)]
+        project['stairs'][str(i)]['rise'] = results["rise" + str(i) ]
+        if "part_m" + str(i) in results.keys():
+            project['stairs'][str(i)]['part_m'] = True
+        else:
+            project['stairs'][str(i)]['part_m'] = False
+
+        project['stairs'][str(i)]['min_f'] = tools.calc_flights(project['stairs'][str(i)],project["privacy"])
+        session['project'] = None
+        session['project'] = project
 
 @bp.route('/name')
 def new_project():# to new project

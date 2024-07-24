@@ -25,3 +25,12 @@ def calc_flights(stairs, domestic):
         return int(temp) + 1
     else:
         return temp   
+    
+
+def calc_slope(ramp , domestic):
+    min_run = ''
+    max_run = ''
+
+    
+
+    return None

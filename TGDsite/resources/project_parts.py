@@ -21,6 +21,9 @@ class project:
 
     def stair_num(self):
         return len(self.stairs)
+    
+    def ramp_num(self):
+        return len(self.ramps)
 
     # convert into dict for session purposes
     def serialize(self):
@@ -28,12 +31,18 @@ class project:
         dict = {"name": self.name,
                 "privacy": self.privacy,
                 "stair_num": self.stair_num(),
-                "floors": self.floors
+                "floors": self.floors,
+                "ramp_num": self.ramp_num()
                 }
         for i in range(self.stair_num()):
             temp[str(i)] = self.stairs[i].serialize()
         
         dict['stairs'] = temp
+
+        temp = {}
+        for i in range(self.ramp_num):
+            temp[str(i)] = self.ramps[i].serialize()
+        
 
         return dict
 
@@ -65,7 +74,7 @@ class ramp:
         self.part_m = False
         self.width = 0
 
-    # conver to dict
+    # convert to dict
     def serialize(self):
         return {"name": self.name,
                 "inside": self.inside,
