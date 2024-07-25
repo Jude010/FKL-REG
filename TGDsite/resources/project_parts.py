@@ -40,7 +40,7 @@ class project:
         dict['stairs'] = temp
 
         temp = {}
-        for i in range(self.ramp_num):
+        for i in range(self.ramp_num()):
             temp[str(i)] = self.ramps[i].serialize()
         
 
