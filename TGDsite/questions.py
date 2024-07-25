@@ -55,7 +55,7 @@ def ramp_questions():
         session['project'] = None
         session['project'] = project
     
-    return render_template('project_results.html.jinja' , project=project ) 
+    return render_template('ramp_questions.html.jinja' , project=project ) 
 
 @bp.route('/name')
 def new_project():# to new project
