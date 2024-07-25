@@ -54,6 +54,8 @@ def ramp_questions():
         project['stairs'][str(i)]['min_f'] = tools.calc_flights(project['stairs'][str(i)],project["privacy"])
         session['project'] = None
         session['project'] = project
+    
+    return render_template('project_results.html.jinja' , project=project ) 
 
 @bp.route('/name')
 def new_project():# to new project
