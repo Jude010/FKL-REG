@@ -21,7 +21,7 @@ def project_results():
         else:
             project['ramps'][str(i)]['part_m'] = False
 
-        project['ramps'][str(i)]['min_f'] = tools.calc_slope(project['ramps'][str(i)],project["privacy"])
+        project['ramps'][str(i)]['going'] = tools.calc_slope(project['ramps'][str(i)],project["privacy"])
         session['project'] = None
         session['project'] = project
     return render_template('project_results.html.jinja', project = project , date=date)

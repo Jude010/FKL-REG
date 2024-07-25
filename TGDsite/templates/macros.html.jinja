@@ -4,6 +4,7 @@
     <h2>{{project['name']}}</h2>
     <div>floors:{{project['floors']}}<br>
     {{project['privacy']}}
+    {# STAIRS #}
     {% for i in range(project['stair_num']) %}
         <h3>{{project['stairs'][i|string]['name']}}</h3>
         {{project['stairs'][i|string]['inside']}} <br>
@@ -159,5 +160,54 @@
         </table>
         <br><br>
     {% endfor %}
+    {# endStairs #}
     </div>
+    {# Ramps #}
+    {% for i in range(project['ramp_num']) %}
+        <h3>{{project['ramps'][i|string]['name']}}</h3>
+        {{project['ramps'][i|string]['inside']}} <br>
+        {% if project['ramps'][i|string]['part_m'] %}
+            Part M
+        {% endif %}
+        <br><br>
+        {% if project['ramps'][i|string]['inside'] == 'internal' %}
+            {% if project['privacy'] == 'domestic' %}
+                {% if project['ramps'][i|string]['part_m']%}
+                    {# INTERNAL DOMESTIC PART_M #}
+                    <div>INTERNAL DOMESTIC PART_M</div>
+                {% else %}
+                    {# INTERNAL DOMESTIC PART_M #}
+                    <div>INTERNAL DOMESTIC PART_M</div>
+                {% endif %}
+            {% else %}
+                {% if project['ramps'][i|string]['part_m'] %}
+                    {# INTERNAL PUBLIC PART_M #}
+                    <div>INTERNAL PUBLIC PART_M</div>
+                {% else %}
+                    {# INTERNAL PUBLIC NON PART_M #}
+                    <div>INTERNAL PUBLIC NON PART_M</div>
+                {% endif %}
+            {% endif %}
+        {% else %}
+            {% if project['privacy'] == 'domestic' %}
+                {% if project['ramps'][i|string]['part_m'] %}
+                    {# EXTERNAL DOMESTIC PART_M #}
+                    <div>EXTERNAL DOMESTIC PART_M</div>
+                {% else %}
+                    {# EXTERNAL DOMESTIC NON PART_M #}
+                    <div>EXTERNAL DOMESTIC NON PART_M</div>
+                {% endif %}
+            {% else %}
+                {% if project['ramps'][i|string]['part_m'] %}
+                    {# EXTERNAL PUBLIC PART_M #}
+                    <div>EXTERNAL PUBLIC PART_M</div>
+                {% else %}
+                    {# EXTERNAL PUBLIC NON PART_M #}
+                    <div>EXTERNAL PUBLIC NON PART_M</div>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+
+    {% endfor %}
+    {# endRamps #}
 {% endmacro %}

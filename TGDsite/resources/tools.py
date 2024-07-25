@@ -33,4 +33,4 @@ def calc_slope(ramp , domestic):
 
     
 
-    return None
+    return '5'
