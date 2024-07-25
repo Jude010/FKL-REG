@@ -38,7 +38,7 @@ def stair_questions():
     session['project'] = project
     return render_template('stair_questons.html.jinja' , project = project)
 
-@bp.route('/ramps', method=['POST'])
+@bp.route('/ramps', methods=['POST'])
 def ramp_questions():
     results = request.form
     project = session['project']
