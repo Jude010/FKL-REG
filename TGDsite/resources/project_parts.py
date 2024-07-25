@@ -43,6 +43,8 @@ class project:
         for i in range(self.ramp_num()):
             temp[str(i)] = self.ramps[i].serialize()
         
+        dict['ramps'] = temp
+        
 
         return dict
 
