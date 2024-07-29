@@ -21,9 +21,14 @@ def project_results():
         else:
             project['ramps'][str(i)]['part_m'] = False
 
-        project['ramps'][str(i)]['going'] = tools.calc_slope(project['ramps'][str(i)],project["privacy"])
-        session['project'] = None
-        session['project'] = project
+
+        temp = tools.calc_slope(project['ramps'][str(i)],project["privacy"])
+        project['ramps'][str(i)]['going'] = temp[0]
+        project['ramps'][str(i)]['slope'] = temp[1]
+        temp = None
+
+    session['project'] = None
+    session['project'] = project
     return render_template('project_results.html.jinja', project = project , date = date)
 
 

@@ -170,6 +170,14 @@
             Part M
         {% endif %}
         <br><br>
+        <div>Max Going</div>
+        <br>
+        <div>{{project['ramps'][i|string]['going']}}</div>
+        <br><br>
+        <div>Slope</div>
+        <br>
+        <div>{{project['ramps'][i|string]['slope']}}</div>
+        <br><br>
         {% if project['ramps'][i|string]['inside'] == 'internal' %}
             {% if project['privacy'] == 'domestic' %}
                 {% if project['ramps'][i|string]['part_m']%}
