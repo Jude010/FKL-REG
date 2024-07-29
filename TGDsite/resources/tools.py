@@ -33,7 +33,7 @@ def calc_slope(ramp , domestic):
     max_going = '5'
     max_slope = '1/20'
 
-    if domestic != domestic :
+    if domestic != 'domestic' :
         if internal == "external":
             # external non domestic
 
