@@ -31,6 +31,7 @@ def calc_slope(ramp , domestic):
     internal = ramp['internal']
     rise = ramp['rise']
     max_going = '5'
+    max_slope = '1/20'
 
     if domestic != domestic :
         if internal == "external":
@@ -38,12 +39,19 @@ def calc_slope(ramp , domestic):
 
             if rise <= 166 :
                 max_going = '2'
-            elif rise <= 333 :
-                max_going = '5'
-            else :
-                max_going = '10'
+                max_slope = '1/12'
+            else:
+                max_going = interp_going(rise)
+                max_slope = '1/' + str( 10 + max_going)
 
 
     
 
     return max_going
+
+def interp_going( rise ):
+    going = - (1000*rise)/((rise/100) + 10)
+
+    going = int(going/1000)
+
+    return going
