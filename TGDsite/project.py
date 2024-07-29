@@ -24,7 +24,7 @@ def project_results():
         project['ramps'][str(i)]['going'] = tools.calc_slope(project['ramps'][str(i)],project["privacy"])
         session['project'] = None
         session['project'] = project
-    return render_template('project_results.html.jinja', project = project , date=date)
+    return render_template('project_results.html.jinja', project = project , date = date)
 
 
 
