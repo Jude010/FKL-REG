@@ -28,9 +28,22 @@ def calc_flights(stairs, domestic):
     
 
 def calc_slope(ramp , domestic):
-    min_run = ''
-    max_run = ''
+    internal = ramp['internal']
+    rise = ramp['rise']
+    max_going = '5'
+
+    if domestic != domestic :
+        if internal == "external":
+            # external non domestic
+
+            if rise <= 166 :
+                max_going = '2'
+            elif rise <= 333 :
+                max_going = '5'
+            else :
+                max_going = '10'
+
 
     
 
-    return '5'
+    return max_going
