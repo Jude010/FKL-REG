@@ -28,26 +28,48 @@ def calc_flights(stairs, domestic):
     
 
 def calc_slope(ramp , domestic):
-    internal = ramp['inside']
+    part_m = ramp['part_m']
     rise = ramp['rise']
-    max_going = '5'
-    max_slope = '1/20'
+    internal = ramp['internal']
+    min_going = '5'
+    max_slope = '1:20'
 
-    if domestic != 'domestic' :
-        if internal == "external":
-            # external non domestic
+    
+    if part_m :
+        if domestic != 'domestic' :
+            # external non domestic part m
 
             if rise <= 166 :
-                max_going = '2'
-                max_slope = '1/12'
+                min_going = '2'
+                max_slope = '1:12'
             else:
-                max_going = interp_going(rise)
-                max_slope = '1/' + str( 10 + max_going)
+                min_going = interp_going(rise)
+                max_slope = '1:' + str( 10 + min_going)
+        else :
+            #external domestic part m
+
+            if int(rise)*12 < 5000 :
+                min_going = float(int(rise)*12/1000)
+                max_slope = '1:12'
+            else : 
+                min_going = float(int(rise)*20/1000)
+                max_slope = '1:15'
+            
+
+    else :
+        # all nom part m
+
+        if  int(rise)*12 < 10000 :
+            min_going = float(int(rise)*12/1000)
+            max_slope = "1:12"
+        else :
+            min_going = float(int(rise)*20/1000)
+            max_slope = "1:20"
 
 
     
 
-    return (max_going , max_slope)
+    return (min_going , max_slope)
 
 def interp_going( rise ):
     going = -1(1000*rise)/((rise/100) + 10)
