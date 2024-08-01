@@ -39,7 +39,7 @@ def calc_slope(ramp , domestic):
         if domestic != 'domestic' :
             # external non domestic part m
 
-            if rise <= 166 :
+            if int(rise) <= 166 :
                 min_going = '2'
                 max_slope = '1:12'
             else:
