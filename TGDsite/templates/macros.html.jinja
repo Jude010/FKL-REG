@@ -170,50 +170,35 @@
             Part M
         {% endif %}
         <br><br>
-        <div>Max Going</div>
-        <div>{{project['ramps'][i|string]['going']}}</div>
-        <br>
-        <div>Slope</div>
-        <div>{{project['ramps'][i|string]['slope']}}</div>
-        <br><br>
-        {% if project['ramps'][i|string]['inside'] == 'internal' %}
+        <table id="results">
+        <tr><td class="left">Max Going</td><td class="right">{{project['ramps'][i|string]['going']}}M</td></tr>
+        <tr><td class="left">Slope</td><td class="right">{{project['ramps'][i|string]['slope']}}</td></tr>
+        {% if project['ramps'][i|string]['part_m'] %}
             {% if project['privacy'] == 'domestic' %}
-                {% if project['ramps'][i|string]['part_m']%}
-                    {# INTERNAL DOMESTIC PART_M #}
-                    <div>INTERNAL DOMESTIC PART_M</div>
-                {% else %}
-                    {# INTERNAL DOMESTIC PART_M #}
-                    <div>INTERNAL DOMESTIC PART_M</div>
-                {% endif %}
+                {# domestic part M #}
+                <tr><td class="left">Headroom</td><td class="right">>= 2100mm</td></tr>
+                <tr><td class="left">Width</td><td class="right">>= 900mm</td></tr>
+                <tr><td class="left">Raised Kirb</td><td class="right"> 100mm open side</td></tr>
             {% else %}
-                {% if project['ramps'][i|string]['part_m'] %}
-                    {# INTERNAL PUBLIC PART_M #}
-                    <div>INTERNAL PUBLIC PART_M</div>
-                {% else %}
-                    {# INTERNAL PUBLIC NON PART_M #}
-                    <div>INTERNAL PUBLIC NON PART_M</div>
-                {% endif %}
+                {# non domestic part M #}
+                <tr><td class="left">Headroom</td><td class="right">>= 2100mm</td></tr>
+                <tr><td class="left">Clear Width</td><td class="right">>= 1500mm</td></tr>
+                <tr><td class="left">Handrail Width</td></td><td class="right">>= 1200mm</td></tr>
+                <tr><td class="left">Handrails</td><td class="left">both sides</td></tr>
+                <tr><td class="left">Distance between additional handrails</td><td class="left">1200mm - 2500mm</td></tr>
+                <tr><td class="left">Stepped acess route</td><td class="left">if rise > 300mm</td></tr>
+                <tr><td class="left">Stair lift</td><td class="left">If slope >= 1:20 and rise > 2000mm</td></tr>
             {% endif %}
         {% else %}
-            {% if project['privacy'] == 'domestic' %}
-                {% if project['ramps'][i|string]['part_m'] %}
-                    {# EXTERNAL DOMESTIC PART_M #}
-                    <div>EXTERNAL DOMESTIC PART_M</div>
-                {% else %}
-                    {# EXTERNAL DOMESTIC NON PART_M #}
-                    <div>EXTERNAL DOMESTIC NON PART_M</div>
-                {% endif %}
-            {% else %}
-                {% if project['ramps'][i|string]['part_m'] %}
-                    {# EXTERNAL PUBLIC PART_M #}
-                    <div>EXTERNAL PUBLIC PART_M</div>
-                {% else %}
-                    {# EXTERNAL PUBLIC NON PART_M #}
-                    <div>EXTERNAL PUBLIC NON PART_M</div>
-                {% endif %}
-            {% endif %}
+            {# non part M #}
+            <tr><td class="left">Headroom</td><td class="right">>= 2000mm</td></tr>
+            <tr><td class="left">Clear Width</td><td class="right">>= 800mm</td></tr>
+            <tr><td class="left">Handrails</td><td class="right">Width < 1000mm : one side</td></tr>
+            <tr><td class="left"></td><td class="right">Width >= 1000 mm : both sides</td></tr>
+            <tr><td class="left">Handrail height</td><td class="right">900mm - 1000mm</td></tr>
         {% endif %}
 
     {% endfor %}
+    </table>
     {# endRamps #}
 {% endmacro %}
