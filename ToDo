@@ -51,7 +51,7 @@ display signatures x
 implement ramps  -   questions x 
                      answers x
                      going based on rise x
-                     off by 1 error in display
+                     off by 1 error in display x
                      interp slope passing negatives
                      
                   
