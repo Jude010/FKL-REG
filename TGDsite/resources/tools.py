@@ -73,6 +73,7 @@ def calc_slope(ramp , domestic):
     return (min_going , max_slope)
 
 def interp_slope( rise ):
+    print(rise)
     if rise == None:
         rise = 1
     elif rise == 1000:
