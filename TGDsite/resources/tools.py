@@ -73,7 +73,7 @@ def calc_slope(ramp , domestic):
 
 def interp_going( rise ):
     rise = int(rise)
-    going = -1*((1000*rise)/((rise/100) + 10))
+    going = ((1000*rise)/((rise/100) + 10))
 
     going = int(going/1000)
 
