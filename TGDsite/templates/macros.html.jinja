@@ -6,14 +6,13 @@
     {{project['privacy']}}
     {# STAIRS #}
     {% for i in range(project['stair_num']) %}
-        <table id="results">
         <h3>{{project['stairs'][i|string]['name']}}</h3>
         {{project['stairs'][i|string]['inside']}} <br>
         {% if project['stairs'][i|string]['part_m'] %}
             Part M
         {% endif %}
         <br><br>
-        
+        <table id="results">
         <tr><td class="left">Total Rise</td><td class="right">{{project['stairs'][i|string]['rise']}}mm</td></tr>
         <tr><td class="left">Minimum flights</td><td class="right">{{project['stairs'][i|string]['min_f']}}</td></tr>
         
@@ -165,14 +164,13 @@
     </div>
     {# Ramps #}
     {% for i in range(project['ramp_num']) %}
-        <table id="results">
         <h3>{{project['ramps'][i|string]['name']}}</h3>
         {{project['ramps'][i|string]['inside']}} <br>
         {% if project['ramps'][i|string]['part_m'] %}
             Part M
         {% endif %}
         <br><br>
-        
+        <table id="results">
         <tr><td class="left">Max Going</td><td class="right">{{project['ramps'][i|string]['going']}}M</td></tr>
         <tr><td class="left">Slope</td><td class="right">{{project['ramps'][i|string]['slope']}}</td></tr>
         {% if project['ramps'][i|string]['part_m'] %}
@@ -200,7 +198,7 @@
             <tr><td class="left">Handrail height</td><td class="right">900mm - 1000mm</td></tr>
         {% endif %}
     <br>
-    {% endfor %}
     </table>
+    {% endfor %}
     {# endRamps #}
 {% endmacro %}
