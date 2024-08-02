@@ -6,7 +6,7 @@
     {{project['privacy']}}
     {# STAIRS #}
     {% for i in range(project['stair_num']) %}
-        <table id="results"></table>
+        <table id="results">
         <h3>{{project['stairs'][i|string]['name']}}</h3>
         {{project['stairs'][i|string]['inside']}} <br>
         {% if project['stairs'][i|string]['part_m'] %}
