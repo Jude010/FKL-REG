@@ -43,8 +43,9 @@ def calc_slope(ramp , domestic):
                 min_going = '2'
                 max_slope = '1:12'
             else:
-                min_going = interp_going(rise)
-                max_slope = '1:' + str( 10 + min_going)
+                temp = interp_slope(rise)
+                max_slope = '1:' + str(temp)
+                min_going = temp - 10
         else :
             #external domestic part m
 
@@ -71,10 +72,10 @@ def calc_slope(ramp , domestic):
 
     return (min_going , max_slope)
 
-def interp_going( rise ):
-    rise = int(rise)
-    going = ((1000*rise)/((rise/100) + 10))
+def interp_slope( rise ):
+    rise = int(rise/1000)
+    slope = -10/(rise - 1)
 
-    going = int(going/1000)
+    slope= int(slope)
 
-    return going
+    return slope
