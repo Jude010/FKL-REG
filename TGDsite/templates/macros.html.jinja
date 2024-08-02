@@ -164,13 +164,14 @@
     </div>
     {# Ramps #}
     {% for i in range(project['ramp_num']) %}
+        <table id="results">
         <h3>{{project['ramps'][i|string]['name']}}</h3>
         {{project['ramps'][i|string]['inside']}} <br>
         {% if project['ramps'][i|string]['part_m'] %}
             Part M
         {% endif %}
         <br><br>
-        <table id="results">
+        
         <tr><td class="left">Max Going</td><td class="right">{{project['ramps'][i|string]['going']}}M</td></tr>
         <tr><td class="left">Slope</td><td class="right">{{project['ramps'][i|string]['slope']}}</td></tr>
         {% if project['ramps'][i|string]['part_m'] %}
