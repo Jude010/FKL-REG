@@ -29,6 +29,7 @@ def project_results():
 
     session['project'] = None
     session['project'] = project
+    print(project)
     return render_template('project_results.html.jinja', project = project , date = date)
 
 
