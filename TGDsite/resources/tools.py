@@ -30,7 +30,6 @@ def calc_flights(stairs, domestic):
 def calc_slope(rise , part_m , domestic):
     part_m = part_m
     rise = rise
-    internal = ramp['inside']
     min_going = '5'
     max_slope = '1:20'
 
@@ -42,6 +41,10 @@ def calc_slope(rise , part_m , domestic):
             if int(rise) <= 166 :
                 min_going = '2'
                 max_slope = '1:12'
+                
+            elif int(rise) > 500:
+                float(int(rise)*20/1000)
+
             else:
                 temp = interp_slope(int(rise))
                 max_slope = '1:' + str(temp)
