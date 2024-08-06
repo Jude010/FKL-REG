@@ -27,9 +27,9 @@ def calc_flights(stairs, domestic):
         return temp   
     
 
-def calc_slope(ramp , domestic):
-    part_m = ramp['part_m']
-    rise = ramp['rise']
+def calc_slope(rise , part_m , domestic):
+    part_m = part_m
+    rise = rise
     internal = ramp['inside']
     min_going = '5'
     max_slope = '1:20'

@@ -15,14 +15,14 @@ def project_results():
         project['ramps'][str(i)]['name'] = results[str(i)]
         project['ramps'][str(i)]['inside'] = results["internal" + str(i)]
         project['ramps'][str(i)]['rise'] = results["rise" + str(i)]
-        project['ramps'][str(i)]['rise'] = results["width" + str(i)]
+        project['ramps'][str(i)]['width'] = results["width" + str(i)]
         if "part_m" + str(i) in results.keys():
             project['ramps'][str(i)]['part_m'] = True
         else:
             project['ramps'][str(i)]['part_m'] = False
 
         print(str(project['ramps'][str(i)]['rise']) + "test")
-        temp = tools.calc_slope(project['ramps'][str(i)],project["privacy"])
+        temp = tools.calc_slope(project['ramps'][str(i)]['rise'], project['ramps'][str(i)]['part_m'] ,project["privacy"])
         project['ramps'][str(i)]['going'] = temp[0]
         project['ramps'][str(i)]['slope'] = temp[1]
         temp = None
