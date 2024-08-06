@@ -21,7 +21,7 @@ def project_results():
         else:
             project['ramps'][str(i)]['part_m'] = False
 
-
+        print(str(project['ramps'][str(i)]['rise']) + "test")
         temp = tools.calc_slope(project['ramps'][str(i)],project["privacy"])
         project['ramps'][str(i)]['going'] = temp[0]
         project['ramps'][str(i)]['slope'] = temp[1]
