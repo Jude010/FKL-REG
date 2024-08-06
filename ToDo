@@ -52,6 +52,9 @@ implement ramps  -   questions x
                      answers x
                      going based on rise x
                      off by 1 error in display x
-                     interp slope passing negatives
+                     interp slope passing negativesx
+
+update stairs - stairs => floors => flights
+                            
                      
                   

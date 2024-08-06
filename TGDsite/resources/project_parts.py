@@ -53,11 +53,12 @@ class project:
 
 
 class stair:
-    def __init__(self , name) -> None:
+    def __init__(self , name ) -> None:
         self.inside = ''
         self.name = name
         self.rise = 0
         self.part_m = False
+        self.floors = 0
 
 
     # convert to dict for session purposes
@@ -66,6 +67,11 @@ class stair:
                 "inside": self.inside,
                 "rise": self.rise,
                 "part_m": self.part_m}
+    
+class s_floor:
+    def __init__(self, rise = 0):
+        self.rise = rise
+
     
 
 class ramp:
