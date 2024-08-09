@@ -62,7 +62,7 @@ def new_project():# to new project
     return render_template("new_project.html.jinja")
 
 @bp.route('/stairs', methods=['POST'])
-def stair_questions_2():
+def stair_questions2():
     results = request.form
     project = session['project']
     for i in range(project['stair_num']):
