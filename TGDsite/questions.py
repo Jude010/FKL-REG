@@ -61,7 +61,7 @@ def ramp_questions():
 def new_project():# to new project
     return render_template("new_project.html.jinja")
 
-@bp.route('/stairs', methods=['POST'])
+@bp.route('/stairs2', methods=['POST'])
 def stair_questions_2():
     results = request.form
     project = session['project']
