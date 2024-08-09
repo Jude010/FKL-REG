@@ -2,7 +2,7 @@
 
 {% block header %}<h1 class="title"> {{project['name']}} </h1>{% endblock %}
 {% block content %}
-<form method="post" action="{{url_for('questions.stair_questions')}}" class="questions">
+<form method="post" action="{{url_for('questions.stair_questions_1')}}" class="questions">
 <input type="radio" id="domestic" class="checkmark"  name='privacy' value="domestic" required>
         <label for="domestic" id='dom-lab'class="radio">domestic</label>
             OR         
