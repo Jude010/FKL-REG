@@ -74,9 +74,10 @@ def stair_questions2():
         else:
             project['stairs'][str(i)]['part_m'] = False
 
-        #project['stairs'][str(i)]['min_f'] = tools.calc_flights(project['stairs'][str(i)],project["privacy"])
-        session['project'] = None
-        session['project'] = project
+        project['stairs'][str(i)]['min_f'] = tools.calc_flights(project['stairs'][str(i)],project["privacy"])
+    
+    session['project'] = None
+    session['project'] = project   
 
     return render_template("stair_questions_2.html.jinja")
 
