@@ -41,7 +41,7 @@ def calc_slope(rise , part_m , domestic):
             if int(rise) <= 166 :
                 min_going = '2'
                 max_slope = '1:12'
-                
+
             elif int(rise) > 500:
                 float(int(rise)*20/1000)
 
@@ -86,6 +86,9 @@ def interp_slope( rise ):
     
     slope = -10000/(rise - 1000)
 
+    if slope - int(slope) > 0 : # round fractions up
+        slope +=1
+    
     slope= int(slope)
 
     return slope

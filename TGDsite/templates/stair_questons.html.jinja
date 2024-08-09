@@ -5,7 +5,7 @@
 {% block content %}
     <h2>{{ project.name}}</h2>
     
-    <form method="POST" action="{{url_for('questions.ramp_questions')}}"> 
+    <form method="POST" action="{{url_for('questions.stair_questions_2')}}"> 
         {% for stair in range(project['stair_num']) %}
             <div class="center">
                 <h3>{{project['stairs'][stair|string]['name']}}</h3>
@@ -16,9 +16,9 @@
                 <input type="radio" id="internal" name={{'internal' ~ stair}} value="internal" required>
                 <input type="radio" id="external" name={{'internal' ~ stair}} value="external" required>
                 <br>
-                <label for="rise">Total rise</label>
+                <label for="rise">Floors</label>
                 <br>
-                <input type="number" id="rise" name={{'rise' ~ stair}} value="1000" required>
+                <input type="number" id="floors" name={{'floors' ~ stair}} value="0" required>
                 <br><br>
                 <label for="part_m">Part M</label>
                 <input type="checkbox" id="part_m" name={{'part_m' ~ stair}}>
