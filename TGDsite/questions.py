@@ -57,7 +57,7 @@ def ramp_questions():
     
     return render_template('ramp_questions.html.jinja' , project=project ) 
 
-@bp.route('/name')
+@bp.route('/')
 def new_project():# to new project
     return render_template("new_project.html.jinja")
 

@@ -9,7 +9,7 @@
         {% for i in range(project['stair_num']) %}
             <div class="center">
                 <h3>{{project['stairs'][i|string]['name']}}</h3>
-                {% for j in range(project['stairs'][i|string]['floors']) %}
+                {% for j in range(project['stairs'][i|string]['floors']|int) %}
                     <label for="flights"></label>
                     <br>
                     <input type="number" id="flights" name={{ i ~ j ~ 'flights'}} value = "0">
