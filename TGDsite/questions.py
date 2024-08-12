@@ -79,7 +79,7 @@ def stair_questions_2():
     session['project'] = None
     session['project'] = project   
 
-    return render_template("stair_questions_2.html.jinja")
+    return render_template("stair_questions_2.html.jinja" , project = project)
 
 @bp.route('/stairs', methods=['POST'])
 def stair_questions_3():
