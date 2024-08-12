@@ -10,9 +10,10 @@
             <div class="center">
                 <h3>{{project['stairs'][i|string]['name']}}</h3>
                 {% for j in range(project['stairs'][i|string]['floors']|int) %}
-                    <label for="flights"></label>
+                    <label for="flights">Flight {{j}}</label>
                     <br>
                     <input type="number" id="flights" name={{ i ~ j ~ 'flights'}} value = "0">
+                    <br><br>
                 {% endfor %}
             </div>
             <br>
