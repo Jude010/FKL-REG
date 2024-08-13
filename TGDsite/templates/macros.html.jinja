@@ -16,8 +16,8 @@
         <tr><td class="left">Flights</td><td class="right">{{project['stairs'][i|string]['floors']}}mm</td></tr>
         {% for j in range( project['stairs'][i|string]['floors']|int) %}
             <tr><td class="left">Floor</td><td class="right">{{j}}</td></tr>
-            <tr><td class="left">Total Rise</td><td class="right">{{project['stairs'][i]['floor' + j|str]['rise']}}</td></tr>
-            <tr><td class="left">Flights</td><td class="right">{{project['stairs'][i]['floor' + j|str]['flights']}}</td></tr>
+            <tr><td class="left">Total Rise</td><td class="right">{{project['stairs'][i]['floor' + j|string]['rise']}}</td></tr>
+            <tr><td class="left">Flights</td><td class="right">{{project['stairs'][i]['floor' + j|string]['flights']}}</td></tr>
 
         {% endfor %}
         
