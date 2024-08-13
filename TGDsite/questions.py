@@ -43,7 +43,7 @@ def ramp_questions():
     results = request.form
     project = session['project']
     for i in range(project['stair_num']):
-        for j in range( project['stairs'][str(i)]['floors']):
+        for j in range( int(project['stairs'][str(i)]['floors'])):
             rise = results[i + j + 'rise']
             privacy = project['privacy']
             part_m = project['part_m']
