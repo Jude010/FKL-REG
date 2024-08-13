@@ -44,7 +44,7 @@ def ramp_questions():
     project = session['project']
     for i in range(project['stair_num']):
         for j in range( int(project['stairs'][str(i)]['floors'])):
-            rise = results[i + j + 'rise']
+            rise = results[str(i) + str(j) + 'rise']
             privacy = project['privacy']
             part_m = project['part_m']
             inside = project['stairs'][i]['inside'] 
