@@ -13,7 +13,7 @@
         {% endif %}
         <br><br>
         <table id="results">
-        <tr><td class="left">Flights</td><td class="right">{{project['stairs'][i|string]['Floors']}}mm</td></tr>
+        <tr><td class="left">Flights</td><td class="right">{{project['stairs'][i|string]['floors']}}mm</td></tr>
         {% for j in range( {{project['stairs'][i|string]['Floors']}}) %}
             <tr><td class="left">Floor</td><td class="right">{{j}}</td></tr>
             <tr><td class="left">Total Rise</td><td class="right">{{project['stairs'][i]['floor' + j]['rise']}}</td></tr>
