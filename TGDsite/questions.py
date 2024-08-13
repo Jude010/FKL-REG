@@ -43,17 +43,17 @@ def ramp_questions():
     results = request.form
     project = session['project']
     for i in range(project['stair_num']):
-        project['stairs'][str(i)]['name'] = results[str(i)]
-        project['stairs'][str(i)]['inside'] = results["internal" + str(i)]
-        project['stairs'][str(i)]['rise'] = results["rise" + str(i) ]
-        if "part_m" + str(i) in results.keys():
-            project['stairs'][str(i)]['part_m'] = True
-        else:
-            project['stairs'][str(i)]['part_m'] = False
+        for j in range( project['stairs'][i]['floors']):
+            rise = results[i + j + 'rise']
+            privacy = project['privacy']
+            part_m = project['part_m']
+            inside = project['stairs'][i]['inside'] 
+            project['stairs'][i]['floor' + j]['rise'] = rise
+            project['stairs'][i]['floor' + j]['flights'] = tools.calc_flights(rise , privacy , part_m , inside)
 
-        project['stairs'][str(i)]['min_f'] = tools.calc_flights(project['stairs'][str(i)],project["privacy"])
-        session['project'] = None
-        session['project'] = project
+
+    session['project'] = None
+    session['project'] = project
     
     return render_template('ramp_questions.html.jinja' , project=project ) 
 
@@ -81,11 +81,4 @@ def stair_questions_2():
 
     return render_template("stair_questions_2.html.jinja" , project = project)
 
-@bp.route('/stairs3', methods=['POST'])
-def stair_questions_3():
-    results = request.form
-    project = session['project']
-
-
-    return render_template("stair_quetsions_3.html.jinja")
 

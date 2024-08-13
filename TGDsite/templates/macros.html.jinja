@@ -13,8 +13,13 @@
         {% endif %}
         <br><br>
         <table id="results">
-        <tr><td class="left">Total Rise</td><td class="right">{{project['stairs'][i|string]['rise']}}mm</td></tr>
-        <tr><td class="left">Minimum flights</td><td class="right">{{project['stairs'][i|string]['min_f']}}</td></tr>
+        <tr><td class="left">Flights</td><td class="right">{{project['stairs'][i|string]['Floors']}}mm</td></tr>
+        {% for j in range( {{project['stairs'][i|string]['Floors']}}) %}
+            <tr><td class="left">Floor</td><td class="right">{{j}}</td></tr>
+            <tr><td class="left">Total Rise</td><td class="right">{{project['stairs'][i]['floor' + j]['rise']}}</td></tr>
+            <tr><td class="left">Flights</td><td class="right">{{project['stairs'][i]['floor' + j]['flights']}}</td></tr>
+
+        {% endfor %}
         
         {% if project['stairs'][i|string]['inside'] == 'internal' %}
             {% if project['privacy'] == 'domestic' %}

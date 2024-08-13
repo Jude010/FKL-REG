@@ -1,24 +1,24 @@
 
 #tool to calculate minimum flights given a stari object conveted to a dict and if the project is private or public
-def calc_flights(stairs, domestic):
+def calc_flights(rise, domestic , part_m , inside):
     min_flights = ''
 
     if domestic == 'domestic' :
-        if stairs['part_m'] == True :
-            temp = float(stairs['rise']) / float(1800)
+        if part_m == True :
+            temp = float(rise) / float(1800)
         else:
-            temp = float(stairs['rise']) / float(3520)
+            temp = float(rise) / float(3520)
     else:
-        if stairs['part_m'] == True :
-            if stairs['inside'] == 'internal':
-                temp = float(stairs['rise']) / float(2880)
+        if part_m == True :
+            if inside == 'internal':
+                temp = float(rise) / float(2880)
             else:
-                temp = float(stairs['rise']) / float(3240)
+                temp = float(rise) / float(3240)
         else:
-            if stairs['inside'] == 'internal':
-                temp = float(stairs['rise']) / float(2880)
+            if inside == 'internal':
+                temp = float(rise) / float(2880)
             else:
-                temp = float(stairs['rise']) / float(1800)
+                temp = float(rise) / float(1800)
             
     # round temp up accounting for bit inaccuracy
     if (temp - int(temp)) > 0.0001:
