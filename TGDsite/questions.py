@@ -46,7 +46,7 @@ def ramp_questions():
         for j in range( int(project['stairs'][str(i)]['floors'])):
             rise = results[str(i) + str(j) + 'rise']
             privacy = project['privacy']
-            part_m = project['part_m']
+            part_m = project['stairs'][i]['part_m']
             inside = project['stairs'][i]['inside'] 
             project['stairs'][i]['floor' + j]['rise'] = rise
             project['stairs'][i]['floor' + j]['flights'] = tools.calc_flights(rise , privacy , part_m , inside)
