@@ -73,8 +73,6 @@ def stair_questions_2():
             project['stairs'][str(i)]['part_m'] = True
         else:
             project['stairs'][str(i)]['part_m'] = False
-
-        project['stairs'][str(i)]['min_f'] = tools.calc_flights(project['stairs'][str(i)],project["privacy"])
     
     session['project'] = None
     session['project'] = project   
