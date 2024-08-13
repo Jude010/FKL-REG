@@ -81,7 +81,7 @@ def stair_questions_2():
 
     return render_template("stair_questions_2.html.jinja" , project = project)
 
-@bp.route('/stairs', methods=['POST'])
+@bp.route('/stairs3', methods=['POST'])
 def stair_questions_3():
     results = request.form
     project = session['project']
