@@ -2,15 +2,20 @@
 {% macro project_display(project)%}
 
     <h2>{{project['name']}}</h2>
-    <div>floors:{{project['floors']}}<br>
+    {#<div>floors:{{project['floors']}}<br>#}
     {{project['privacy']}}
     {# STAIRS #}
     {% for i in range(project['stair_num']) %}
         <h3>{{project['stairs'][i|string]['name']}}</h3>
-        {{project['stairs'][i|string]['inside']}} <br>
+        
+        <div>Must comply with PartK 
         {% if project['stairs'][i|string]['part_m'] %}
-            Part M
+            , Part B and Part M
+        {% else %}
+            and part B
         {% endif %}
+        </div><br>
+        {{project['stairs'][i|string]['inside']}}
         <br><br>
         <table id="results">
         <tr><td class="left">Floors</td><td class="right">{{project['stairs'][i|string]['floors']}}</td></tr>
@@ -49,7 +54,7 @@
                     <tr><td class="left">Tapered Treads</td><td class="right">Avoid</td></tr>
                     <tr><td class="left">Headroom</td><td class="right">2000mm</td></tr>
                     <tr><td class="left">Handrails</td><td class="right">>3 Risers : Provide Handrails</td></tr>
-                    <tr><td class="left">         </td><td class="right"> &lt= 1000mm rise : one side only</td></tr>
+                    <tr><td class="left">         </td><td class="right"> &leq; 1000mm rise : one side only</td></tr>
                     <tr><td class="left">         </td><td class="right">> 1000mm rise : both sides</td></tr>
                     <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td></tr>
                     <tr><td class="left">                </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td></tr>
@@ -84,7 +89,7 @@
                     <tr><td class="left">Tapered Treads</td><td class="right"> Non Compliant</td></tr>
                     <tr><td class="left">Headroom</td><td class="right"> &GreaterEqual; 2000mm</td></tr>
                     <tr><td class="left">Handrails</td><td class="right"> >3 Risers : Provide Handrails</td></tr>
-                    <tr><td class="left">         </td><td class="right"> &lt= 1000mm rise : one side only</td></tr>
+                    <tr><td class="left">         </td><td class="right"> &leq; 1000mm rise : one side only</td></tr>
                     <tr><td class="left">         </td><td class="right"> > 1000mm rise : both sides</td></tr>
                     <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td></tr>
                     <tr><td class="left">               </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td></tr>
@@ -97,8 +102,8 @@
                     {# EXTERNAL DOMESTIC PART_M #}
                     <tr><td class="left">Width</td><td class="right"> >900mm</td></tr>
                     <tr><td class="left">Max Rise</td><td class="right"> 1800mm</td></tr>
-                    <tr><td class="left">Rise(R)</td><td class="right"> &lt=175mm</td></tr>
-                    <tr><td class="left">Going(G)</td><td class="right"> &gt= 280mm</td></tr>
+                    <tr><td class="left">Rise(R)</td><td class="right"> &leq;175mm</td></tr>
+                    <tr><td class="left">Going(G)</td><td class="right"> &GreaterEqual; 280mm</td></tr>
                     <tr><td class="left">Gait(2R+G)</td><td class="right"> opimal: 600 min: 550 max: 700</td></tr>
                     <tr><td class="left">Open Risers</td><td class="right"> min 16mm nosing overlap, max 100mm gap between Treads</td></tr>
                     <tr><td class="left">Tapered Treads</td><td class="right"> Avoid</td></tr>
@@ -119,7 +124,7 @@
                     <tr><td class="left">Tapered Treads</td><td class="right"> Avoid</td></tr>
                     <tr><td class="left">Headroom</td><td class="right"> 2100mm</td></tr>
                     <tr><td class="left">Handrails</td><td class="right"> >3 Risers : Provide Handrails</td></tr>
-                    <tr><td class="left">         </td><td class="right"> &lt= 1000mm rise : one side only</td></tr>
+                    <tr><td class="left">         </td><td class="right"> &leq; 1000mm rise : one side only</td></tr>
                     <tr><td class="left">         </td><td class="right"> > 1000mm rise : both sides</td></tr>
                     <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td></tr>
                     <tr><td class="left">               </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td></tr>
@@ -155,7 +160,7 @@
                     <tr><td class="left">Tapered Treads</td><td class="right"> Non Compliant</td></tr>
                     <tr><td class="left">Headroom</td><td class="right"> &GreaterEqual; 2000mm</td></tr>
                     <tr><td class="left">Handrails</td><td class="right"> >3 Risers : Provide Handrails</td></tr>
-                    <tr><td class="left">         </td><td class="right"> &lt= 1000mm rise : one side only</td></tr>
+                    <tr><td class="left">         </td><td class="right"> &leq; 1000mm rise : one side only</td></tr>
                     <tr><td class="left">         </td><td class="right"> > 1000mm rise : both sides</td></tr>
                     <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td></tr>
                     <tr><td class="left">               </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td></tr>

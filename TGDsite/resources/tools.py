@@ -11,14 +11,14 @@ def calc_flights(rise, domestic , part_m , inside):
     else:
         if part_m == True :
             if inside == 'internal':
-                temp = float(rise) / float(2880)
+                temp = float(rise) / float(1800)
             else:
-                temp = float(rise) / float(3240)
+                temp = float(rise) / float(1500)
         else:
             if inside == 'internal':
                 temp = float(rise) / float(2880)
             else:
-                temp = float(rise) / float(1800)
+                temp = float(rise) / float(2880)
             
     # round temp up accounting for bit inaccuracy
     if (temp - int(temp)) > 0.0001:
