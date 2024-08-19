@@ -27,7 +27,7 @@
                 {% if project['stairs'][i|string]['part_m']%}
                     {# INTERNAL DOMESTIC PART_M #}
                     <tr><td class="left">Width</td><td class="right">>900mm</td></tr>
-                    <tr><td class="left">Max Rise</td><td class="right">1800mm</td></tr>
+                    <tr><td class="left">Max Rise between landings</td><td class="right">1800mm</td></tr>
                     <tr><td class="left">Rise(R)</td><td class="right">&leq; 175mm</td></tr>
                     <tr><td class="left">Going(G)</td><td class="right">&GreaterEqual; 280mm</td></tr>
                     <tr><td class="left">Gait(2R+G)</td><td class="right">opimal: 600 min: 550 max: 700</td></tr>
@@ -40,7 +40,7 @@
                     <tr><td class="left"> Guarding</td><td class="right">Where rise > 600mm</td></tr>
                 {% else %}
                     {# INTERNAL DOMESTIC NON PART_M #}
-                    <tr><td class="left">Width</td><td class="right"> >800mm</td></tr>
+                    <tr><td class="left">Width</td><td class="right"> > 800mm</td></tr>
                     <tr><td class="left">Max Risers</td><td class="right"> 16</td></tr>
                     <tr><td class="left">Rise(R)</td><td class="right">opimal: 175mm max: 220mm</td></tr>
                     <tr><td class="left">Going(G)</td><td class="right">optimal: 250mm min:220mm</td></tr>
@@ -58,7 +58,7 @@
             {% else %}
                 {% if project['stairs'][i|string]['part_m'] %}
                     {# INTERNAL PUBLIC PART_M #}
-                    <tr><td class="left">Max Rise</td><td class="right"> 1800mm</td></tr>
+                    <tr><td class="left">Max Rise between landings</td><td class="right"> 1800mm</td></tr>
                     <tr><td class="left">Width</td><td class="right"> 1200mm min between walls, upstands, strings</td></tr>
                     <tr><td class="left">      </td><td class="right">1000mm min between handrails</td></tr>
                     <tr><td class="left">Rise(R)</td><td class="right"> 150 - 180 mm</td></tr>
@@ -70,7 +70,7 @@
                     <tr><td class="left">Handrail</td><td class="right"> Both sides</td></tr>
                     <tr><td class="left">Handrail Height</td><td class="right"> Flight: Min: 900mm Max: 1000mm</td></tr>
                     <tr><td class="left">              </td><td class="right"> Landing: Min: 900mm Max: 1000mm</td></tr>
-                    <tr><td class="left">Guarding</td><td class="right"> Where rise >600mm</td></tr>
+                    <tr><td class="left">Guarding</td><td class="right">Required Where rise >600mm</td></tr>
                     <tr><td class="left">Visibility</td><td class="right"> All step nosing to incorporate permanently contrasting material on the tread.</td></tr>
                     <tr><td class="left">          </td><td class="right"> Illumanence at tread level to be at least 100 lux</td></tr>
                 {% else %}
@@ -147,7 +147,7 @@
                 {% else %}
                     {# EXTERNAL PUBLIC NON PART_M #}
                     <tr><td class="left">Max risers</td><td class="right"> 16 or 18 where going &GreaterEqual; 350</td></tr>
-                    <tr><td class="left">Width</td><td class="right"> 800mm</td></tr>
+                    <tr><td class="left">Width</td><td class="right"> > 800mm</td></tr>
                     <tr><td class="left">Rise(R)</td><td class="right"> Optimal:150mm Max:180mm</td></tr>
                     <tr><td class="left">Going(G)</td><td class="right"> Optimal:300 Min:280mm</td></tr>
                     <tr><td class="left">Gait(2R + G)</td><td class="right"> 550 - 700 optimal:600</td></tr>
