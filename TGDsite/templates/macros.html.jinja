@@ -65,7 +65,7 @@
                     <tr><td class="left">Gait(2R + G)</td><td class="right"> 550 - 700 optimal:600</td></tr>
                     <tr><td class="left">Open Risers</td><td class="right"> Non Compliant</td></tr>
                     <tr><td class="left">Tapered Treads</td><td class="right"> Non Compliant</td></tr>
-                    <tr><td class="left">Headrroom</td><td class="right"> &GreaterEqual 2100mm</td></tr>
+                    <tr><td class="left">Headrroom</td><td class="right"> &GreaterEqual; 2100mm</td></tr>
                     <tr><td class="left">Handrail</td><td class="right"> Both sides</td></tr>
                     <tr><td class="left">Handrail Height</td><td class="right"> Flight: Min: 900mm Max: 1000mm</td></tr>
                     <tr><td class="left">              </td><td class="right"> Landing: Min: 900mm Max: 1000mm</td></tr>
@@ -75,13 +75,13 @@
                 {% else %}
                     {# INTERNAL PUBLIC NON PART_M #}
                     <tr><td class="left">Max risers</td><td class="right"> 16</td></tr>
-                    <tr><td class="left">Width</td><td class="right"> &GreaterEqual 800mm</td></tr>
+                    <tr><td class="left">Width</td><td class="right"> &GreaterEqual; 800mm</td></tr>
                     <tr><td class="left">Rise(R)</td><td class="right"> Optimal:150mm Max:190mm</td></tr>
                     <tr><td class="left">Going(G)</td><td class="right"> Optimal:300 Min:280mm</td></tr>
                     <tr><td class="left">Gait(2R + G)</td><td class="right"> 550 - 700 optimal:600</td></tr>
                     <tr><td class="left">Open Risers</td><td class="right"> min 16mm nosing overlap, max 100mm gap between Treads</td></tr>
                     <tr><td class="left">Tapered Treads</td><td class="right"> Non Compliant</td></tr>
-                    <tr><td class="left">Headroom</td><td class="right"> &GreaterEqual 2000mm</td></tr>
+                    <tr><td class="left">Headroom</td><td class="right"> &GreaterEqual; 2000mm</td></tr>
                     <tr><td class="left">Handrails</td><td class="right"> >3 Risers : Provide Handrails</td></tr>
                     <tr><td class="left">         </td><td class="right"> &lt= 1000mm rise : one side only</td></tr>
                     <tr><td class="left">         </td><td class="right"> > 1000mm rise : both sides</td></tr>
@@ -103,7 +103,7 @@
                     <tr><td class="left">Tapered Treads</td><td class="right"> Avoid</td></tr>
                     <tr><td class="left">Headroom</td><td class="right"> 2000mm</td></tr>
                     <tr><td class="left">Handrails</td><td class="right"> >3 Risers Provide continuous on both sides</td></tr>
-                    <tr><td class="left">         </td><td class="right">  Going &GreaterEqual 750 handrails need not be provided</td></tr>
+                    <tr><td class="left">         </td><td class="right">  Going &GreaterEqual; 750 handrails need not be provided</td></tr>
                     <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td></tr>
                     <tr><td class="left">               </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td></tr>
                     <tr><td class="left">Guarding</td><td class="right">required where rise > 600mm</td></tr>
@@ -127,7 +127,7 @@
             {% else %}
                 {% if project['stairs'][i|string]['part_m'] %}
                     {# EXTERNAL PUBLIC PART_M #}
-                    <tr><td class="left">Max Rise</td><td class="right"> 1500mm or 18 risers where going &GreaterEqual 350mm</td></tr>
+                    <tr><td class="left">Max Rise</td><td class="right"> 1500mm or 18 risers where going &GreaterEqual; 350mm</td></tr>
                     <tr><td class="left">Width</td><td class="right"> 1200mm min between walls, upstands, strings </td></tr>
                     <tr><td class="left">     </td><td class="right"> 1000mm min between handrails</td></tr>
                     <tr><td class="left">Rise(R)</td><td class="right"> 150 - 180 mm</td></tr>
@@ -135,7 +135,7 @@
                     <tr><td class="left">Gait(2R + G)</td><td class="right"> 550 - 700 optimal:600</td></tr>
                     <tr><td class="left">Open Risers</td><td class="right"> Non Compliant</td></tr>
                     <tr><td class="left">Tapered Treads</td><td class="right"> Non Compliant</td></tr>
-                    <tr><td class="left">Headrroom</td><td class="right"> &GreaterEqual 2100mm</td></tr>
+                    <tr><td class="left">Headrroom</td><td class="right"> &GreaterEqual; 2100mm</td></tr>
                     <tr><td class="left">Handrail</td><td class="right"> Both sides all stairs regardless of risers</td></tr>
                     <tr><td class="left">Handrail Height</td><td class="right"> Flight: Min: 900mm Max: 1000mm</td></tr>
                     <tr><td class="left">               </td><td class="right"> Landing: Min: 900mm Max: 1100mm</td></tr>
@@ -145,14 +145,14 @@
                     <tr><td class="left">Tactile hazard warning surfaces</td><td class="right"> top and bottom landings</td></tr>
                 {% else %}
                     {# EXTERNAL PUBLIC NON PART_M #}
-                    <tr><td class="left">Max risers</td><td class="right"> 16 or 18 where going &GreaterEqual 350</td></tr>
+                    <tr><td class="left">Max risers</td><td class="right"> 16 or 18 where going &GreaterEqual; 350</td></tr>
                     <tr><td class="left">Width</td><td class="right"> 800mm</td></tr>
                     <tr><td class="left">Rise(R)</td><td class="right"> Optimal:150mm Max:180mm</td></tr>
                     <tr><td class="left">Going(G)</td><td class="right"> Optimal:300 Min:280mm</td></tr>
                     <tr><td class="left">Gait(2R + G)</td><td class="right"> 550 - 700 optimal:600</td></tr>
                     <tr><td class="left">Open Risers</td><td class="right"> min 16mm nosing overlap, max 100mm gap between Treads</td></tr>
                     <tr><td class="left">Tapered Treads</td><td class="right"> Non Compliant</td></tr>
-                    <tr><td class="left">Headroom</td><td class="right"> &GreaterEqual 2000mm</td></tr>
+                    <tr><td class="left">Headroom</td><td class="right"> &GreaterEqual; 2000mm</td></tr>
                     <tr><td class="left">Handrails</td><td class="right"> >3 Risers : Provide Handrails</td></tr>
                     <tr><td class="left">         </td><td class="right"> &lt= 1000mm rise : one side only</td></tr>
                     <tr><td class="left">         </td><td class="right"> > 1000mm rise : both sides</td></tr>
@@ -182,23 +182,23 @@
         {% if project['ramps'][i|string]['part_m'] %}
             {% if project['privacy'] == 'domestic' %}
                 {# domestic part M #}
-                <tr><td class="left">Headroom</td><td class="right">&GreaterEqual 2100mm</td></tr>
-                <tr><td class="left">Width</td><td class="right">&GreaterEqual 900mm</td></tr>
+                <tr><td class="left">Headroom</td><td class="right">&GreaterEqual; 2100mm</td></tr>
+                <tr><td class="left">Width</td><td class="right">&GreaterEqual; 900mm</td></tr>
                 <tr><td class="left">Raised Kirb</td><td class="right"> 100mm open side</td></tr>
             {% else %}
                 {# non domestic part M #}
-                <tr><td class="left">Headroom</td><td class="right">&GreaterEqual 2100mm</td></tr>
-                <tr><td class="left">Clear Width</td><td class="right">&GreaterEqual 1500mm</td></tr>
-                <tr><td class="left">Handrail Width</td></td><td class="right">&GreaterEqual 1200mm</td></tr>
+                <tr><td class="left">Headroom</td><td class="right">&GreaterEqual; 2100mm</td></tr>
+                <tr><td class="left">Clear Width</td><td class="right">&GreaterEqual; 1500mm</td></tr>
+                <tr><td class="left">Handrail Width</td></td><td class="right">&GreaterEqual; 1200mm</td></tr>
                 <tr><td class="left">Handrails</td><td class="right">both sides</td></tr>
                 <tr><td class="left">Distance between additional handrails</td><td class="right">1200mm - 2500mm</td></tr>
                 <tr><td class="left">Stepped acess route</td><td class="right">if rise > 300mm</td></tr>
-                <tr><td class="left">Stair lift</td><td class="right">If slope &GreaterEqual 1:20 and rise > 2000mm</td></tr>
+                <tr><td class="left">Stair lift</td><td class="right">If slope &GreaterEqual; 1:20 and rise > 2000mm</td></tr>
             {% endif %}
         {% else %}
             {# non part M #}
-            <tr><td class="left">Headroom</td><td class="right">&GreaterEqual 2000mm</td></tr>
-            <tr><td class="left">Clear Width</td><td class="right">&GreaterEqual 800mm</td></tr>
+            <tr><td class="left">Headroom</td><td class="right">&GreaterEqual; 2000mm</td></tr>
+            <tr><td class="left">Clear Width</td><td class="right">&GreaterEqual; 800mm</td></tr>
             <tr><td class="left">Handrails</td><td class="right">Width < 1000mm : one side</td></tr>
             <tr><td class="left"></td><td class="right">Width &GreaterEqual 1000 mm : both sides</td></tr>
             <tr><td class="left">Handrail height</td><td class="right">900mm - 1000mm</td></tr>
