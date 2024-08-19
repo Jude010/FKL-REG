@@ -8,6 +8,6 @@ Vagrant + Virtualbox - VM hosting \
 jinja/html/css - web design
 
 
-project shape in session
+project dict shape in session
 
-project{name, privacy, floors, stair_num, stairs{stair(i){name , inside ,rise ,part_m}}}
+project{name, privacy, floors, stair_num, ramp_num, stairs{ i{name, inside, rise, part_m, floor(j){rise, flights} }}, ramps{ i{name, inside, rise, width, part_m, going, slope}}}

@@ -66,7 +66,8 @@ class stair:
         return {"name": self.name,
                 "inside": self.inside,
                 "rise": self.rise,
-                "part_m": self.part_m}
+                "part_m": self.part_m,
+                "flooors": self.floors}
     
 class s_floor:
     def __init__(self, rise = 0):

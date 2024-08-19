@@ -7,11 +7,13 @@
     {{ project_display(project) }}
     <br>
     <form action="{{url_for('saves.save_project')}}" method="POST">
-        <p>The above infromation has been incorporated into <br>
-        the design and cross referenced with relevent<br>
-         technical guidence documents to ensure compliance</p><br>
-         Date : {{date}}  Checked by : <input type="text" name="signature" required><br>
+        <p>The above information has been incorporated into <br>
+        the design and cross referenced with relevant<br>
+        technical guidance documents to ensure compliance</p><br>
+        Date : {{date}} <br>
+        Checked by : <input type="text" name="signature" required><br>
         <input type="hidden" name="date" value={{date}}>
+        <br>
         <input type="submit" value="submit" name="submit">
     </form>
     <br>

@@ -36,7 +36,7 @@ def calc_slope(rise , part_m , domestic):
     
     if part_m :
         if domestic != 'domestic' :
-            # external non domestic part m
+            # non domestic part m
 
             if int(rise) <= 166 :
                 min_going = '2'
@@ -50,7 +50,7 @@ def calc_slope(rise , part_m , domestic):
                 max_slope = '1:' + str(temp)
                 min_going = temp - 10
         else :
-            #external domestic part m
+            # domestic part m
 
             if int(rise)*12 < 5000 :
                 min_going = float(int(rise)*12/1000)
