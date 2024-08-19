@@ -13,12 +13,13 @@
         {% endif %}
         <br><br>
         <table id="results">
-        <tr><td class="left">Flights</td><td class="right">{{project['stairs'][i|string]['floors']}}mm</td></tr>
+        <tr><td class="left">Floors</td><td class="right">{{project['stairs'][i|string]['floors']}}mm</td></tr>
+        <tr></tr>
         {% for j in range( project['stairs'][i|string]['floors']|int) %}
             <tr><td class="left">Floor</td><td class="right">{{j + 1}}</td></tr>
             <tr><td class="left">Total Rise</td><td class="right">{{project['stairs'][i|string]['floor' + j|string]['rise']}}</td></tr>
             <tr><td class="left">Flights</td><td class="right">{{project['stairs'][i|string]['floor' + j|string]['flights']}}</td></tr>
-
+            <tr></tr>
         {% endfor %}
         
         {% if project['stairs'][i|string]['inside'] == 'internal' %}
