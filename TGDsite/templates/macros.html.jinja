@@ -14,7 +14,7 @@
         <br><br>
         <table id="results">
         <tr><td class="left">Floors</td><td class="right">{{project['stairs'][i|string]['floors']}}</td></tr>
-        <tr><td>&LessFullEqual;</td><td></td></tr>
+        <tr><td></td><td></td></tr>
         {% for j in range( project['stairs'][i|string]['floors']|int) %}
             <tr><td class="left">Floor</td><td class="right">{{j + 1}}</td></tr>
             <tr><td class="left">Total Rise</td><td class="right">{{project['stairs'][i|string]['floor' + j|string]['rise']}}</td></tr>
@@ -28,7 +28,7 @@
                     {# INTERNAL DOMESTIC PART_M #}
                     <tr><td class="left">Width</td><td class="right">>900mm</td></tr>
                     <tr><td class="left">Max Rise</td><td class="right">1800mm</td></tr>
-                    <tr><td class="left">Rise(R)</td><td class="right">&LessFullEqual; 175mm</td></tr>
+                    <tr><td class="left">Rise(R)</td><td class="right">&LessSlantEqual; 175mm</td></tr>
                     <tr><td class="left">Going(G)</td><td class="right">&GreaterEqual; 280mm</td></tr>
                     <tr><td class="left">Gait(2R+G)</td><td class="right">opimal: 600 min: 550 max: 700</td></tr>
                     <tr><td class="left">Open Risers</td><td class="right">Allowed</td></tr>
