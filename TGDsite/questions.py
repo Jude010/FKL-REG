@@ -1,4 +1,4 @@
-from flask import Flask , render_template , Blueprint , request ,session
+from flask import Flask , render_template , Blueprint , request ,session , redirect
 from TGDsite.db import connect
 from TGDsite.resources import project_parts, readText , tools
 
@@ -36,7 +36,10 @@ def stair_questions_1():
     project['privacy'] = results['privacy']
     session['project'] = None
     session['project'] = project
-    return render_template('stair_questons.html.jinja' , project = project)
+    if project['stair_num'] > 0:
+        return render_template('stair_questons.html.jinja' , project = project)
+    else :
+        return redirect('questions.ramp_questions')
 
 @bp.route('/ramps', methods=['POST'])
 def ramp_questions():
