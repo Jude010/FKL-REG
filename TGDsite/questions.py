@@ -36,6 +36,7 @@ def stair_questions_1():
     project['privacy'] = results['privacy']
     session['project'] = None
     session['project'] = project
+
     if project['stair_num'] > 0:
         return render_template('stair_questons.html.jinja' , project = project)
     else :
@@ -59,7 +60,10 @@ def ramp_questions():
     session['project'] = None
     session['project'] = project
     
-    return render_template('ramp_questions.html.jinja' , project=project ) 
+    if project['ramp_num'] > 0:
+        return render_template('ramp_questions.html.jinja' , project=project ) 
+    else :
+        return redirect(url_for('project.project_results') , code = 307)
 
 @bp.route('/')
 def new_project():# to new project
