@@ -92,3 +92,99 @@ def interp_slope( rise ):
     slope= int(slope)
 
     return slope
+
+def vaidate_gait( internal , privacy, part_m , rise , going):
+    r_val = False
+    g_val = False
+    ga_val = False
+    gait = 2*rise + going
+
+    if privacy == 'domestic' :
+        if internal == "internal" :
+            if part_m == True :
+                # internal domestic part m
+                if rise <= 175 :
+                    r_val = True
+
+                if going >= 280 : 
+                    g_val = True
+
+                if  gait > 550 and gait < 700 :
+                    ga_val = True
+            else :
+                # internal domestic non part_m
+                if rise <= 220 :
+                    r_val = True
+
+                if going >= 220 : 
+                    g_val = True
+
+                if  gait > 550 and gait < 700 :
+                    ga_val = True
+        else :
+            if part_m == True :
+                # external domestic part m
+                if rise <= 175 :
+                    r_val = True
+
+                if going >= 280 : 
+                    g_val = True
+
+                if  gait > 550 and gait < 700 :
+                    ga_val = True
+            else :
+                # external domestic non part_m
+                if rise <= 220 :
+                    r_val = True
+
+                if going >= 220 : 
+                    g_val = True
+
+                if  gait > 550 and gait < 700 :
+                    ga_val = True
+    else :
+        if internal == "internal" :
+            if part_m == True :
+                # internal public part m
+                if rise <= 180 and rise >= 150 :
+                    r_val = True
+
+                if going >= 250 and going <= 300 : 
+                    g_val = True
+
+                if  gait > 550 and gait < 700 :
+                    ga_val = True
+            else :
+                # internal public non part_m
+                if rise <= 190 :
+                    r_val = True
+
+                if going >= 280 : 
+                    g_val = True
+
+                if  gait > 550 and gait < 700 :
+                    ga_val = True
+        else :
+            if part_m == True :
+                # external public part m
+                if rise <= 180 and rise >= 150 :
+                    r_val = True
+
+                if going >= 300 and going <= 450 : 
+                    g_val = True
+
+                if  gait > 550 and gait < 700 :
+                    ga_val = True
+            else :
+                # external public non part_m
+                if rise <= 180 :
+                    r_val = True
+
+                if going >= 280 : 
+                    g_val = True
+
+                if  gait > 550 and gait < 700 :
+                    ga_val = True
+
+
+    return (r_val , g_val , ga_val)

@@ -32,6 +32,13 @@ def project_results():
     print(project)
     return render_template('project_results.html.jinja', project = project , date = date)
 
+@bp.route('/project_validation' , methods=['POST'])
+def project_valid():
+    results = request.form
+    project = session['project']
+    for i in range(project['stair_num']):
+        
+
 
 
 
