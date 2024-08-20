@@ -39,7 +39,7 @@ def stair_questions_1():
     if project['stair_num'] > 0:
         return render_template('stair_questons.html.jinja' , project = project)
     else :
-        return redirect(url_for('.ramp_questions' , code=307))
+        return redirect(url_for('.ramp_questions') , code = 307)
 
 @bp.route('/ramps', methods=['POST'])
 def ramp_questions():
