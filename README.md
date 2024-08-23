@@ -10,4 +10,4 @@ jinja/html/css - web design
 
 project dict shape in session
 
-project{name, privacy, floors, stair_num, ramp_num, stairs{ i{name, inside, rise, part_m, floor(j){rise, flights} }}, ramps{ i{name, inside, rise, width, part_m, going, slope}}}
+project{name:str, privacy:str, floors:int, stair_num:int, ramp_num:int, stairs{ i{name:str, inside:str, rise:int, part_m:bool, floor(j){rise:str, flights:int , validation:(bool , bool , bool)} }}, ramps{ i{name:str, inside:str, rise:int, width:int, part_m:bool, going:int, slope:str}}}

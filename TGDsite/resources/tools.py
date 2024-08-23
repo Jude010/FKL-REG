@@ -93,6 +93,7 @@ def interp_slope( rise ):
 
     return slope
 
+ # validate the rise going and gait based on passed specifications
 def vaidate_gait( internal , privacy, part_m , rise , going):
     r_val = False
     g_val = False
