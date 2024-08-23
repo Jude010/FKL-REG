@@ -54,7 +54,10 @@ implement ramps  -   questions x
                      off by 1 error in display x
                      interp slope passing negativesx
 
-update stairs - stairs => floors => flights
-                            
+update stairs - stairs => floors => flights x
+
+validation -  backend x
+              questions
+              dispaly
                      
                   
