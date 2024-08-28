@@ -371,9 +371,11 @@
 
     {% if type == 'kirb' %}{# kirb #}
         {% if ramp['kirb_val'] is defined %}
-            <td class="valid">{{ramp['kirb']}}mm</td>
-        {% else %}
-            <td class="invalid">{{ramp['kirb']}}mm</td>
+            {% if ramp['kirb_val'] %}
+                <td class="valid">{{ramp['kirb']}}mm</td>
+            {% else %}
+                <td class="invalid">{{ramp['kirb']}}mm</td>
+            {% endif %}    
         {% endif %}
     {% endif %}
 
