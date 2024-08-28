@@ -1,0 +1,219 @@
+
+{% macro project_validate(project)%}
+
+    <h2>{{project['name']}}</h2>
+    {#<div>floors:{{project['floors']}}<br>#}
+    {{project['privacy']}}
+    {# STAIRS #}
+    {% for i in range(project['stair_num']) %}
+        <h3>{{project['stairs'][i|string]['name']}}</h3>
+        
+        <div>Must comply with PartK 
+        {% if project['stairs'][i|string]['part_m'] %}
+            , Part B and Part M
+        {% else %}
+            and part B
+        {% endif %}
+        </div><br>
+        {{project['stairs'][i|string]['inside']}}
+        <br><br>
+        <table id="results">
+        <tr><td class="left">Floors</td><td class="right">{{project['stairs'][i|string]['floors']}}</td></tr>
+        <tr><td></td><td></td></tr>
+        {% for j in range( project['stairs'][i|string]['floors']|int) %}
+            <tr><td class="left">Floor</td><td class="right">{{j + 1}}</td></tr>
+            <tr><td class="left">Total Rise</td><td class="right">{{project['stairs'][i|string]['floor' + j|string]['rise']}}</td></tr>
+            <tr><td class="left">Flights</td><td class="right">{{project['stairs'][i|string]['floor' + j|string]['flights']}}</td></tr>
+            <tr><td class="left"><label>Per step Rise</label></td><td class="right"></td><input type="number" name={{floor_rise ~ j ~ i}}></tr>
+            <tr><td class="left"><label>Per step Going</label></td><td class="right"></td><input type ="number" name={{floor_going ~ j ~ i}}></tr>
+            <tr><td class="left"><label>Handrails</label></td><td class="right"></td><input type="checkbox" name={{handrails ~ j ~ i}}></tr>
+            <tr><td></td><td></td></tr>
+        {% endfor %}
+        
+        {% if project['stairs'][i|string]['inside'] == 'internal' %}
+            {% if project['privacy'] == 'domestic' %}
+                {% if project['stairs'][i|string]['part_m']%}
+                    {# INTERNAL DOMESTIC PART_M #}
+                    <tr><td class="left">Width</td><td class="right">>900mm</td><td><input type="number" name={{width ~ i}}>mm</td></tr>
+                    <tr><td class="left">Max Rise between landings</td><td class="right">1800mm</td></tr>
+                    <tr><td class="left">Rise(R)</td><td class="right">&leq; 175mm</td></tr>
+                    <tr><td class="left">Going(G)</td><td class="right">&GreaterEqual; 280mm</td></tr>
+                    <tr><td class="left">Gait(2R+G)</td><td class="right">opimal: 600 min: 550 max: 700</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right">Allowed</td><td><input type="checkbox" name={{o_riser}}>mm</td></tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right">Avoid</td><td><input type="chackbox" name={{taper ~ i}}>mm</td></tr>
+                    <tr><td class="left">Headroom</td><td class="right">2000mm</td><td><input type="number" name={{headroom ~ i}}>mm</td></tr>
+                    <tr><td class="left">Handrails</td><td class="right">>3 Risers Provide continuous on both sides</td></tr>
+                    <tr><td class="left">Handrail height</td><td class="right">Pitch line of flight: min: 900mm max: 1000mm</td><td><input type="number" name={{handrail_pitch ~ i}}>mm</td></tr>
+                    <tr><td class="left">               </td><td class="right">Intermediate landing: min: 900mm max: 1100mm</td><td><input type="number" name={{handrail_land ~ i}}>mm</td></tr>
+                    <tr><td class="left"> Guarding</td><td class="right">Where rise > 600mm</td><td><input type="checkbox" name={{guarding ~ i}}>mm</td></tr>
+                {% else %}
+                    {# INTERNAL DOMESTIC NON PART_M #}
+                    <tr><td class="left">Width</td><td class="right"> > 800mm</td><td><input type="number" name={{width ~ i}}>mm</td></tr>
+                    <tr><td class="left">Max Risers</td><td class="right"> 16</td></tr>
+                    <tr><td class="left">Rise(R)</td><td class="right">opimal: 175mm max: 220mm</td></tr>
+                    <tr><td class="left">Going(G)</td><td class="right">optimal: 250mm min:220mm</td></tr>
+                    <tr><td class="left">Gait(2R+G)</td><td class="right">opimal: 600 min: 550 max: 700</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right">Allowed</td><td><input type="checkbox" name={{o_riser}}>mm</td></tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right">Avoid</td><td><input type="chackbox" name={{taper ~ i}}>mm</td></tr>
+                    <tr><td class="left">Headroom</td><td class="right">2000mm</td><td><input type="number" name={{headroom ~ i}}>mm</td></tr>
+                    <tr><td class="left">Handrails</td><td class="right">>3 Risers : Provide Handrails</td></tr>
+                    <tr><td class="left">         </td><td class="right"> &leq; 1000mm rise : one side only</td></tr>
+                    <tr><td class="left">         </td><td class="right">> 1000mm rise : both sides</td></tr>
+                    <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td><td><input type="number" name={{handrail_pitch ~ i}}>mm</td></tr>
+                    <tr><td class="left">                </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td><td><input type="number" name={{handrail_land ~ i}}>mm</td></tr>
+                    <tr><td class="left">Guarding</td><td class="right">Where rise > 600mm</td><td><input type="checkbox" name={{guarding ~ i}}>mm</td></tr>
+                {% endif %}
+            {% else %}
+                {% if project['stairs'][i|string]['part_m'] %}
+                    {# INTERNAL PUBLIC PART_M #}
+                    <tr><td class="left">Max Rise between landings</td><td class="right"> 1800mm</td></tr>
+                    <tr><td class="left">Width</td><td class="right"> 1200mm min between walls, upstands, strings</td><td><input type="number" name={{width ~ i}}>mm</td></tr>
+                    <tr><td class="left">      </td><td class="right">1000mm min between handrails</td><td><input type="number" name={{handrail_width ~ i}}>mm</td></tr>
+                    <tr><td class="left">Rise(R)</td><td class="right"> 150 - 180 mm</td></tr>
+                    <tr><td class="left">Going(G)</td><td class="right"> 250 - 300 mm</td></tr>
+                    <tr><td class="left">Gait(2R + G)</td><td class="right"> 550 - 700 optimal:600</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right"> Non Compliant</td><td><input type="checkbox" name={{o_riser}}>mm</td></tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right"> Non Compliant</td><td><input type="number" name={{taper ~ i}}>mm</td></tr>
+                    <tr><td class="left">Headroom</td><td class="right"> &GreaterEqual; 2100mm</td><td><input type="number" name={{headroom ~ i}}>mm</td></tr>
+                    <tr><td class="left">Handrail</td><td class="right"> Both sides</td></tr>
+                    <tr><td class="left">Handrail Height</td><td class="right"> Flight: Min: 900mm Max: 1000mm</td><td><input type="number" name={{handrail_pitch ~ i}}>mm</td></tr>
+                    <tr><td class="left">              </td><td class="right"> Landing: Min: 900mm Max: 1000mm</td><td><input type="number" name={{handrail_land ~ i}}>mm</td></tr>
+                    <tr><td class="left">Guarding</td><td class="right">Required Where rise >600mm</td><td><input type="checkbox" name={{guarding ~ i}}>mm</td></tr>
+                    <tr><td class="left">Visibility</td><td class="right"> All step nosing to incorporate permanently contrasting material on the tread.</td><td><input type="checkbox" name={{tread_con ~ i}}>mm</td></tr>
+                    <tr><td class="left">          </td><td class="right"> Illumanence at tread level to be at least 100 lux</td><td><input type="number" name={{tread_lux ~ i}}>mm</td></tr>
+                {% else %}
+                    {# INTERNAL PUBLIC NON PART_M #}
+                    <tr><td class="left">Max risers</td><td class="right"> 16</td></tr>
+                    <tr><td class="left">Width</td><td class="right"> &GreaterEqual; 800mm</td><td><input type="number" name={{width ~ i}}>mm</td></tr>
+                    <tr><td class="left">Rise(R)</td><td class="right"> Optimal:150mm Max:190mm</td></tr>
+                    <tr><td class="left">Going(G)</td><td class="right"> Optimal:300 Min:280mm</td></tr>
+                    <tr><td class="left">Gait(2R + G)</td><td class="right"> 550 - 700 optimal:600</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right"> min 16mm nosing overlap, max 100mm gap between Treads</td><td><input type="checkbox" name={{o_riser}}>mm</td></tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right"> Non Compliant</td><td><input type="number" name={{taper ~ i}}>mm</td></tr>
+                    <tr><td class="left">Headroom</td><td class="right"> &GreaterEqual; 2000mm</td><td><input type="number" name={{headroom ~ i}}>mm</td></tr>
+                    <tr><td class="left">Handrails</td><td class="right"> >3 Risers : Provide Handrails</td></tr>
+                    <tr><td class="left">         </td><td class="right"> &leq; 1000mm rise : one side only</td></tr>
+                    <tr><td class="left">         </td><td class="right"> > 1000mm rise : both sides</td></tr>
+                    <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td><td><input type="number" name={{handrail_pitch ~ i}}>mm</td></tr>
+                    <tr><td class="left">               </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td><td><input type="number" name={{handrail_land ~ i}}>mm</td></tr>
+                    <tr><td class="left">Guarding</td><td class="right">required Where rise >600mm</td><td><input type="checkbox" name={{guarding ~ i}}>mm</td></tr>
+                {% endif %}
+            {% endif %}
+        {% else %}
+            {% if project['privacy'] == 'domestic' %}
+                {% if project['stairs'][i|string]['part_m'] %}
+                    {# EXTERNAL DOMESTIC PART_M #}
+                    <tr><td class="left">Width</td><td class="right"> >900mm</td><td><input type="number" name={{width ~ i}}>mm</td></tr>
+                    <tr><td class="left">Max Rise</td><td class="right"> 1800mm</td></tr>
+                    <tr><td class="left">Rise(R)</td><td class="right"> &leq;175mm</td></tr>
+                    <tr><td class="left">Going(G)</td><td class="right"> &GreaterEqual; 280mm</td></tr>
+                    <tr><td class="left">Gait(2R+G)</td><td class="right"> opimal: 600 min: 550 max: 700</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right"> min 16mm nosing overlap, max 100mm gap between Treads</td><td><input type="checkbox" name={{o_riser}}>mm</td></tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right"> Avoid</td><td><input type="number" name={{taper ~ i}}>mm</td></tr>
+                    <tr><td class="left">Headroom</td><td class="right"> 2000mm</td><td><input type="number" name={{headroom ~ i}}>mm</td></tr>
+                    <tr><td class="left">Handrails</td><td class="right"> >3 Risers Provide continuous on both sides</td></tr>
+                    <tr><td class="left">         </td><td class="right">  Going &GreaterEqual; 750 handrails need not be provided</td></tr>
+                    <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td><td><input type="number" name={{handrail_pitch ~ i}}>mm</td></tr>
+                    <tr><td class="left">               </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td><td><input type="number" name={{handrail_land ~ i}}>mm</td></tr>
+                    <tr><td class="left">Guarding</td><td class="right">required where rise > 600mm</td><td><input type="checkbox" name={{guarding ~ i}}>mm</td></tr>
+                {% else %}
+                    {# EXTERNAL DOMESTIC NON PART_M #}
+                    <tr><td class="left">Width</td><td class="right"> >800mm</td><td><input type="number" name={{width ~ i}}>mm</td></tr>
+                    <tr><td class="left">Max Risers</td><td class="right"> 16</td></tr>
+                    <tr><td class="left">Rise(R)</td><td class="right"> opimal: 175mm max: 220mm</td></tr>
+                    <tr><td class="left">Going(G)</td><td class="right"> optimal: 250mm min:220mm</td></tr>
+                    <tr><td class="left">Gait(2R+G)</td><td class="right"> opimal: 600 min: 550 max: 700</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right"> min 16mm nosing overlap, max 100mm gap between Treads</td><td><input type="checkbox" name={{o_riser}}>mm</td></tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right"> Avoid</td><td><input type="number" name={{taper ~ i}}>mm</td></tr>
+                    <tr><td class="left">Headroom</td><td class="right"> 2100mm</td><td><input type="number" name={{headroom ~ i}}>mm</td></tr>
+                    <tr><td class="left">Handrails</td><td class="right"> >3 Risers : Provide Handrails</td></tr>
+                    <tr><td class="left">         </td><td class="right"> &leq; 1000mm rise : one side only</td></tr>
+                    <tr><td class="left">         </td><td class="right"> > 1000mm rise : both sides</td></tr>
+                    <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td><td><input type="number" name={{handrail_pitch ~ i}}>mm</td></tr>
+                    <tr><td class="left">               </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td><td><input type="number" name={{handrail_land ~ i}}>mm</td></tr>
+                    <tr><td class="left">Guarding</td><td class="right">required where rise > 600mm</td><td><input type="checkbox" name={{guarding ~ i}}>mm</td></tr>
+                {% endif %}
+            {% else %}
+                {% if project['stairs'][i|string]['part_m'] %}
+                    {# EXTERNAL PUBLIC PART_M #}
+                    <tr><td class="left">Max Rise</td><td class="right"> 1500mm or 18 risers where going &GreaterEqual; 350mm</td></tr>
+                    <tr><td class="left">Width</td><td class="right"> 1200mm min between walls, upstands, strings </td><td class="right"> >800mm</td><td><input type="number" name={{width ~ i}}>mm</td></tr>
+                    <tr><td class="left">     </td><td class="right"> 1000mm min between handrails</td><td><input type="number" name={{handrail_width ~ i}}>mm</td></tr>
+                    <tr><td class="left">Rise(R)</td><td class="right"> 150 - 180 mm</td></tr>
+                    <tr><td class="left">Going(G)</td><td class="right"> 300 - 450 mm</td></tr>
+                    <tr><td class="left">Gait(2R + G)</td><td class="right"> 550 - 700 optimal:600</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right"> Non Compliant</td><td><input type="checkbox" name={{o_riser}}>mm</td></tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right"> Non Compliant</td><td><input type="number" name={{taper ~ i}}>mm</td></tr>
+                    <tr><td class="left">Headrroom</td><td class="right"> &GreaterEqual; 2100mm</td><td><input type="number" name={{headroom ~ i}}>mm</td></tr>
+                    <tr><td class="left">Handrail</td><td class="right"> Both sides all stairs regardless of risers</td></tr>
+                    <tr><td class="left">Handrail Height</td><td class="right"> Flight: Min: 900mm Max: 1000mm</td><td><input type="number" name={{handrail_pitch ~ i}}>mm</td></tr>
+                    <tr><td class="left">               </td><td class="right"> Landing: Min: 900mm Max: 1100mm</td><td><input type="number" name={{handrail_land ~ i}}>mm</td></tr>
+                    <tr><td class="left">Guarding</td><td class="right"> Where rise >600mm</td><td><input type="checkbox" name={{guarding ~ i}}>mm</td></tr>
+                    <tr><td class="left">Visibility</td><td class="right"> All step nosing to incorporate permanently contrasting material on the tread.</td></tr>
+                    <tr><td class="left">          </td><td class="right"> Illumanence at tread level to be at least 100 lux</td></tr>
+                    <tr><td class="left">Tactile hazard warning surfaces</td><td class="right"> top and bottom landings</td><td><input type="checkbox" name={{hazard ~ i}}>mm</td></tr>
+                {% else %}
+                    {# EXTERNAL PUBLIC NON PART_M #}
+                    <tr><td class="left">Max risers</td><td class="right"> 16 or 18 where going &GreaterEqual; 350</td></tr>
+                    <tr><td class="left">Width</td><td class="right"> > 800mm</td><td class="right"> >800mm</td><td><input type="number" name={{width ~ i}}>mm</td></tr>
+                    <tr><td class="left">Rise(R)</td><td class="right"> Optimal:150mm Max:180mm</td></tr>
+                    <tr><td class="left">Going(G)</td><td class="right"> Optimal:300 Min:280mm</td></tr>
+                    <tr><td class="left">Gait(2R + G)</td><td class="right"> 550 - 700 optimal:600</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right"> min 16mm nosing overlap, max 100mm gap between Treads</td><td><input type="checkbox" name={{o_riser}}>mm</td></tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right"> Non Compliant</td><td><input type="number" name={{taper ~ i}}>mm</td></tr>
+                    <tr><td class="left">Headroom</td><td class="right"> &GreaterEqual; 2000mm</td><td><input type="number" name={{headroom ~ i}}>mm</td></tr>
+                    <tr><td class="left">Handrails</td><td class="right"> >3 Risers : Provide Handrails</td></tr>
+                    <tr><td class="left">         </td><td class="right"> &leq; 1000mm rise : one side only</td></tr>
+                    <tr><td class="left">         </td><td class="right"> > 1000mm rise : both sides</td></tr>
+                    <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td><td><input type="number" name={{handrail_pitch ~ i}}>mm</td></tr>
+                    <tr><td class="left">               </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td><td><input type="number" name={{handrail_land ~ i}}>mm</td></tr>
+                    <tr><td class="left">Guarding</td><td class="right"> Where rise >600mm</td><td><input type="checkbox" name={{guarding ~ i}}>mm</td></tr>
+                {% endif %}
+            {% endif %}
+        {% endif %}
+        </table>
+        <br><br>
+    {% endfor %}
+    {# endStairs #}
+    </div>
+    {# Ramps #}{# holding <tr><td class="left"><label></label></td><td class="right"></td><input></tr> <td><input></td> #}
+    {% for i in range(project['ramp_num']) %}
+        <h3>{{project['ramps'][i|string]['name']}}</h3>
+        {{project['ramps'][i|string]['inside']}} <br>
+        {% if project['ramps'][i|string]['part_m'] %}
+            Part M
+        {% endif %}
+        <br><br>
+        <table id="results">
+        <tr><td class="left">Rise</td><td class="right">{{project['ramps'][i|string]['rise']}}mm</td></tr>
+        <tr><td class="left">Max Going</td><td class="right">{{project['ramps'][i|string]['going']}}000mm</td></tr>
+        <tr><td class="left">Max Slope</td><td class="right">{{project['ramps'][i|string]['slope']}}</td></tr>
+        {% if project['ramps'][i|string]['part_m'] %}
+            {% if project['privacy'] == 'domestic' %}
+                {# domestic part M #}
+                <tr><td class="left">Headroom</td><td class="right">&GreaterEqual; 2100mm</td><td><input type="number" name={{r_headroom ~ i}}>mm</td></tr>
+                <tr><td class="left">Width</td><td class="right">&GreaterEqual; 900mm</td><td><input type="number" name={{r_width ~ i}}>mm</td></tr>
+                <tr><td class="left">Raised Kirb</td><td class="right"> 100mm open side</td><td><input type="chackbox" name={{kirb ~ i}}>mm</td></tr>
+            {% else %}
+                {# non domestic part M #}
+                <tr><td class="left">Headroom</td><td class="right">&GreaterEqual; 2100mm</td><td><input type="number" name={{r_headroom ~ i}}>mm</td></tr>
+                <tr><td class="left">Clear Width</td><td class="right">&GreaterEqual; 1500mm</td><td><input type="number" name={{r_width ~ i}}>mm</td></tr>
+                <tr><td class="left">Handrail Width</td></td><td class="right">&GreaterEqual; 1200mm</td><td><input type="number" name={{r_width_h ~ i}}>mm</td></tr>
+                <tr><td class="left">Handrails</td><td class="right">both sides</td><td><input type="checkbox" name={{r_handrails ~ i}}>mm</td></tr>
+                <tr><td class="left">Distance between additional handrails</td><td class="right">1200mm - 2500mm</td></tr>
+                <tr><td class="left">Stepped acess route</td><td class="right">if rise > 300mm</td><td><input type="ceckbox" name={{r_stepped ~ i}}>mm</td></tr>
+                <tr><td class="left">Stair lift</td><td class="right">If slope &GreaterEqual; 1:20 and rise > 2000mm</td><td><input type="ceckbox" name={{lift ~ i}}>mm</td></tr>
+            {% endif %}
+        {% else %}
+            {# non part M #}
+            <tr><td class="left">Headroom</td><td class="right">&GreaterEqual; 2000mm</td><td><input type="number" name={{r_headroom ~ i}}>mm</td></tr>
+            <tr><td class="left">Clear Width</td><td class="right">&GreaterEqual; 800mm</td><td><input type="number" name={{r_width ~ i}}>mm</td></tr>
+            <tr><td class="left">Handrails</td><td class="right">Width < 1000mm : one side</td></tr>
+            <tr><td class="left"></td><td class="right">Width &GreaterEqual; 1000 mm : both sides</td></tr>
+            <tr><td class="left">Handrail height</td><td class="right">900mm - 1000mm</td><td><input type="number" name={{r_hand_height ~ i}}>mm</td></tr>
+        {% endif %}
+    <br>
+    </table>
+    {% endfor %}
+    {# endRamps #}
+{% endmacro %}

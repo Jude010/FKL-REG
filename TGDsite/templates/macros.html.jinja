@@ -24,6 +24,7 @@
             <tr><td class="left">Floor</td><td class="right">{{j + 1}}</td></tr>
             <tr><td class="left">Total Rise</td><td class="right">{{project['stairs'][i|string]['floor' + j|string]['rise']}}</td></tr>
             <tr><td class="left">Flights</td><td class="right">{{project['stairs'][i|string]['floor' + j|string]['flights']}}</td></tr>
+            {{validate_display('gait' , None , None , project['stairs'][i|string]['floor' + j|string])}}
             <tr><td></td><td></td></tr>
         {% endfor %}
         
@@ -31,140 +32,140 @@
             {% if project['privacy'] == 'domestic' %}
                 {% if project['stairs'][i|string]['part_m']%}
                     {# INTERNAL DOMESTIC PART_M #}
-                    <tr><td class="left">Width</td><td class="right">>900mm</td></tr>
+                    <tr><td class="left">Width</td><td class="right">>900mm</td>{{validate_display( 'width' ,project['stairs'][i|string] ,None ,None)}}</tr>
                     <tr><td class="left">Max Rise between landings</td><td class="right">1800mm</td></tr>
                     <tr><td class="left">Rise(R)</td><td class="right">&leq; 175mm</td></tr>
                     <tr><td class="left">Going(G)</td><td class="right">&GreaterEqual; 280mm</td></tr>
                     <tr><td class="left">Gait(2R+G)</td><td class="right">opimal: 600 min: 550 max: 700</td></tr>
-                    <tr><td class="left">Open Risers</td><td class="right">Allowed</td></tr>
-                    <tr><td class="left">Tapered Treads</td><td class="right">Avoid</td></tr>
-                    <tr><td class="left">Headroom</td><td class="right">2000mm</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right">Allowed</td>{{validate_display( 'o_risers' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right">Avoid</td>{{validate_display( 'taper' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">Headroom</td><td class="right">2000mm</td>{{validate_display( 'headroom' ,project['stairs'][i|string] ,None ,None)}}</tr>
                     <tr><td class="left">Handrails</td><td class="right">>3 Risers Provide continuous on both sides</td></tr>
-                    <tr><td class="left">Handrail height</td><td class="right">Pitch line of flight: min: 900mm max: 1000mm</td></tr>
-                    <tr><td class="left">               </td><td class="right">Intermediate landing: min: 900mm max: 1100mm</td></tr>
-                    <tr><td class="left"> Guarding</td><td class="right">Where rise > 600mm</td></tr>
+                    <tr><td class="left">Handrail height</td><td class="right">Pitch line of flight: min: 900mm max: 1000mm</td>{{validate_display( 'hand_pitch' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">               </td><td class="right">Intermediate landing: min: 900mm max: 1100mm</td>{{validate_display( 'hand_land' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left"> Guarding</td><td class="right">Where rise > 600mm</td>{{validate_display('guarding' , None , None , project['stairs'][i|string])}}</tr>
                 {% else %}
                     {# INTERNAL DOMESTIC NON PART_M #}
-                    <tr><td class="left">Width</td><td class="right"> > 800mm</td></tr>
+                    <tr><td class="left">Width</td><td class="right"> > 800mm</td>{{validate_display( 'width' ,project['stairs'][i|string] ,None ,None)}}</tr>
                     <tr><td class="left">Max Risers</td><td class="right"> 16</td></tr>
                     <tr><td class="left">Rise(R)</td><td class="right">opimal: 175mm max: 220mm</td></tr>
                     <tr><td class="left">Going(G)</td><td class="right">optimal: 250mm min:220mm</td></tr>
                     <tr><td class="left">Gait(2R+G)</td><td class="right">opimal: 600 min: 550 max: 700</td></tr>
-                    <tr><td class="left">Open Risers</td><td class="right">Allowed</td></tr>
-                    <tr><td class="left">Tapered Treads</td><td class="right">Avoid</td></tr>
-                    <tr><td class="left">Headroom</td><td class="right">2000mm</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right">Allowed</td>{{validate_display( 'o_risers' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right">Avoid</td>{{validate_display( 'taper' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">Headroom</td><td class="right">2000mm</td>{{validate_display( 'headroom' ,project['stairs'][i|string] ,None ,None)}}</tr>
                     <tr><td class="left">Handrails</td><td class="right">>3 Risers : Provide Handrails</td></tr>
                     <tr><td class="left">         </td><td class="right"> &leq; 1000mm rise : one side only</td></tr>
                     <tr><td class="left">         </td><td class="right">> 1000mm rise : both sides</td></tr>
-                    <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td></tr>
-                    <tr><td class="left">                </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td></tr>
-                    <tr><td class="left">Guarding</td><td class="right">Where rise > 600mm</td></tr>
+                    <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td>{{validate_display( 'hand_pitch' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">                </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td>{{validate_display( 'hand_land' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">Guarding</td><td class="right">Where rise > 600mm</td>{{validate_display('guarding' , None , None , project['stairs'][i|string])}}</tr>
                 {% endif %}
             {% else %}
                 {% if project['stairs'][i|string]['part_m'] %}
                     {# INTERNAL PUBLIC PART_M #}
                     <tr><td class="left">Max Rise between landings</td><td class="right"> 1800mm</td></tr>
-                    <tr><td class="left">Width</td><td class="right"> 1200mm min between walls, upstands, strings</td></tr>
-                    <tr><td class="left">      </td><td class="right">1000mm min between handrails</td></tr>
+                    <tr><td class="left">Width</td><td class="right"> 1200mm min between walls, upstands, strings</td>{{validate_display( 'width' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">      </td><td class="right">1000mm min between handrails</td>{{validate_display( 'hand_width' ,project['stairs'][i|string] ,None ,None)}}</tr>
                     <tr><td class="left">Rise(R)</td><td class="right"> 150 - 180 mm</td></tr>
                     <tr><td class="left">Going(G)</td><td class="right"> 250 - 300 mm</td></tr>
                     <tr><td class="left">Gait(2R + G)</td><td class="right"> 550 - 700 optimal:600</td></tr>
-                    <tr><td class="left">Open Risers</td><td class="right"> Non Compliant</td></tr>
-                    <tr><td class="left">Tapered Treads</td><td class="right"> Non Compliant</td></tr>
-                    <tr><td class="left">Headrroom</td><td class="right"> &GreaterEqual; 2100mm</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right"> Non Compliant</td>{{validate_display( 'o_risers' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right"> Non Compliant</td>{{validate_display( 'taper' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">Headrroom</td><td class="right"> &GreaterEqual; 2100mm</td>{{validate_display( 'headroom' ,project['stairs'][i|string] ,None ,None)}}</tr>
                     <tr><td class="left">Handrail</td><td class="right"> Both sides</td></tr>
-                    <tr><td class="left">Handrail Height</td><td class="right"> Flight: Min: 900mm Max: 1000mm</td></tr>
-                    <tr><td class="left">              </td><td class="right"> Landing: Min: 900mm Max: 1000mm</td></tr>
-                    <tr><td class="left">Guarding</td><td class="right">Required Where rise >600mm</td></tr>
-                    <tr><td class="left">Visibility</td><td class="right"> All step nosing to incorporate permanently contrasting material on the tread.</td></tr>
-                    <tr><td class="left">          </td><td class="right"> Illumanence at tread level to be at least 100 lux</td></tr>
+                    <tr><td class="left">Handrail Height</td><td class="right"> Flight: Min: 900mm Max: 1000mm</td>{{validate_display( 'hand_pitch' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">              </td><td class="right"> Landing: Min: 900mm Max: 1000mm</td>{{validate_display( 'hand_land' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">Guarding</td><td class="right">Required Where rise >600mm</td>{{validate_display('guarding' , None , None , project['stairs'][i|string])}}</tr>
+                    <tr><td class="left">Visibility</td><td class="right"> All step nosing to incorporate permanently contrasting material on the tread.</td>{{validate_display('tread_con' , None , None , project['stairs'][i|string])}}</tr>
+                    <tr><td class="left">          </td><td class="right"> Illumanence at tread level to be at least 100 lux</td>{{validate_display('tread_lux' , None , None , project['stairs'][i|string])}}</tr>
                 {% else %}
                     {# INTERNAL PUBLIC NON PART_M #}
                     <tr><td class="left">Max risers</td><td class="right"> 16</td></tr>
-                    <tr><td class="left">Width</td><td class="right"> &GreaterEqual; 800mm</td></tr>
+                    <tr><td class="left">Width</td><td class="right"> &GreaterEqual; 800mm</td>{{validate_display( 'width' ,project['stairs'][i|string] ,None ,None)}}</tr>
                     <tr><td class="left">Rise(R)</td><td class="right"> Optimal:150mm Max:190mm</td></tr>
                     <tr><td class="left">Going(G)</td><td class="right"> Optimal:300 Min:280mm</td></tr>
                     <tr><td class="left">Gait(2R + G)</td><td class="right"> 550 - 700 optimal:600</td></tr>
-                    <tr><td class="left">Open Risers</td><td class="right"> min 16mm nosing overlap, max 100mm gap between Treads</td></tr>
-                    <tr><td class="left">Tapered Treads</td><td class="right"> Non Compliant</td></tr>
-                    <tr><td class="left">Headroom</td><td class="right"> &GreaterEqual; 2000mm</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right"> min 16mm nosing overlap, max 100mm gap between Treads</td>{{validate_display( 'o_risers' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right"> Non Compliant</td>{{validate_display( 'taper' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">Headroom</td><td class="right"> &GreaterEqual; 2000mm</td>{{validate_display( 'headroom' ,project['stairs'][i|string] ,None ,None)}}</tr>
                     <tr><td class="left">Handrails</td><td class="right"> >3 Risers : Provide Handrails</td></tr>
                     <tr><td class="left">         </td><td class="right"> &leq; 1000mm rise : one side only</td></tr>
                     <tr><td class="left">         </td><td class="right"> > 1000mm rise : both sides</td></tr>
-                    <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td></tr>
-                    <tr><td class="left">               </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td></tr>
-                    <tr><td class="left">Guarding</td><td class="right">required Where rise >600mm</td></tr>
+                    <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td>{{validate_display( 'hand_pitch' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">               </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td>{{validate_display( 'hand_land' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">Guarding</td><td class="right">required Where rise >600mm</td>{{validate_display('guarding' , None , None , project['stairs'][i|string])}}</tr>
                 {% endif %}
             {% endif %}
         {% else %}
             {% if project['privacy'] == 'domestic' %}
                 {% if project['stairs'][i|string]['part_m'] %}
                     {# EXTERNAL DOMESTIC PART_M #}
-                    <tr><td class="left">Width</td><td class="right"> >900mm</td></tr>
+                    <tr><td class="left">Width</td><td class="right"> >900mm</td>{{validate_display( 'width' ,project['stairs'][i|string] ,None ,None)}}</tr>
                     <tr><td class="left">Max Rise</td><td class="right"> 1800mm</td></tr>
                     <tr><td class="left">Rise(R)</td><td class="right"> &leq;175mm</td></tr>
                     <tr><td class="left">Going(G)</td><td class="right"> &GreaterEqual; 280mm</td></tr>
                     <tr><td class="left">Gait(2R+G)</td><td class="right"> opimal: 600 min: 550 max: 700</td></tr>
-                    <tr><td class="left">Open Risers</td><td class="right"> min 16mm nosing overlap, max 100mm gap between Treads</td></tr>
-                    <tr><td class="left">Tapered Treads</td><td class="right"> Avoid</td></tr>
-                    <tr><td class="left">Headroom</td><td class="right"> 2000mm</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right"> min 16mm nosing overlap, max 100mm gap between Treads</td>{{validate_display( 'o_risers' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right"> Avoid</td>{{validate_display( 'taper' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">Headroom</td><td class="right"> 2000mm</td>{{validate_display( 'headroom' ,project['stairs'][i|string] ,None ,None)}}</tr>
                     <tr><td class="left">Handrails</td><td class="right"> >3 Risers Provide continuous on both sides</td></tr>
                     <tr><td class="left">         </td><td class="right">  Going &GreaterEqual; 750 handrails need not be provided</td></tr>
-                    <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td></tr>
-                    <tr><td class="left">               </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td></tr>
-                    <tr><td class="left">Guarding</td><td class="right">required where rise > 600mm</td></tr>
+                    <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td>{{validate_display( 'hand_pitch' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">               </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td>{{validate_display( 'hand_land' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">Guarding</td><td class="right">required where rise > 600mm</td>{{validate_display('guarding' , None , None , project['stairs'][i|string])}}</tr>
                 {% else %}
                     {# EXTERNAL DOMESTIC NON PART_M #}
-                    <tr><td class="left">Width</td><td class="right"> >800mm</td></tr>
+                    <tr><td class="left">Width</td><td class="right"> >800mm</td>{{validate_display( 'width' ,project['stairs'][i|string] ,None ,None)}}</tr>
                     <tr><td class="left">Max Risers</td><td class="right"> 16</td></tr>
                     <tr><td class="left">Rise(R)</td><td class="right"> opimal: 175mm max: 220mm</td></tr>
                     <tr><td class="left">Going(G)</td><td class="right"> optimal: 250mm min:220mm</td></tr>
                     <tr><td class="left">Gait(2R+G)</td><td class="right"> opimal: 600 min: 550 max: 700</td></tr>
-                    <tr><td class="left">Open Risers</td><td class="right"> min 16mm nosing overlap, max 100mm gap between Treads</td></tr>
-                    <tr><td class="left">Tapered Treads</td><td class="right"> Avoid</td></tr>
-                    <tr><td class="left">Headroom</td><td class="right"> 2100mm</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right"> min 16mm nosing overlap, max 100mm gap between Treads</td>{{validate_display( 'o_risers' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right"> Avoid</td>{{validate_display( 'taper' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">Headroom</td><td class="right"> 2100mm</td>>{{validate_display( 'headroom' ,project['stairs'][i|string] ,None ,None)}}</tr>
                     <tr><td class="left">Handrails</td><td class="right"> >3 Risers : Provide Handrails</td></tr>
                     <tr><td class="left">         </td><td class="right"> &leq; 1000mm rise : one side only</td></tr>
                     <tr><td class="left">         </td><td class="right"> > 1000mm rise : both sides</td></tr>
-                    <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td></tr>
-                    <tr><td class="left">               </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td></tr>
-                    <tr><td class="left">Guarding</td><td class="right">required where rise > 600mm</td></tr>
+                    <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td>{{validate_display( 'hand_pitch' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">               </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td>{{validate_display( 'hand_land' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">Guarding</td><td class="right">required where rise > 600mm</td>{{validate_display('guarding' , None , None , project['stairs'][i|string])}}</tr>
                 {% endif %}
             {% else %}
                 {% if project['stairs'][i|string]['part_m'] %}
                     {# EXTERNAL PUBLIC PART_M #}
                     <tr><td class="left">Max Rise</td><td class="right"> 1500mm or 18 risers where going &GreaterEqual; 350mm</td></tr>
-                    <tr><td class="left">Width</td><td class="right"> 1200mm min between walls, upstands, strings </td></tr>
-                    <tr><td class="left">     </td><td class="right"> 1000mm min between handrails</td></tr>
+                    <tr><td class="left">Width</td><td class="right"> 1200mm min between walls, upstands, strings </td>{{validate_display( 'width' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">     </td><td class="right"> 1000mm min between handrails</td>{{validate_display( 'hand_width' ,project['stairs'][i|string] ,None ,None)}}</tr>
                     <tr><td class="left">Rise(R)</td><td class="right"> 150 - 180 mm</td></tr>
                     <tr><td class="left">Going(G)</td><td class="right"> 300 - 450 mm</td></tr>
                     <tr><td class="left">Gait(2R + G)</td><td class="right"> 550 - 700 optimal:600</td></tr>
-                    <tr><td class="left">Open Risers</td><td class="right"> Non Compliant</td></tr>
-                    <tr><td class="left">Tapered Treads</td><td class="right"> Non Compliant</td></tr>
-                    <tr><td class="left">Headrroom</td><td class="right"> &GreaterEqual; 2100mm</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right"> Non Compliant</td>{{validate_display( 'o_risers' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right"> Non Compliant</td>{{validate_display( 'taper' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">Headroom</td><td class="right"> &GreaterEqual; 2100mm</td>{{validate_display( 'headroom' ,project['stairs'][i|string] ,None ,None)}}</tr>
                     <tr><td class="left">Handrail</td><td class="right"> Both sides all stairs regardless of risers</td></tr>
-                    <tr><td class="left">Handrail Height</td><td class="right"> Flight: Min: 900mm Max: 1000mm</td></tr>
-                    <tr><td class="left">               </td><td class="right"> Landing: Min: 900mm Max: 1100mm</td></tr>
-                    <tr><td class="left">Guarding</td><td class="right"> Where rise >600mm</td></tr>
-                    <tr><td class="left">Visibility</td><td class="right"> All step nosing to incorporate permanently contrasting material on the tread.</td></tr>
-                    <tr><td class="left">          </td><td class="right"> Illumanence at tread level to be at least 100 lux</td></tr>
-                    <tr><td class="left">Tactile hazard warning surfaces</td><td class="right"> top and bottom landings</td></tr>
+                    <tr><td class="left">Handrail Height</td><td class="right"> Flight: Min: 900mm Max: 1000mm</td>{{validate_display( 'hand_pitch' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">               </td><td class="right"> Landing: Min: 900mm Max: 1100mm</td>{{validate_display( 'hand_land' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">Guarding</td><td class="right"> Where rise >600mm</td>{{validate_display('guarding' , None , None , project['stairs'][i|string])}}</tr>
+                    <tr><td class="left">Visibility</td><td class="right"> All step nosing to incorporate permanently contrasting material on the tread.</td>{{validate_display('tread_con' , None , None , project['stairs'][i|string])}}</tr>
+                    <tr><td class="left">          </td><td class="right"> Illumanence at tread level to be at least 100 lux</td>{{validate_display('tread_lux' , None , None , project['stairs'][i|string])}}</tr>
+                    <tr><td class="left">Tactile hazard warning surfaces</td><td class="right"> top and bottom landings</td>{{validate_display('hazard' , None , None , project['stairs'][i|string])}}</tr>
                 {% else %}
                     {# EXTERNAL PUBLIC NON PART_M #}
                     <tr><td class="left">Max risers</td><td class="right"> 16 or 18 where going &GreaterEqual; 350</td></tr>
-                    <tr><td class="left">Width</td><td class="right"> > 800mm</td></tr>
+                    <tr><td class="left">Width</td><td class="right"> > 800mm</td>{{validate_display( 'width' ,project['stairs'][i|string] ,None ,None)}}</tr>
                     <tr><td class="left">Rise(R)</td><td class="right"> Optimal:150mm Max:180mm</td></tr>
                     <tr><td class="left">Going(G)</td><td class="right"> Optimal:300 Min:280mm</td></tr>
                     <tr><td class="left">Gait(2R + G)</td><td class="right"> 550 - 700 optimal:600</td></tr>
-                    <tr><td class="left">Open Risers</td><td class="right"> min 16mm nosing overlap, max 100mm gap between Treads</td></tr>
-                    <tr><td class="left">Tapered Treads</td><td class="right"> Non Compliant</td></tr>
-                    <tr><td class="left">Headroom</td><td class="right"> &GreaterEqual; 2000mm</td></tr>
+                    <tr><td class="left">Open Risers</td><td class="right"> min 16mm nosing overlap, max 100mm gap between Treads</td>{{validate_display( 'o_risers' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">Tapered Treads</td><td class="right"> Non Compliant</td>{{validate_display( 'taper' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">Headroom</td><td class="right"> &GreaterEqual; 2000mm</td>{{validate_display( 'headroom' ,project['stairs'][i|string] ,None ,None)}}</tr>
                     <tr><td class="left">Handrails</td><td class="right"> >3 Risers : Provide Handrails</td></tr>
                     <tr><td class="left">         </td><td class="right"> &leq; 1000mm rise : one side only</td></tr>
                     <tr><td class="left">         </td><td class="right"> > 1000mm rise : both sides</td></tr>
-                    <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td></tr>
-                    <tr><td class="left">               </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td></tr>
-                    <tr><td class="left">Guarding</td><td class="right"> Where rise >600mm</td></tr>
+                    <tr><td class="left">Handrail height</td><td class="right"> Pitch line of flight: min: 900mm max: 1000mm</td>{{validate_display( 'hand_pitch' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">               </td><td class="right"> Intermediate landing: min: 900mm max: 1100mm</td>{{validate_display( 'hand_land' ,project['stairs'][i|string] ,None ,None)}}</tr>
+                    <tr><td class="left">Guarding</td><td class="right"> Where rise >600mm</td>{{validate_display('guarding' , None , None , project['stairs'][i|string])}}</tr>
                 {% endif %}
             {% endif %}
         {% endif %}
@@ -188,29 +189,233 @@
         {% if project['ramps'][i|string]['part_m'] %}
             {% if project['privacy'] == 'domestic' %}
                 {# domestic part M #}
-                <tr><td class="left">Headroom</td><td class="right">&GreaterEqual; 2100mm</td></tr>
-                <tr><td class="left">Width</td><td class="right">&GreaterEqual; 900mm</td></tr>
-                <tr><td class="left">Raised Kirb</td><td class="right"> 100mm open side</td></tr>
+                <tr><td class="left">Headroom</td><td class="right">&GreaterEqual; 2100mm</td>{{validate_display('r_headroom' , None , project['ramps'][i|string] , None)}}</tr>
+                <tr><td class="left">Width</td><td class="right">&GreaterEqual; 900mm</td>{{validate_display('r_width' , None , project['ramps'][i|string] , None)}}</tr>
+                <tr><td class="left">Raised Kirb</td><td class="right"> 100mm open side</td>{{validate_display('kirb' , None , project['ramps'][i|string] , None)}}</tr>
             {% else %}
                 {# non domestic part M #}
-                <tr><td class="left">Headroom</td><td class="right">&GreaterEqual; 2100mm</td></tr>
-                <tr><td class="left">Clear Width</td><td class="right">&GreaterEqual; 1500mm</td></tr>
-                <tr><td class="left">Handrail Width</td></td><td class="right">&GreaterEqual; 1200mm</td></tr>
-                <tr><td class="left">Handrails</td><td class="right">both sides</td></tr>
+                <tr><td class="left">Headroom</td><td class="right">&GreaterEqual; 2100mm</td>{{validate_display('r_headroom' , None , project['ramps'][i|string] , None)}}</tr>
+                <tr><td class="left">Clear Width</td><td class="right">&GreaterEqual; 1500mm</td>{{validate_display('r_width' , None , project['ramps'][i|string] , None)}}</tr>
+                <tr><td class="left">Handrail Width</td></td><td class="right">&GreaterEqual; 1200mm</td>{{validate_display('r_width_h' , None , project['ramps'][i|string] , None)}}</tr>
+                <tr><td class="left">Handrails</td><td class="right">both sides</td>{{validate_display('r_handrails' , None , project['ramps'][i|string] , None)}}</tr>
                 <tr><td class="left">Distance between additional handrails</td><td class="right">1200mm - 2500mm</td></tr>
-                <tr><td class="left">Stepped acess route</td><td class="right">if rise > 300mm</td></tr>
-                <tr><td class="left">Stair lift</td><td class="right">If slope &GreaterEqual; 1:20 and rise > 2000mm</td></tr>
+                <tr><td class="left">Stepped acess route</td><td class="right">if rise > 300mm</td>{{validate_display('r_stepped' , None , project['ramps'][i|string] , None)}}</tr>
+                <tr><td class="left">Stair lift</td><td class="right">If slope &GreaterEqual; 1:20 and rise > 2000mm</td>{{validate_display('lift' , None , project['ramps'][i|string] , None)}}</tr>
             {% endif %}
         {% else %}
             {# non part M #}
-            <tr><td class="left">Headroom</td><td class="right">&GreaterEqual; 2000mm</td></tr>
-            <tr><td class="left">Clear Width</td><td class="right">&GreaterEqual; 800mm</td></tr>
+            <tr><td class="left">Headroom</td><td class="right">&GreaterEqual; 2000mm</td>{{validate_display('r_headroom' , None , project['ramps'][i|string] , None)}}</tr>
+            <tr><td class="left">Clear Width</td><td class="right">&GreaterEqual; 800mm</td>{{validate_display('r_width' , None , project['ramps'][i|string] , None)}}</tr>
             <tr><td class="left">Handrails</td><td class="right">Width < 1000mm : one side</td></tr>
-            <tr><td class="left"></td><td class="right">Width &GreaterEqual; 1000 mm : both sides</td></tr>
+            <tr><td class="left">         </td><td class="right">Width &GreaterEqual; 1000 mm : both sides</td></tr>
             <tr><td class="left">Handrail height</td><td class="right">900mm - 1000mm</td></tr>
         {% endif %}
     <br>
     </table>
     {% endfor %}
     {# endRamps #}
+{% endmacro %}
+
+{% macro validate_display(type , stair, ramp , floor) %}
+
+    {% if type == 'gait'%}{# Rise Going and Gait #}
+        {% if floor['stair_validation'] is defined %}
+            {% if floor['stair_validation'][0]  %}{#rise#}
+                <tr><td class="left">per step Rise</td><td class="right valid">{{floor['rise']}}mm</td></tr>
+            {% else%}
+                <tr><td class="left">per step Rise</td><td class="right invalid">{{floor['rise']}}mm</td></tr>
+            {% endif %}
+            {% if floor['stair_validation'][1]  %}{#going#}
+                <tr><td class="left">per step Going</td><td class="right valid">{{floor['going']}}mm</td></tr>
+            {% else%}
+                <tr><td class="left">per step Going</td><td class="right invalid">{{floor['going']}}mm</td></tr>
+            {% endif %}
+            {% if floor['stair_validation'][2]  %}{#gait#}
+                <tr><td class="left">Gait</td><td class="right valid">{{floor['rise']}}</td></tr>
+            {% else%}
+                <tr><td class="left">Gait</td><td class="right invalid">{{floor['rise']}}</td></tr>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    {% if type == 'width' %}{# width #}
+        {% if stair['w_validation'] is defined %}
+            {%if stair['w_validation'] %}
+                <td class="valid">{{stair['width']}}mm</td>
+            {% else %}
+                <td class="invalid">{{stair['width']}}mm</td>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    {% if type == 'headroom' %}{# headroom #}
+        {% if stair['hdr_validation'] is defined %}
+            {%if stair['hdr_validation'] %}
+                <td class="valid">{{stair['headroom']}}mm</td>
+            {% else %}
+                <td class="invalid">{{stair['headroom']}}mm</td>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    {% if type == 'hand_pitch' %}{# handrail pitch flight #}
+        {% if stair['hr_p_validation'] is defined %}
+            {%if stair['hr_p_validation'] %}
+                <td class="valid">{{stair['hand_pitch']}}mm</td>
+            {% else %}
+                <td class="invalid">{{stair['hand_pitch']}}mm</td>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    {% if type == 'hand_land' %}{# handrail landing #}
+        {% if stair['hr_l_validation'] is defined %}
+            {%if stair['hr_l_validation'] %}
+                <td class="valid">{{stair['hand_land']}}mm</td>
+            {% else %}
+                <td class="invalid">{{stair['hand_land']}}mm</td>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    {% if type == 'guarding' %}{# guarding #}
+        {% if stair['g_validation'] is defined %}
+            {%if stair['g_validation'] %}
+                <td class="right valid">{{stair['guarding']}}mm</td>
+            {% else %}
+                <td class="right invalid">{{stair['guarding']}}mm</td>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    {% if type == 'o_riser' %}{# open risers #}
+        {% if stair['r_validation'] is defined %}
+            {%if stair['r_validation'] %}
+                <td class="valid">{{stair['o_riser']}}mm</td>
+            {% else %}
+                <td class="invalid">{{stair['o_riser']}}mm</td>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    {% if type == 'taper' %}{# tapered treads #}
+        {% if stair['taper_validation'] is defined %}
+            {%if stair['taper_validation'] %}
+                <td class="valid">{{stair['taper']}}mm</td>
+            {% else %}
+                <td class="invalid">{{stair['taper']}}mm</td>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    {% if type == 'hand_width' %}{# handrail width #}
+        {% if stair['hand_width_val'] is defined %}
+            {%if stair['hand_width_val'] %}
+                <td class="valid">{{stair['hand_width']}}mm</td>
+            {% else %}
+                <td class="invalid">{{stair['hand_width']}}mm</td>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    {% if type == 'tread_lux' %}{# tread visibility #}
+        {% if stair['vis_validation'] is defined %}
+            {% if stair['vis_validation'] %}
+                <td class="valid">{{stair['tread_lux']}}mm</td>
+            {% else %}
+                <td class="invalid">{{stair['tread_lux']}}mm</td>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    {% if type == 'tread_con' %}{# tread contrast #}
+        {% if stair['con_validation'] is defined %}
+            {% if stair['con_validation'] %}
+                <td class="valid">{{stair['tread_con']}}mm</td>
+            {% else %}
+                <td class="invalid">{{stair['tread_con']}}mm</td>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+
+    {% if type == 'hazard' %}{# tactile hazard #}
+        {% if stair['hazard_validation'] is defined %}
+            {% if stair['hazard_validation'] %}
+                <td class="valid">{{stair['hazard']}}mm</td>
+            {% else %}
+                <td class="invalid">{{stair['hazard']}}mm</td>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    {% if type == 'r_width' %}{# ramp width #}
+        {% if ramp['width_val'] is defined %}
+            {%if stair['width_val'] %}
+                <td class="valid">{{ramp['width']}}mm</td>
+            {% else %}
+                <td class="invalid">{{ramp['width']}}mm</td>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    {% if type == 'r_headroom' %}{# ramp headroom #}
+        {% if ramp['head_val'] is defined %}
+            {%if stair['head_val'] %}
+                <td class="valid">{{ramp['headroom']}}mm</td>
+            {% else %}
+                <td class="invalid">{{ramp['headroom']}}mm</td>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    {% if type == 'kirb' %}{# kirb #}
+        {% if ramp['kirb_val'] is defined %}
+            <td class="valid">{{ramp['kirb']}}mm</td>
+        {% else %}
+            <td class="invalid">{{ramp['kirb']}}mm</td>
+        {% endif %}
+    {% endif %}
+
+    {% if type == 'r_width_h' %}{# ramp handrail width #}
+        {% if ramp['h_width_val'] is defined %}
+            {%if stair['h_width_val'] %}
+                <td class="valid">{{ramp['h_width']}}mm</td>
+            {% else %}
+                <td class="invalid">{{ramp['h_width']}}mm</td>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    {% if type == 'r_handrails' %}{# ramp handrail #}
+        {% if ramp['handrail_val'] is defined %}
+            {%if stair['handrail_val'] %}
+                <td class="valid">{{ramp['handrails']}}mm</td>
+            {% else %}
+                <td class="invalid">{{ramp['handrails']}}mm</td>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    {% if type == 'r_lift' %}{# stairlift #}
+        {% if ramp['handrail_val'] is defined %}
+            {%if stair['handrail_val'] %}
+                <td class="valid">{{ramp['lift']}}mm</td>
+            {% else %}
+                <td class="invalid">{{ramp['lift']}}mm</td>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+    {% if type == 'r_stepped' %}{# stepped acess route #}
+        {% if ramp['stepped_val'] is defined %}
+            {%if stair['stepped_val'] %}
+                <td class="valid">{{ramp['stepped']}}mm</td>
+            {% else %}
+                <td class="invalid">{{ramp['stepped']}}mm</td>
+            {% endif %}
+        {% endif %}
+    {% endif %}
+
+
 {% endmacro %}
