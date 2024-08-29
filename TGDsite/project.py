@@ -30,9 +30,9 @@ def project_results():
     session['project'] = None
     session['project'] = project
     print(project)
-    return render_template('project_results.html.jinja', project = project , date = date)
+    return render_template('validation.html.jinja', project = project , date = date)
 
-@bp.route('/project_validation' , methods=['POST'])
+@bp.route('/validation' , methods=['POST'])
 def project_valid():
     results = request.form
     project = session['project']
@@ -41,4 +41,4 @@ def project_valid():
 
     session['project'] = project
 
-    return render_template('project_validation.html.jinja', project = project) 
+    return render_template('project_results.html.jinja', project = project) 
