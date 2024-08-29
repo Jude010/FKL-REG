@@ -24,9 +24,9 @@
             <tr><td class="left">Floor</td><td class="right">{{j + 1}}</td></tr>
             <tr><td class="left">Total Rise</td><td class="right">{{project['stairs'][i|string]['floor' + j|string]['rise']}}</td></tr>
             <tr><td class="left">Flights</td><td class="right">{{project['stairs'][i|string]['floor' + j|string]['flights']}}</td></tr>
-            <tr><td class="left"><label>Per step Rise</label></td><td class="right"></td><td><input type="number" name={{floor_rise ~ j ~ i}}></td></tr>
-            <tr><td class="left"><label>Per step Going</label></td><td class="right"></tr><td><input type ="number" name={{floor_going ~ j ~ i}}></td></tr>
-            <tr><td class="left"><label>Handrails</label></td><td class="right"></td><td><input type="checkbox" name={{handrails ~ j ~ i}}></td></tr>
+            <tr><td class="left"><label>Per step Rise</label></td><td class="right"></td><td class="right"><input type="number" name={{floor_rise ~ j ~ i}}></td></tr>
+            <tr><td class="left"><label>Per step Going</label></td><td class="right"></tr><td class="right"><input type ="number" name={{floor_going ~ j ~ i}}></td></tr>
+            <tr><td class="left"><label>Handrails</label></td><td class="right"></td><td class="right"><input type="checkbox" name={{handrails ~ j ~ i}}></td></tr>
             <tr><td></td><td></td></tr>
         {% endfor %}
         
