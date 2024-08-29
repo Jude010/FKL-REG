@@ -212,14 +212,14 @@ def validate_project(project , results):
             stair['floor' + j]['going'] = going
             stair['floor' + j]['gait'] = 2*rise + going
 
-            if part_m == True: # handrails 
-                if results['handrails'+j+i] == True:
+            if part_m is not None: # handrails 
+                if results['handrails'+j+i] is not None:
                     stair['floor'+j]['handrail_validation'] = True
                 else:
                     stair['floor'+j]['handrail_validation'] = False
             else:
                 if stair['floor'+j]['risers'] > 3 :
-                    if results['handrails'+j+i] == True:
+                    if results['handrails'+j+i] is not None:
                         stair['floor'+j]['handrail_validation'] = True
                     else:
                         stair['floor'+j]['handrail_validation'] = False
@@ -234,7 +234,7 @@ def validate_project(project , results):
         
         if privacy == 'domestic' :
             if internal == "internal" :
-                if part_m == True :
+                if part_m is not None :
                     # internal domestic part m
 
                     if results['width' + i] > 900: #width
@@ -331,7 +331,7 @@ def validate_project(project , results):
                     stair['taper'] = results['taper' + i]
                     
             else :
-                if part_m == True :
+                if part_m is not None :
                     # external domestic part m
 
                     if results['width' + i] > 900: #width
@@ -427,7 +427,7 @@ def validate_project(project , results):
                     
         else :
             if internal == "internal" :
-                if part_m == True :
+                if part_m is not None :
                     # internal public part m
 
                     # width
@@ -529,7 +529,7 @@ def validate_project(project , results):
                     stair['taper'] = results['taper' + i]
                     
             else :
-                if part_m == True :
+                if part_m is not None :
                     # external public part m
 
                     if results['width' + i] > 1200: #width
@@ -634,7 +634,7 @@ def validate_project(project , results):
         ramp = project['ramps'][i]
         part_m = ramp['part_m']
 
-        if part_m == True:
+        if part_m is not None:
             if privacy == 'domestic':
                 #domestic part_M
 
