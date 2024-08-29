@@ -24,7 +24,7 @@
             <tr><td class="left">Floor</td><td class="right">{{j + 1}}</td></tr>
             <tr><td class="left">Total Rise</td><td class="right">{{project['stairs'][i|string]['floor' + j|string]['rise']}}</td></tr>
             <tr><td class="left">Flights</td><td class="right">{{project['stairs'][i|string]['floor' + j|string]['flights']}}</td></tr>
-            <tr><td class="left"><label>Per step Rise</label></td><td class="right"><input type="number" id={{'floor_rise' ~ j ~ i}} name={{'floor_rise' ~ j ~ i}}>mm</td></tr>
+            <tr><td class="left"><label>Per step Rise</label></td><td class="right"><input type="number" name={{'floor_rise' ~ j ~ i}}>mm</td></tr>
             <tr><td class="left"><label>Per step Going</label></td><td class="right"><input type ="number" name={{'floor_going' ~ j ~ i}}>mm</td></tr>
             <tr><td class="left"><label>Handrails</label></td><td class="right"><input type="checkbox" name={{'handrails' ~ j ~ i}}></td></tr>
             <tr><td></td><td></td></tr>
@@ -198,7 +198,7 @@
                 {# non domestic part M #}
                 <tr><td class="left">Headroom</td><td class="right">&GreaterEqual; 2100mm</td><td><input type="number" name={{'r_headroom' ~ i}}>mm</td></tr>
                 <tr><td class="left">Clear Width</td><td class="right">&GreaterEqual; 1500mm</td><td><input type="number" name={{'r_width' ~ i}}>mm</td></tr>
-                <tr><td class="left">Handrail Width</td></td><td class="right">&GreaterEqual; 1200mm</td><td><input type="number" name={{'r_width'_h ~ i}}>mm</td></tr>
+                <tr><td class="left">Handrail Width</td></td><td class="right">&GreaterEqual; 1200mm</td><td><input type="number" name={{'r_width_h' ~ i}}>mm</td></tr>
                 <tr><td class="left">Handrails</td><td class="right">both sides</td><td><input type="checkbox" name={{'r_handrails' ~ i}}></td></tr>
                 <tr><td class="left">Distance between additional handrails</td><td class="right">1200mm - 2500mm</td></tr>
                 <tr><td class="left">Stepped acess route</td><td class="right">if rise > 300mm</td><td><input type="checkbox" name={{'r_stepped' ~ i}}></td></tr>
