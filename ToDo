@@ -57,7 +57,7 @@ implement ramps  -   questions x
 update stairs - stairs => floors => flights x
 
 validation -  backend x
-              questions
+              questions - convert > questions to int
               dispaly
                      
                   
