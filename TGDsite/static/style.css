@@ -158,3 +158,10 @@ input[type=number] {
     text-align: right;
 }
 
+.valid {
+    background-color: greenyellow;
+}
+
+.invalid {
+    background-color: red;
+}
