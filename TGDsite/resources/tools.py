@@ -196,7 +196,7 @@ def validate_project(project , results):
     for i in range(project['stair_num']):# for each stair
         stair = project['stairs'][str(i)]
         internal = stair['inside']
-        part_m = stair[i]['part_m']
+        part_m = stair[str(i)]['part_m']
         
         for j in range(['floors']): # for each floor in each stair
             rise = results['floor_rise'+ j + i]
