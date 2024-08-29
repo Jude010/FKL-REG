@@ -36,6 +36,8 @@ def project_results():
 def project_valid():
     results = request.form
     project = session['project']
+
+    print(results)
     
     project = tools.validate_project(project , results)
 
