@@ -194,15 +194,17 @@ def vaidate_gait( internal , privacy, part_m , rise , going):
 def validate_project(project , results):
     privacy = project['privacy']
     for i in range(project['stair_num']):# for each stair
+        i = str(i)
         stair = project['stairs'][str(i)]
         internal = stair['inside']
         part_m = stair['part_m']
-        i = str(i)
+        
         
         for j in range(int(stair['floors'])): # for each floor in each stair
+            j = str(j)
             rise = results['floor_rise'+ j + i]
             going = results['floor_going'+ j + i]
-            j = str(j)
+            
 
             val = vaidate_gait(internal , privacy , part_m , rise , going) # validate the gait rise and going
             stair['floor'+j]['stair_validation'] = val
