@@ -237,34 +237,34 @@ def validate_project(project , results):
                 if part_m == True :
                     # internal domestic part m
 
-                    if results['width' + i] > 900: #width
+                    if int(results['width' + i])> 900: #width
                         stair['w_validation'] = True
                     else:
                         stair['w_validation'] = False
                     stair['width'] = results['width' + i]
 
-                    if results['headroom' + i] >= 2000: #headroom
+                    if int(results['headroom' + i])>= 2000: #headroom
                         stair['hdr_validation'] = True
                     else:
                         stair['hdr_validation'] = False
                     stair['headroom'] = results['headroom + i']
 
                     # handrail specs pitch
-                    if results['handrail_pitch'+i] >= 900 and results['handrail_pitch'+i] <= 1000 :
+                    if int(results['handrail_pitch'+i])>= 900 and int(results['handrail_pitch'+i])<= 1000 :
                         stair['hr_p_validation'] = True
                     else  :
                         stair['hr_p_validation'] = False
                     stair['hand_pitch'] = results['handrail_pitch'+i]
 
                     # handrail specs landing
-                    if results['handrail_land'+i] >= 900 and results['handrail_land'+i] <= 1100 :
+                    if int(results['handrail_land'+i]) >= 900 and int(results['handrail_land'+i]) <= 1100 :
                         stair['hr_l_validation'] = True
                     else  :
                         stair['hr_l_validation'] = False
                     stair['hand_land'] = results['handrail_land'+i]
 
                    # guarding specs
-                    if stair['rise'] > 600:
+                    if int(stair['rise']) > 600:
                         if results['guarding' + i ]:
                             stair['g_validation'] = True
                         else:
@@ -286,34 +286,34 @@ def validate_project(project , results):
                 else :
                     # internal domestic non part_m
 
-                    if results['width' + i] > 800: #width
+                    if int(results['width' + i])> 800: #width
                         stair['w_validation'] = True
                     else:
                         stair['w_validation'] = False
                     stair['width'] = results['width' + i]
 
-                    if results['headroom' + i] >= 2000: #headroom
+                    if int(results['headroom' + i])>= 2000: #headroom
                         stair['hdr_validation'] = True
                     else:
                         stair['hdr_validation'] = False
                     stair['headroom'] = results['headroom' + i]
 
                     # handrail specs pitch
-                    if results['handrail_pitch'+i] >= 900 and results['handrail_pitch'+i] <= 1000 :
+                    if int(results['handrail_pitch'+i])>= 900 and int(results['handrail_pitch'+i])<= 1000 :
                         stair['hr_p_validation'] = True
                     else  :
                         stair['hr_p_validation'] = False
                     stair['hand_pitch'] = results['handrail_pitch'+i]
 
                     # handrail specs landing
-                    if results['handrail_land'+i] >= 900 and results['handrail_land'+i] <= 1100 :
+                    if int(results['handrail_land'+i]) >= 900 and int(results['handrail_land'+i]) <= 1100 :
                         stair['hr_l_validation'] = True
                     else  :
                         stair['hr_l_validation'] = False
                     stair['hand_land'] = results['handrail_land'+i]
 
                    # guarding specs
-                    if stair['rise'] > 600:
+                    if int(stair['rise']) > 600:
                         if results['guarding' + i ]:
                             stair['g_validation'] = True
                         else:
@@ -334,34 +334,34 @@ def validate_project(project , results):
                 if part_m == True :
                     # external domestic part m
 
-                    if results['width' + i] > 900: #width
+                    if int(results['width' + i])> 900: #width
                         stair['w_validation'] = True
                     else:
                         stair['w_validation'] = False
                     stair['width'] = results['width' + i]
 
-                    if results['headroom' + i] >= 2000: #headroom
+                    if int(results['headroom' + i])>= 2000: #headroom
                         stair['hdr_validation'] = True
                     else:
                         stair['hdr_validation'] = False
                     stair['headroom'] = results['headroom' + i]
 
                     # handrail specs pitch
-                    if results['handrail_pitch'+i] >= 900 and results['handrail_pitch'+i] <= 1000 :
+                    if int(results['handrail_pitch'+i])>= 900 and int(results['handrail_pitch'+i])<= 1000 :
                         stair['hr_p_validation'] = True
                     else  :
                         stair['hr_p_validation'] = False
                     stair['hand_pitch'] = results['handrail_pitch'+i]
 
                     # handrail specs landing
-                    if results['handrail_land'+i] >= 900 and results['handrail_land'+i] <= 1100 :
+                    if int(results['handrail_land'+i]) >= 900 and int(results['handrail_land'+i]) <= 1100 :
                         stair['hr_l_validation'] = True
                     else  :
                         stair['hr_l_validation'] = False
                     stair['hand_land'] = results['handrail_land'+i]
 
                    # guarding specs
-                    if stair['rise'] > 600:
+                    if int(stair['rise']) > 600:
                         if results['guarding' + i ]:
                             stair['g_validation'] = True
                         else:
@@ -381,34 +381,34 @@ def validate_project(project , results):
                 else :
                     # external domestic non part_m
 
-                    if results['width' + i] > 800: #width
+                    if int(results['width' + i])> 800: #width
                         stair['w_validation'] = True
                     else:
                         stair['w_validation'] = False
                     stair['width'] = results['width' + i]
 
-                    if results['headroom' + i] >= 2100: #headroom
+                    if int(results['headroom' + i])>= 2100: #headroom
                         stair['hdr_validation'] = True
                     else:
                         stair['hdr_validation'] = False
                     stair['headroom'] = results['headroom' + i]
 
                     # handrail specs pitch
-                    if results['handrail_pitch'+i] >= 900 and results['handrail_pitch'+i] <= 1000 :
+                    if int(results['handrail_pitch'+i])>= 900 and int(results['handrail_pitch'+i])<= 1000 :
                         stair['hr_p_validation'] = True
                     else  :
                         stair['hr_p_validation'] = False
                     stair['hand_pitch'] = results['handrail_pitch'+i]
 
                     # handrail specs landing
-                    if results['handrail_land'+i] >= 900 and results['handrail_land'+i] <= 1100 :
+                    if int(results['handrail_land'+i]) >= 900 and int(results['handrail_land'+i]) <= 1100 :
                         stair['hr_l_validation'] = True
                     else  :
                         stair['hr_l_validation'] = False
                     stair['hand_land'] = results['handrail_land'+i]
 
                    # guarding specs
-                    if stair['rise'] > 600:
+                    if int(stair['rise']) > 600:
                         if results['guarding' + i ]:
                             stair['g_validation'] = True
                         else:
@@ -431,35 +431,35 @@ def validate_project(project , results):
                     # internal public part m
 
                     # width
-                    if results['width' + i] > 1200:
+                    if int(results['width' + i])> 1200:
                         stair['w_validation'] = True
                     else:
                         stair['w_validation'] = False
                     stair['width'] = results['width' + i]
 
                     # headroom
-                    if results['headroom' + i] >= 2100:
+                    if int(results['headroom' + i])>= 2100:
                         stair['hdr_validation'] = True
                     else:
                         stair['hdr_validation'] = False
                     stair['headroom'] = results['headroom' + i]
 
                     # handrail specs pitch
-                    if results['handrail_pitch'+i] >= 900 and results['handrail_pitch'+i] <= 1000 :
+                    if int(results['handrail_pitch'+i])>= 900 and int(results['handrail_pitch'+i])<= 1000 :
                         stair['hr_p_validation'] = True
                     else  :
                         stair['hr_p_validation'] = False
                     stair['hand_pitch'] = results['handrail_pitch'+i]
 
                     # handrail specs landing
-                    if results['handrail_land'+i] >= 900 and results['handrail_land'+i] <= 1100 :
+                    if int(results['handrail_land'+i]) >= 900 and int(results['handrail_land'+i]) <= 1100 :
                         stair['hr_l_validation'] = True
                     else  :
                         stair['hr_l_validation'] = False
                     stair['hand_land'] = results['handrail_land'+i]
 
                     #handrail width
-                    if results['hand_width'+i] >= 1000 :
+                    if int(results['hand_width'+i]) >= 1000 :
                         stair['hand_width_val'] = True
                     else:
                         stair['hand_width_val'] = False
@@ -474,7 +474,7 @@ def validate_project(project , results):
                     stair['taper'] = results['taper' + i]
 
                     #visibility_lux
-                    if results['tread_lux'+i] >=100: 
+                    if int(results['tread_lux'+i]) >=100: 
                         stair['vis_validation'] = True
                     else:
                         stair['vis_validation'] = False
@@ -487,32 +487,32 @@ def validate_project(project , results):
                 else :
                     # internal public non part_m
 
-                    if results['width' + i] > 800: #width
+                    if int(results['width' + i]) > 800: #width
                         stair['w_validation'] = True
                     else:
                         stair['w_validation'] = False
                     stair['width'] = results['width' + i]
 
-                    if results['headroom' + i] >= 2000: #headroom
+                    if int(results['headroom' + i]) >= 2000: #headroom
                         stair['hdr_validation'] = True
                     else:
                         stair['hdr_validation'] = False
                     stair['headroom'] = results['headroom' + i]
 
                     # handrail specs pitch
-                    if results['handrail_pitch'+i] >= 900 and results['handrail_pitch'+i] <= 1000 :
+                    if int(results['handrail_pitch'+i]) >= 900 and int(results['handrail_pitch'+i])<= 1000 :
                         stair['hr_p_validation'] = True
                     else  :
                         stair['hr_p_validation'] = False
 
                     # handrail specs landing
-                    if results['handrail_land'+i] >= 900 and results['handrail_land'+i] <= 1100 :
+                    if int(results['handrail_land'+i]) >= 900 and int(results['handrail_land'+i]) <= 1100 :
                         stair['hr_l_validation'] = True
                     else  :
                         stair['hr_l_validation'] = False
 
                     # guarding specs
-                    if stair['rise'] > 600:
+                    if int(stair['rise']) > 600:
                         if results['guarding'+i]:
                             stair['g_validation'] = True
                         else:
@@ -532,34 +532,34 @@ def validate_project(project , results):
                 if part_m == True :
                     # external public part m
 
-                    if results['width' + i] > 1200: #width
+                    if int(results['width' + i])> 1200: #width
                         stair['w_validation'] = True
                     else:
                         stair['w_validation'] = False
                     stair['width'] = results['width' + i]
 
-                    if results['headroom' + i] >= 2100: #headroom
+                    if int(results['headroom' + i])>= 2100: #headroom
                         stair['hdr_validation'] = True
                     else:
                         stair['hdr_validation'] = False
                     stair['headroom'] = results['headroom' + i]
 
                     # handrail specs pitch
-                    if results['handrail_pitch'+i] >= 900 and results['handrail_pitch'+i] <= 1000 :
+                    if int(results['handrail_pitch'+i])>= 900 and int(results['handrail_pitch'+i])<= 1000 :
                         stair['hr_p_validation'] = True
                     else  :
                         stair['hr_p_validation'] = False
                     stair['hand_pitch'] = results['handrail_pitch'+i]
 
                     # handrail specs landing
-                    if results['handrail_land'+i] >= 900 and results['handrail_land'+i] <= 1100 :
+                    if int(results['handrail_land'+i]) >= 900 and int(results['handrail_land'+i]) <= 1100 :
                         stair['hr_l_validation'] = True
                     else  :
                         stair['hr_l_validation'] = False
                     stair['hand_land'] = results['handrail_land'+i]
 
                    # guarding specs
-                    if stair['rise'] > 600:
+                    if int(stair['rise']) > 600:
                         if results['guarding' + i ]:
                             stair['g_validation'] = True
                         else:
@@ -583,34 +583,34 @@ def validate_project(project , results):
                 else :
                     # external public non part_m
                     
-                    if results['width' + i] > 1200: #width
+                    if int(results['width' + i])> 1200: #width
                         stair['w_validation'] = True
                     else:
                         stair['w_validation'] = False
                     stair['width'] = results['width' + i]
 
-                    if results['headroom' + i] >= 2100: #headroom
+                    if int(results['headroom' + i])>= 2100: #headroom
                         stair['hdr_validation'] = True
                     else:
                         stair['hdr_validation'] = False
                     stair['headroom'] = results['headroom']
 
                     # handrail specs pitch
-                    if results['handrail_pitch'+i] >= 900 and results['handrail_pitch'+i] <= 1000 :
+                    if int(results['handrail_pitch'+i])>= 900 and int(results['handrail_pitch'+i])<= 1000 :
                         stair['hr_p_validation'] = True
                     else  :
                         stair['hr_p_validation'] = False
                     stair['hand_pitch'] = results['handrail_pitch'+i]
 
                     # handrail specs landing
-                    if results['handrail_land'+i] >= 900 and results['handrail_land'+i] <= 1100 :
+                    if int(results['handrail_land'+i]) >= 900 and int(results['handrail_land'+i]) <= 1100 :
                         stair['hr_l_validation'] = True
                     else  :
                         stair['hr_l_validation'] = False
                     stair['hand_land'] = results['handrail_land'+i]
 
                    # guarding specs
-                    if stair['rise'] > 600:
+                    if int(stair['rise']) > 600:
                         if results['guarding' + i ]:
                             stair['g_validation'] = True
                         else:
@@ -639,23 +639,23 @@ def validate_project(project , results):
                 #domestic part_M
 
                 # headroom
-                if results['r_headroom' + i] >= 2100:
+                if int(results['r_headroom' + i]) >= 2100:
                     ramp['head_val'] = True
                 else:
                     ramp['head_val'] = False
                 ramp['headroom'] = results['r_headroom' + i]
 
                 # width
-                if results['r_width' + i] >= 900:
+                if int(results['r_width' + i]) >= 900:
                     ramp['width_val'] = True
                 else:
                     ramp['width_val'] = False
                 ramp['width'] = results['r_width' + i]
 
                 # kirb
-                if results['kirb' + i] and ramp['rise'] >= 100:
+                if results['kirb' + i] and int(ramp['rise']) >= 100:
                     ramp['kirb_val'] = True
-                elif not results['kirb' + i] and ramp['rise'] >= 100:
+                elif not results['kirb' + i] and int(ramp['rise']) >= 100:
                     ramp['kirb_val'] = False
                 else: 
                     ramp['kirb_val'] = True
@@ -666,21 +666,21 @@ def validate_project(project , results):
                 #non domestic part_M
 
                 # headroom
-                if results['r_headroom' + i] >= 2100:
+                if int(results['r_headroom' + i]) >= 2100:
                     ramp['head_val'] = True
                 else:
                     ramp['head_val'] = False
                 ramp['headroom'] = results['r_headroom' + i]
 
                 # width
-                if results['r_width' + i] >= 1500:
+                if int(results['r_width' + i]) >= 1500:
                     ramp['width_val'] = True
                 else:
                     ramp['width_val'] = False
                 ramp['width'] = results['r_width' + i]
 
                 # handrail width
-                if results['r_width_h' + i] >= 1200:
+                if int(results['r_width_h' + i]) >= 1200:
                     ramp['h_width_val'] = True
                 else:
                     ramp['h_width_val'] = False
@@ -694,14 +694,14 @@ def validate_project(project , results):
                 ramp['handrails'] = results['r_handrails'+i]
 
                 #stepped acess route
-                if not results['r_stepped'+i] and ramp['rise'] > 300:
+                if not results['r_stepped'+i] and int(ramp['rise']) > 300:
                     ramp['stepped_val'] = False
                 else:
                     ramp['stepped_val'] = True
                 ramp['stepped'] = results['r_stepped'+i] 
                 
                 #Stair Lift
-                if not results['r_lift'+i] and ramp['rise'] > 2000 and ramp['slope'].split(':')[2]  <= 20:
+                if not results['r_lift'+i] and int(ramp['rise']) > 2000 and int(ramp['slope'].split(':')[2])  <= 20:
                     ramp['lift'] = False
                 else:
                     ramp['lift'] = True
@@ -712,21 +712,21 @@ def validate_project(project , results):
             #non part_M
 
             #headroom
-            if results['r_headroom' + i] >= 2000:
+            if int(results['r_headroom' + i]) >= 2000:
                 ramp['head_val'] = True
             else:
                 ramp['head_val'] = False
             ramp['headroom'] = results['r_headroom' + i]
 
             #width
-            if results['r_width' + i] >= 800:
+            if int(results['r_width' + i]) >= 800:
                 ramp['width_val'] = True
             else:
                 ramp['width_val'] = False
             ramp['width'] = results['r_width' + i]
 
             # handrail height
-            if results['r_hand_height' + i] >= 900 and results['r_hand_height' + i] <=1000:
+            if int(results['r_hand_height' + i]) >= 900 and int(results['r_hand_height' + i]) <=1000:
                 ramp['hand_height'] = True
             else:
                 ramp['hand_height'] = False
