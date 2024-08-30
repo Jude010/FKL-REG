@@ -277,11 +277,11 @@ def validate_project(project , results):
 
                     # Open risers
                     stair['r_validation'] = True
-                    stair['o_riser'] = results['o_riser' + i]
+                    stair['o_riser'] = ('o_riser' + i) in results
 
                     #TaperedTreads
                     stair['taper_validation'] = False
-                    stair['taper'] = results['taper' + i]
+                    stair['taper'] = ('taper' + i) in results
 
 
 
