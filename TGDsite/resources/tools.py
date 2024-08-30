@@ -330,7 +330,7 @@ def validate_project(project , results):
 
                     #TaperedTreads
                     stair['taper_validation'] = False
-                    stair['taper'] = results['taper' + i]
+                    stair['taper'] = ('taper' + i) in results
                     
             else :
                 if part_m == True :
@@ -427,7 +427,7 @@ def validate_project(project , results):
 
                     #TaperedTreads
                     stair['taper_validation'] = False
-                    stair['taper'] = results['taper' + i]
+                    stair['taper'] = ('taper' + i) in results
                     
         else :
             if internal == "internal" :
@@ -530,7 +530,7 @@ def validate_project(project , results):
 
                     #TaperedTreads
                     stair['taper_validation'] = False
-                    stair['taper'] = results['taper' + i]
+                    stair['taper'] = ('taper' + i) in results
                     
             else :
                 if part_m == True :
@@ -578,7 +578,7 @@ def validate_project(project , results):
 
                     #TaperedTreads
                     stair['taper_validation'] = False
-                    stair['taper'] = results['taper' + i]
+                    stair['taper'] = ('taper' + i) in results
 
                     #tactile Hazard
                     stair['hazard_validation'] = results['hazard'+i]
@@ -629,7 +629,7 @@ def validate_project(project , results):
 
                     #TaperedTreads
                     stair['taper_validation'] = False
-                    stair['taper'] = results['taper' + i]
+                    stair['taper'] = ('taper' + i) in results
 
         project['stairs'][i] = stair
 
