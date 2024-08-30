@@ -378,7 +378,7 @@ def validate_project(project , results):
 
                     #TaperedTreads
                     stair['taper_validation'] = False
-                    stair['taper'] = results['taper' + i]
+                    stair['taper'] = ('taper' + i) in results
                     
                 else :
                     # external domestic non part_m
