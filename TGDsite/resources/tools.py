@@ -208,9 +208,11 @@ def validate_project(project , results):
 
             val = vaidate_gait(internal , privacy , part_m , rise , going) # validate the gait rise and going
             stair['floor'+j]['stair_validation'] = val
-            stair['floor' + j]['rise'] = rise 
+            stair['floor' + j]['s_rise'] = rise 
             stair['floor' + j]['going'] = going
             stair['floor' + j]['gait'] = 2*rise + going
+
+            risers = stair['floor' + j]/rise
 
             if part_m == True: # handrails 
                 if 'handrails'+j+i in results :
@@ -218,7 +220,7 @@ def validate_project(project , results):
                 else:
                     stair['floor'+j]['handrail_validation'] = False
             else:
-                if stair['floor'+j]['risers'] > 3 :
+                if risers > 3 :
                     if 'handrails'+j+i in results:
                         stair['floor'+j]['handrail_validation'] = True
                     else:
