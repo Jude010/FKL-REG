@@ -461,7 +461,7 @@ def validate_project(project , results):
                     stair['hand_land'] = results['handrail_land'+i]
 
                     #handrail width
-                    if int(results['hand_width'+i]) >= 1000 :
+                    if int(results['handrail_width'+i]) >= 1000 :
                         stair['hand_width_val'] = True
                     else:
                         stair['hand_width_val'] = False
