@@ -252,7 +252,7 @@ def validate_project(project , results):
                     stair['headroom'] = results['headroom + i']
 
                     # handrail specs pitch
-                    if int(results['handrail_pitch'+ str(i) ])>= 900 and int(results['handrail_pitch'+ str(i) ])<= 1000 :
+                    if int(results['handrail_pitch'+ str(i) ]) >= 900 and int(results['handrail_pitch'+ str(i) ]) <= 1000 :
                         stair['hr_p_validation'] = True
                     else  :
                         stair['hr_p_validation'] = False
