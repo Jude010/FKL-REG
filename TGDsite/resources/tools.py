@@ -473,7 +473,7 @@ def validate_project(project , results):
 
                     #TaperedTreads
                     stair['taper_validation'] = False
-                    stair['taper'] = results['taper' + i]
+                    stair['taper'] = ('taper' + i) in results
 
                     #visibility_lux
                     if int(results['tread_lux'+i]) >=100: 
