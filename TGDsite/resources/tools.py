@@ -212,7 +212,7 @@ def validate_project(project , results):
             stair['floor' + j]['going'] = going
             stair['floor' + j]['gait'] = 2*rise + going
 
-            risers = stair['floor' + j]/rise
+            risers = stair['floor' + j]['rise']/rise
 
             if part_m == True: # handrails 
                 if 'handrails'+j+i in results :
