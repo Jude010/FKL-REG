@@ -301,7 +301,7 @@ def validate_project(project , results):
                     stair['headroom'] = results['headroom' + str(i) ]
 
                     # handrail specs pitch
-                    if int(results['handrail_pitch'+ str(i) ])>= 900 and int(results['handrail_pitch'+ str(i) ])<= 1000 :
+                    if int(results['handrail_pitch'+ str(i) ])>= 900 and int(results['handrail_pitch'+ str(i) ]) <= 1000 :
                         stair['hr_p_validation'] = True
                     else  :
                         stair['hr_p_validation'] = False
@@ -349,7 +349,7 @@ def validate_project(project , results):
                     stair['headroom'] = results['headroom' + str(i) ]
 
                     # handrail specs pitch
-                    if int(results['handrail_pitch'+ str(i) ])>= 900 and int(results['handrail_pitch'+ str(i) ])<= 1000 :
+                    if int(results['handrail_pitch'+ str(i) ])>= 900 and int(results['handrail_pitch'+ str(i) ]) <= 1000 :
                         stair['hr_p_validation'] = True
                     else  :
                         stair['hr_p_validation'] = False
@@ -398,7 +398,7 @@ def validate_project(project , results):
                     stair['headroom'] = results['headroom' + str(i) ]
 
                     # handrail specs pitch
-                    if int(results['handrail_pitch'+ str(i) ])>= 900 and int(results['handrail_pitch'+ str(i) ])<= 1000 :
+                    if int(results['handrail_pitch'+ str(i) ])>= 900 and int(results['handrail_pitch'+ str(i) ]) <= 1000 :
                         stair['hr_p_validation'] = True
                     else  :
                         stair['hr_p_validation'] = False
@@ -449,7 +449,7 @@ def validate_project(project , results):
                     stair['headroom'] = results['headroom' + str(i) ]
 
                     # handrail specs pitch
-                    if int(results['handrail_pitch'+ str(i) ])>= 900 and int(results['handrail_pitch'+ str(i) ])<= 1000 :
+                    if int(results['handrail_pitch'+ str(i) ])>= 900 and int(results['handrail_pitch'+ str(i) ]) <= 1000 :
                         stair['hr_p_validation'] = True
                     else  :
                         stair['hr_p_validation'] = False
@@ -504,7 +504,7 @@ def validate_project(project , results):
                     stair['headroom'] = results['headroom' + str(i) ]
 
                     # handrail specs pitch
-                    if int(results['handrail_pitch'+ str(i) ]) >= 900 and int(results['handrail_pitch'+ str(i) ])<= 1000 :
+                    if int(results['handrail_pitch'+ str(i) ]) >= 900 and int(results['handrail_pitch'+ str(i) ]) <= 1000 :
                         stair['hr_p_validation'] = True
                     else  :
                         stair['hr_p_validation'] = False
@@ -549,7 +549,7 @@ def validate_project(project , results):
                     stair['headroom'] = results['headroom' + str(i) ]
 
                     # handrail specs pitch
-                    if int(results['handrail_pitch'+ str(i) ])>= 900 and int(results['handrail_pitch'+ str(i) ])<= 1000 :
+                    if int(results['handrail_pitch'+ str(i) ])>= 900 and int(results['handrail_pitch'+ str(i) ]) <= 1000 :
                         stair['hr_p_validation'] = True
                     else  :
                         stair['hr_p_validation'] = False
@@ -600,7 +600,7 @@ def validate_project(project , results):
                     stair['headroom'] = results['headroom']
 
                     # handrail specs pitch
-                    if int(results['handrail_pitch'+ str(i) ])>= 900 and int(results['handrail_pitch'+ str(i) ])<= 1000 :
+                    if int(results['handrail_pitch'+ str(i) ])>= 900 and int(results['handrail_pitch'+ str(i) ]) <= 1000 :
                         stair['hr_p_validation'] = True
                     else  :
                         stair['hr_p_validation'] = False
@@ -730,7 +730,7 @@ def validate_project(project , results):
             ramp['width'] = results['r_width' + str(i) ]
 
             # handrail height
-            if int(results['r_hand_height' + str(i) ]) >= 900 and int(results['r_hand_height' + str(i) ]) <=1000:
+            if int(results['r_hand_height' + str(i) ]) >= 900 and int(results['r_hand_height' + str(i) ]) <= 1000:
                 ramp['hand_height'] = True
             else:
                 ramp['hand_height'] = False

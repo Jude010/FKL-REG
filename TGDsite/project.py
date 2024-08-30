@@ -41,6 +41,9 @@ def project_valid():
 
     project = tools.validate_project(project , results)
 
+    print('/n/n')
+    print(results)
+
     session['project'] = None
     session['project'] = project
 
