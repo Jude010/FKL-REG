@@ -281,9 +281,9 @@
     {% if type == 'guarding' %}{# guarding #}
         {% if stair['g_validation'] is defined %}
             {%if stair['g_validation'] %}
-                <td class="right valid">{{stair['guarding']}}mm</td>
+                <td class="right valid">{{stair['guarding']}}</td>
             {% else %}
-                <td class="right invalid">{{stair['guarding']}}mm</td>
+                <td class="right invalid">{{stair['guarding']}}</td>
             {% endif %}
         {% endif %}
     {% endif %}
@@ -291,9 +291,9 @@
     {% if type == 'o_riser' %}{# open risers #}
         {% if stair['r_validation'] is defined %}
             {%if stair['r_validation'] %}
-                <td class="valid">{{stair['o_riser']}}mm</td>
+                <td class="valid">{{stair['o_riser']}}m/td>
             {% else %}
-                <td class="invalid">{{stair['o_riser']}}mm</td>
+                <td class="invalid">{{stair['o_riser']}}</td>
             {% endif %}
         {% endif %}
     {% endif %}
@@ -301,9 +301,9 @@
     {% if type == 'taper' %}{# tapered treads #}
         {% if stair['taper_validation'] is defined %}
             {%if stair['taper_validation'] %}
-                <td class="valid">{{stair['taper']}}mm</td>
+                <td class="valid">{{stair['taper']}}</td>
             {% else %}
-                <td class="invalid">{{stair['taper']}}mm</td>
+                <td class="invalid">{{stair['taper']}}</td>
             {% endif %}
         {% endif %}
     {% endif %}
@@ -331,9 +331,9 @@
     {% if type == 'tread_con' %}{# tread contrast #}
         {% if stair['con_validation'] is defined %}
             {% if stair['con_validation'] %}
-                <td class="valid">{{stair['tread_con']}}mm</td>
+                <td class="valid">{{stair['tread_con']}}</td>
             {% else %}
-                <td class="invalid">{{stair['tread_con']}}mm</td>
+                <td class="invalid">{{stair['tread_con']}}</td>
             {% endif %}
         {% endif %}
     {% endif %}
@@ -342,9 +342,9 @@
     {% if type == 'hazard' %}{# tactile hazard #}
         {% if stair['hazard_validation'] is defined %}
             {% if stair['hazard_validation'] %}
-                <td class="valid">{{stair['hazard']}}mm</td>
+                <td class="valid">{{stair['hazard']}}</td>
             {% else %}
-                <td class="invalid">{{stair['hazard']}}mm</td>
+                <td class="invalid">{{stair['hazard']}}</td>
             {% endif %}
         {% endif %}
     {% endif %}
@@ -372,9 +372,9 @@
     {% if type == 'kirb' %}{# kirb #}
         {% if ramp['kirb_val'] is defined %}
             {% if ramp['kirb_val'] %}
-                <td class="valid">{{ramp['kirb']}}mm</td>
+                <td class="valid">{{ramp['kirb']}}</td>
             {% else %}
-                <td class="invalid">{{ramp['kirb']}}mm</td>
+                <td class="invalid">{{ramp['kirb']}}</td>
             {% endif %}    
         {% endif %}
     {% endif %}
@@ -392,9 +392,9 @@
     {% if type == 'r_handrails' %}{# ramp handrail #}
         {% if ramp['handrail_val'] is defined %}
             {%if stair['handrail_val'] %}
-                <td class="valid">{{ramp['handrails']}}mm</td>
+                <td class="valid">{{ramp['handrails']}}</td>
             {% else %}
-                <td class="invalid">{{ramp['handrails']}}mm</td>
+                <td class="invalid">{{ramp['handrails']}}</td>
             {% endif %}
         {% endif %}
     {% endif %}
@@ -402,9 +402,9 @@
     {% if type == 'r_lift' %}{# stairlift #}
         {% if ramp['handrail_val'] is defined %}
             {%if stair['handrail_val'] %}
-                <td class="valid">{{ramp['lift']}}mm</td>
+                <td class="valid">{{ramp['lift']}}</td>
             {% else %}
-                <td class="invalid">{{ramp['lift']}}mm</td>
+                <td class="invalid">{{ramp['lift']}}</td>
             {% endif %}
         {% endif %}
     {% endif %}
@@ -412,9 +412,9 @@
     {% if type == 'r_stepped' %}{# stepped acess route #}
         {% if ramp['stepped_val'] is defined %}
             {%if stair['stepped_val'] %}
-                <td class="valid">{{ramp['stepped']}}mm</td>
+                <td class="valid">{{ramp['stepped']}}</td>
             {% else %}
-                <td class="invalid">{{ramp['stepped']}}mm</td>
+                <td class="invalid">{{ramp['stepped']}}</td>
             {% endif %}
         {% endif %}
     {% endif %}
