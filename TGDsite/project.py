@@ -39,10 +39,9 @@ def project_valid():
 
     print(results)
 
-
-    
     project = tools.validate_project(project , results)
 
+    session['project'] = None
     session['project'] = project
 
     return render_template('project_results.html.jinja', project = project) 
