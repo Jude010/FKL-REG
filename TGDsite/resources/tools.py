@@ -635,8 +635,8 @@ def validate_project(project , results):
 
 
     for i in range( int(project['ramp_num']) ):
-        ramp = project['ramps'][str(i)]
-        part_m = ramp['part_m']
+        #ramp = project['ramps'][str(i)]
+        #part_m = ramp['part_m']
 
         '''if part_m == True:
             if privacy == 'domestic':
