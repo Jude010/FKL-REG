@@ -634,7 +634,7 @@ def validate_project(project , results):
         project['stairs'][i] = stair
 
 
-    for i in range( int(project['ramp_num'])):
+    for i in range( int(project['ramp_num']) ):
         ramp = project['ramps'][str(i)]
         part_m = ramp['part_m']
 
