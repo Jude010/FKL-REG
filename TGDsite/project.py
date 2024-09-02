@@ -49,4 +49,4 @@ def project_valid():
 
     print('/n/n')
 
-    return   render_template( 'project_results.html.jinja') 
+    return   render_template( 'index.html.jinja' ) 
