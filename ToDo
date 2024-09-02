@@ -57,7 +57,11 @@ implement ramps  -   questions x
 update stairs - stairs => floors => flights x
 
 validation -  backend x
-              questions - convert > questions to int
-              dispaly
+              questions - convert > questions to intx
+              dispalyx
                      
+fix validation - ramp validation 
+               - per step rise , gait
+               - switch flights with generics
+               - 
                   

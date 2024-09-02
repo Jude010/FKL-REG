@@ -202,8 +202,8 @@ def validate_project(project , results):
         
         for j in range(int(stair['floors'])): # for each floor in each stair
             j = str(j)
-            rise = int(results['floor_rise'+ j + str(i) ])
-            going = int(results['floor_going'+ j + str(i) ])
+            rise = int(results['floor_rise' + j + str(i) ])
+            going = int(results['floor_going' + j + str(i) ])
             
 
             val = vaidate_gait(internal , privacy , part_m , rise , going) # validate the gait rise and going
