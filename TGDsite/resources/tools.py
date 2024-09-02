@@ -638,7 +638,7 @@ def validate_project(project , results):
         ramp = project['ramps'][str(i)]
         part_m = ramp['part_m']
 
-        '''if part_m == True:
+        if part_m == True:
             if privacy == 'domestic':
                 #domestic part_M
 
@@ -734,10 +734,10 @@ def validate_project(project , results):
                 ramp['hand_height'] = True
             else:
                 ramp['hand_height'] = False
-            ramp['h_height'] = results['r_hand_height' + str(i) ]'''
+            ramp['h_height'] = results['r_hand_height' + str(i) ]
 
             
         
-        #project['ramps'][i] = ramp
+        project['ramps'][str(i)] = ramp
     
     return project
