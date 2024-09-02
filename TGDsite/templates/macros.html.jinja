@@ -174,7 +174,7 @@
     {% endfor %}
     {# endStairs #}
     </div>
-    {#{# Ramps #} 
+    {# Ramps #} 
     {% for i in range(project['ramp_num']) %}
         <h3>{{project['ramps'][i|string]['name']}}</h3>
         {{project['ramps'][i|string]['inside']}} <br>
@@ -213,7 +213,7 @@
     <br>
     </table>
     {% endfor %}
-    {# endRamps #}#}
+    {# endRamps #}
 {% endmacro %}
 
 {% macro validate_display(type , stair, ramp , floor) %}
