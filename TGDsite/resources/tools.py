@@ -635,7 +635,7 @@ def validate_project(project , results):
 
 
     for i in range( int(project['ramp_num']) ):
-        ramp = project['ramps'][i]
+        ramp = project['ramps'][str(i)]
         part_m = ramp['part_m']
 
         '''if part_m == True:
