@@ -485,8 +485,8 @@ def validate_project(project , results):
                     stair['tread_lux'] = results['tread_lux'+ str(i) ] 
 
                     #visibility_contrast
-                    stair['con_validation'] = results['tread_con'+ str(i) ]
-                    stair['tread_con'] = results['tread_con'+ str(i) ]
+                    stair['con_validation'] =  ('tread_con'+ str(i)) in results
+                    stair['tread_con'] = ('tread_con'+ str(i)) in results
                     
                 else :
                     # internal public non part_m
