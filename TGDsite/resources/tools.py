@@ -663,7 +663,7 @@ def validate_project(project , results):
                     ramp['kirb_val'] = False
                 else: 
                     ramp['kirb_val'] = True
-                ramp['kirb'] = results['kirb'+ str(i) ]
+                ramp['kirb'] = ('kirb' + str(i) ) in results
 
                 
             else:
