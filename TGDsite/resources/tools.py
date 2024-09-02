@@ -267,13 +267,13 @@ def validate_project(project , results):
 
                    # guarding specs
                     if int(stair['rise']) > 600:
-                        if results['guarding' + i ]:
+                        if ('guarding' + i) in results:
                             stair['g_validation'] = True
                         else:
                             stair['g_validation'] = False
                     else:
                         stair['g_validation'] = True
-                    stair['guarding'] = results['guarding' + i ]
+                    stair['guarding'] = ('guarding' + i) in results
 
                     # Open risers
                     stair['r_validation'] = True
@@ -316,13 +316,13 @@ def validate_project(project , results):
 
                    # guarding specs
                     if int(stair['rise']) > 600:
-                        if results['guarding' + i ]:
+                        if ('guarding' + i) in results:
                             stair['g_validation'] = True
                         else:
                             stair['g_validation'] = False
                     else:
                         stair['g_validation'] = True
-                    stair['guarding'] = results['guarding' + i ]
+                    stair['guarding'] = ('guarding' + i) in results
 
                     # Open risers
                     stair['r_validation'] = True
@@ -413,13 +413,13 @@ def validate_project(project , results):
 
                    # guarding specs
                     if int(stair['rise']) > 600:
-                        if results['guarding' + i ]:
+                        if ('guarding' + i) in results:
                             stair['g_validation'] = True
                         else:
                             stair['g_validation'] = False
                     else:
                         stair['g_validation'] = True
-                    stair['guarding'] = results['guarding' + i ]
+                    stair['guarding'] = ('guarding' + i) in results
 
                     # Open risers -- TODO:make account for rise
                     stair['r_validation'] = True
@@ -564,13 +564,13 @@ def validate_project(project , results):
 
                    # guarding specs
                     if int(stair['rise']) > 600:
-                        if results['guarding' + i ]:
+                        if ('guarding' + i) in results:
                             stair['g_validation'] = True
                         else:
                             stair['g_validation'] = False
                     else:
                         stair['g_validation'] = True
-                    stair['guarding'] = results['guarding' + i ]
+                    stair['guarding'] = ('guarding' + i) in results
 
                     # Open risers -- TODO:make account for rise
                     stair['r_validation'] = True
@@ -615,13 +615,13 @@ def validate_project(project , results):
 
                    # guarding specs
                     if int(stair['rise']) > 600:
-                        if results['guarding' + i ]:
+                        if ('guarding' + i) in results:
                             stair['g_validation'] = True
                         else:
                             stair['g_validation'] = False
                     else:
                         stair['g_validation'] = True
-                    stair['guarding'] = results['guarding' + i ]
+                    stair['guarding'] = ('guarding' + i) in results
 
                     # Open risers -- TODO:make account for rise
                     stair['r_validation'] = True
