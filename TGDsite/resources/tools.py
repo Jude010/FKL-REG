@@ -738,6 +738,6 @@ def validate_project(project , results):
 
             
         
-        project['ramps'][i] = ramp
+        #project['ramps'][i] = ramp
     
     return project
