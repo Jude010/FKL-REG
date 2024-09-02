@@ -39,7 +39,7 @@ def project_valid():
 
     print(results)
 
-    project = tools.validate_project(project , results)
+    ##project = tools.validate_project(project , results)
 
     print('/n/n')
     print(results)
