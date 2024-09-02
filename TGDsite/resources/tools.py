@@ -705,10 +705,10 @@ def validate_project(project , results):
                 ramp['stepped'] = ('r_stepped'+ str(i)) in results
                 
                 #Stair Lift
-                #if not ('r_lift'+ str(i)) in results and int(ramp['rise']) > 2000 and int( ramp['slope'].split(':')[2])  <= 20:
-                #    ramp['lift'] = False
-                #else:
-                #    ramp['lift'] = True
+                if not ('r_lift'+ str(i)) in results and int(ramp['rise']) > 2000 and int( ramp['slope'].split(':')[2])  <= 20:
+                    ramp['lift'] = False
+                else:
+                    ramp['lift'] = True
                 ramp['lift'] = ('r_lift'+ str(i)) in results
         
 
