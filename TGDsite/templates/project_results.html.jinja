@@ -4,7 +4,7 @@
 
 {% block header %}<h1> Results </h1>{% endblock %}
 {% block content %}
-    {{ project_display(project) }}
+    {#{{ project_display(project) }}#}
     <br>
     <form action="{{url_for('saves.save_project')}}" method="POST">
         <p>The above information has been incorporated into <br>
