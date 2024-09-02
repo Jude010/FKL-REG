@@ -46,7 +46,7 @@ def project_valid():
 
     session['project'] = None
     session['project'] = project
-    
+
     print('/n/n')
 
     return render_template('project_results.html.jinja', project = project) 
