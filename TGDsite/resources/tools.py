@@ -657,9 +657,9 @@ def validate_project(project , results):
                 ramp['width'] = results['r_width' + str(i) ]
 
                 # kirb
-                if ('kirb' + i) in results and int(ramp['rise']) >= 100:
+                if ('kirb' + str(i) ) in results and int(ramp['rise']) >= 100:
                     ramp['kirb_val'] = True
-                elif not ('kirb' + i) in results and int(ramp['rise']) >= 100:
+                elif not ('kirb' + str(i) ) in results and int(ramp['rise']) >= 100:
                     ramp['kirb_val'] = False
                 else: 
                     ramp['kirb_val'] = True
