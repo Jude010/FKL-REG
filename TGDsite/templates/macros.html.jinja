@@ -201,7 +201,7 @@
                 <tr><td class="left">Handrails</td><td class="right">both sides</td>{{validate_display('r_handrails' , None , project['ramps'][i|string] , None)}}</tr>
                 <tr><td class="left">Distance between additional handrails</td><td class="right">1200mm - 2500mm</td></tr>
                 <tr><td class="left">Stepped acess route</td><td class="right">if rise > 300mm</td>{{validate_display('r_stepped' , None , project['ramps'][i|string] , None)}}</tr>
-                <tr><td class="left">Stair lift</td><td class="right">If slope &GreaterEqual; 1:20 and rise > 2000mm</td>{{validate_display('lift' , None , project['ramps'][i|string] , None)}}</tr>
+                <tr><td class="left">Stair lift</td><td class="right">If slope &GreaterEqual; 1:20 and rise > 2000mm</td>{{validate_display('r_lift' , None , project['ramps'][i|string] , None)}}</tr>
             {% endif %}
         {% else %}
             {# non part M #}
