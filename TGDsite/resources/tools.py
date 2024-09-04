@@ -698,8 +698,11 @@ def validate_project(project , results):
                 ramp['handrails'] = ('r_handrails'+ str(i)) in results
 
                 #stepped acess route
-                if (('r_stepped'+ str(i)) not in results) and (int(ramp['rise']) > 300):
-                    ramp['stepped_val'] = False
+                if (('r_stepped'+ str(i)) not in results) :
+                    if (int(ramp['rise']) > 300):
+                        ramp['stepped_val'] = False
+                    else:
+                        ramp['stepped_val'] = True
                 else:
                     ramp['stepped_val'] = True
                 ramp['stepped'] = ('r_stepped'+ str(i)) in results
