@@ -351,7 +351,7 @@
 
     {% if type == 'r_width' %}{# ramp width #}
         {% if ramp['width_val'] is defined %}
-            {%if stair['width_val'] %}
+            {%if ramp['width_val'] %}
                 <td class="valid">{{ramp['width']}}mm</td>
             {% else %}
                 <td class="invalid">{{ramp['width']}}mm</td>
@@ -361,7 +361,7 @@
 
     {% if type == 'r_headroom' %}{# ramp headroom #}
         {% if ramp['head_val'] is defined %}
-            {%if stair['head_val'] %}
+            {%if ramp['head_val'] %}
                 <td class="valid">{{ramp['headroom']}}mm</td>
             {% else %}
                 <td class="invalid">{{ramp['headroom']}}mm</td>
@@ -381,7 +381,7 @@
 
     {% if type == 'r_width_h' %}{# ramp handrail width #}
         {% if ramp['h_width_val'] is defined %}
-            {%if stair['h_width_val'] %}
+            {%if ramp['h_width_val'] %}
                 <td class="valid">{{ramp['h_width']}}mm</td>
             {% else %}
                 <td class="invalid">{{ramp['h_width']}}mm</td>
@@ -391,7 +391,7 @@
 
     {% if type == 'r_handrails' %}{# ramp handrail #}
         {% if ramp['handrail_val'] is defined %}
-            {%if stair['handrail_val'] %}
+            {%if ramp['handrail_val'] %}
                 <td class="valid">{{ramp['handrails']}}</td>
             {% else %}
                 <td class="invalid">{{ramp['handrails']}}</td>
@@ -401,7 +401,7 @@
 
     {% if type == 'r_lift' %}{# stairlift #}
         {% if ramp['handrail_val'] is defined %}
-            {%if stair['handrail_val'] %}
+            {%if ramp['handrail_val'] %}
                 <td class="valid">{{ramp['lift']}}</td>
             {% else %}
                 <td class="invalid">{{ramp['lift']}}</td>
@@ -411,7 +411,7 @@
 
     {% if type == 'r_stepped' %}{# stepped acess route #}
         {% if ramp['stepped_val'] is defined %}
-            {%if stair['stepped_val'] == True %}
+            {%if ramp['stepped_val'] == True %}
                 <td class="valid">{{ramp['stepped']}}</td>
             {% else %}
                 <td class="invalid">{{ramp['stepped']}}</td>
