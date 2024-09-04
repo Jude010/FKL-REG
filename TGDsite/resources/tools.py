@@ -659,7 +659,7 @@ def validate_project(project , results):
                 # kirb
                 if ('kirb' + str(i) ) in results and int(ramp['rise']) >= 100:
                     ramp['kirb_val'] = True
-                elif not ('kirb' + str(i) ) in results and int(ramp['rise']) >= 100:
+                elif ('kirb' + str(i) ) not in results and int(ramp['rise']) >= 100:
                     ramp['kirb_val'] = False
                 else: 
                     ramp['kirb_val'] = True
@@ -698,14 +698,14 @@ def validate_project(project , results):
                 ramp['handrails'] = ('r_handrails'+ str(i)) in results
 
                 #stepped acess route
-                if (not ('r_stepped'+ str(i)) in results) and (int(ramp['rise']) > 300):
+                if (('r_stepped'+ str(i)) not in results) and (int(ramp['rise']) > 300):
                     ramp['stepped_val'] = False
                 else:
                     ramp['stepped_val'] = True
                 ramp['stepped'] = ('r_stepped'+ str(i)) in results
                 
                 #Stair Lift
-                if not ('r_lift'+ str(i)) in results and int(ramp['rise']) > 2000 and int( ramp['slope'].split(':')[2])  <= 20:
+                if ('r_lift'+ str(i)) not in results and int(ramp['rise']) > 2000 and int( ramp['slope'].split(':')[2])  <= 20:
                     ramp['lift'] = False
                 else:
                     ramp['lift'] = True
