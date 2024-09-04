@@ -411,7 +411,7 @@
 
     {% if type == 'r_stepped' %}{# stepped acess route #}
         {% if ramp['stepped_val'] is defined %}
-            {%if stair['stepped_val'] %}
+            {%if stair['stepped_val'] == True %}
                 <td class="valid">{{ramp['stepped']}}</td>
             {% else %}
                 <td class="invalid">{{ramp['stepped']}}</td>
