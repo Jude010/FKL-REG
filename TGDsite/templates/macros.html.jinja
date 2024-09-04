@@ -221,9 +221,9 @@
     {% if type == 'gait'%}{# Rise Going and Gait #}
         {% if floor['stair_validation'] is defined %}
             {% if floor['stair_validation'][0]  %}{#rise#}
-                <tr><td class="left">per step Rise</td><td class="right valid">{{floor['rise']}}mm</td></tr>
+                <tr><td class="left">per step Rise</td><td class="right valid">{{floor['s_rise']}}mm</td></tr>
             {% else%}
-                <tr><td class="left">per step Rise</td><td class="right invalid">{{floor['rise']}}mm</td></tr>
+                <tr><td class="left">per step Rise</td><td class="right invalid">{{floor['s_rise']}}mm</td></tr>
             {% endif %}
             {% if floor['stair_validation'][1]  %}{#going#}
                 <tr><td class="left">per step Going</td><td class="right valid">{{floor['going']}}mm</td></tr>
@@ -231,9 +231,9 @@
                 <tr><td class="left">per step Going</td><td class="right invalid">{{floor['going']}}mm</td></tr>
             {% endif %}
             {% if floor['stair_validation'][2]  %}{#gait#}
-                <tr><td class="left">Gait</td><td class="right valid">{{floor['rise']}}</td></tr>
+                <tr><td class="left">Gait</td><td class="right valid">{{floor['gait']}}</td></tr>
             {% else%}
-                <tr><td class="left">Gait</td><td class="right invalid">{{floor['rise']}}</td></tr>
+                <tr><td class="left">Gait</td><td class="right invalid">{{floor['gait']}}</td></tr>
             {% endif %}
         {% endif %}
     {% endif %}
