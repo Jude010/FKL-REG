@@ -400,8 +400,8 @@
     {% endif %}
 
     {% if type == 'r_lift' %}{# stairlift #}
-        {% if ramp['handrail_val'] is defined %}
-            {%if ramp['handrail_val'] %}
+        {% if ramp['lift_val'] is defined %}
+            {%if ramp['lift_val'] %}
                 <td class="valid">{{ramp['lift']}}</td>
             {% else %}
                 <td class="invalid">{{ramp['lift']}}</td>

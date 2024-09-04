@@ -709,9 +709,9 @@ def validate_project(project , results):
                 
                 #Stair Lift
                 if ('r_lift'+ str(i)) not in results and int(ramp['rise']) > 2000 and int( ramp['slope'].split(':')[2])  <= 20:
-                    ramp['lift'] = False
+                    ramp['lift_val'] = False
                 else:
-                    ramp['lift'] = True
+                    ramp['lift_val'] = True
                 ramp['lift'] = ('r_lift'+ str(i)) in results
         
 
