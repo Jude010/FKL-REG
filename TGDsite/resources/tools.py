@@ -491,7 +491,7 @@ def validate_project(project , results):
                 else :
                     # internal public non part_m
 
-                    if int(results['width' + str(i) ]) > 800: #width
+                    if int(results['width' + str(i) ]) > 1000: #width
                         stair['w_validation'] = True
                     else:
                         stair['w_validation'] = False
