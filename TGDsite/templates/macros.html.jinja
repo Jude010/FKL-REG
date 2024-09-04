@@ -20,13 +20,7 @@
         <table id="results">
         <tr><td class="left">Floors</td><td class="right">{{project['stairs'][i|string]['floors']}}</td></tr>
         <tr><td></td><td></td></tr>
-        {% for j in range( project['stairs'][i|string]['floors']|int) %}
-            <tr><td class="left">Floor</td><td class="right">{{j + 1}}</td></tr>
-            <tr><td class="left">Total Rise</td><td class="right">{{project['stairs'][i|string]['floor' + j|string]['rise']}}</td></tr>
-            <tr><td class="left">Flights</td><td class="right">{{project['stairs'][i|string]['floor' + j|string]['flights']}}</td></tr>
-            {{validate_display('gait' , None , None , project['stairs'][i|string]['floor' + j|string])}}
-            <tr><td></td><td></td></tr>
-        {% endfor %}
+        
         
         {% if project['stairs'][i|string]['inside'] == 'internal' %}
             {% if project['privacy'] == 'domestic' %}
@@ -171,6 +165,15 @@
         {% endif %}
         </table>
         <br><br>
+
+        {% for j in range( project['stairs'][i|string]['floors']|int) %}
+            <tr><td class="left">Floor</td><td class="right">{{j + 1}}</td></tr>
+            <tr><td class="left">Total Rise</td><td class="right">{{project['stairs'][i|string]['floor' + j|string]['rise']}}</td></tr>
+            <tr><td class="left">Flights</td><td class="right">{{project['stairs'][i|string]['floor' + j|string]['flights']}}</td></tr>
+            {{validate_display('gait' , None , None , project['stairs'][i|string]['floor' + j|string])}}
+            <tr><td></td><td></td></tr>
+        {% endfor %}
+        
     {% endfor %}
     {# endStairs #}
     </div>
