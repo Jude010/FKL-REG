@@ -162,8 +162,6 @@
                 {% endif %}
             {% endif %}
         {% endif %}
-        </table>
-        <br><br>
 
         {% for j in range( project['stairs'][i|string]['floors']|int) %}
             <tr><td class="left">Floor</td><td class="right">{{j + 1}}</td></tr>
@@ -174,7 +172,9 @@
             <tr><td class="left"><label>Handrails</label></td><td class="right"><input type="checkbox" name={{'handrails' ~ j ~ i}}></td></tr>
             <tr><td></td><td></td></tr>
         {% endfor %}
-        
+
+        </table>
+        <br><br>
     {% endfor %}
     {# endStairs #}
     </div>
