@@ -147,11 +147,11 @@ def vaidate_gait( internal , privacy, part_m , rise , going):
     else :
         if internal == "internal" :
             if part_m == True :
-                # internal public part m
+                # internal public part_m
                 if rise <= 180 and rise >= 150 :
                     r_val = True
 
-                if going >= 250 and going <= 300 : 
+                if going >= 300 : 
                     g_val = True
 
                 if  gait > 550 and gait < 700 :

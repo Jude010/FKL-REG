@@ -8,7 +8,7 @@
     {% for i in range(project['stair_num']) %}
         <h3>{{project['stairs'][i|string]['name']}}</h3>
         
-        <div>Must comply with PartK 
+        <div>Must comply with Part K 
         {% if project['stairs'][i|string]['part_m'] %}
             , Part B and Part M
         {% else %}
@@ -62,7 +62,7 @@
                     <tr><td class="left">Width</td><td class="right"> 1200mm min between walls, upstands, strings</td>{{validate_display( 'width' ,project['stairs'][i|string] ,None ,None)}}</tr>
                     <tr><td class="left">      </td><td class="right">1000mm min between handrails</td>{{validate_display( 'hand_width' ,project['stairs'][i|string] ,None ,None)}}</tr>
                     <tr><td class="left">Rise(R)</td><td class="right"> 150 - 180 mm</td></tr>
-                    <tr><td class="left">Going(G)</td><td class="right"> 250 - 300 mm</td></tr>
+                    <tr><td class="left">Going(G)</td><td class="right"> &GreaterEqual; 300 mm</td></tr>
                     <tr><td class="left">Gait(2R + G)</td><td class="right"> 550 - 700 optimal:600</td></tr>
                     <tr><td class="left">Open Risers</td><td class="right"> Non Compliant</td>{{validate_display( 'o_risers' ,project['stairs'][i|string] ,None ,None)}}</tr>
                     <tr><td class="left">Tapered Treads</td><td class="right"> Non Compliant</td>{{validate_display( 'taper' ,project['stairs'][i|string] ,None ,None)}}</tr>
