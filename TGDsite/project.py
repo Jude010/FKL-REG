@@ -37,17 +37,9 @@ def project_valid():
     results = request.form
     project = session['project']
 
-    print(results)
-
     project = tools.validate_project(project , results)
-
-    print('/n/n')
-    print(results)
 
     session['project'] = None
     session['project'] = project
-
-    print('/n/n')
-    print(project)
 
     return   render_template( 'project_results.html.jinja' , project = project ) 
