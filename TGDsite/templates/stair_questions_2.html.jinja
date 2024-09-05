@@ -12,7 +12,7 @@
                 {% for j in range(project['stairs'][i|string]['floors']|int) %}
                     <label for="flights">Floor {{j}} Rise in mm</label>
                     <br>
-                    <input type="number" id="flights" name={{ i ~ j ~ 'rise'}} value = "0">
+                    <input type="number" min="0" id="flights" name={{ i ~ j ~ 'rise'}} value = "0">
                     <br><br>
                 {% endfor %}
             </div>
