@@ -23,5 +23,7 @@ def save_to_db(project , user , signature , date):
         sid = cur.fetchone()[0]
         cur.execute("INSERT INTO proj_stair (stair_id , proj_id) values ('" + str(sid) + "' ,'" + str(pid) + "')")
         conn.commit()
+    
+    conn.close()
 
     
