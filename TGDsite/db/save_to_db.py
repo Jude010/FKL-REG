@@ -1,6 +1,6 @@
 from . import connect
 
-def save_to_db(project , user , signature , date):
+def save_to_db(project , signature , date):
     #save project to db
     conn = connect.get_db_conn()
 
