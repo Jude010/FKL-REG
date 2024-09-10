@@ -86,6 +86,7 @@ Vagrant.configure("2") do |config|
 	apt install -y postgresql
 	git init
 	git pull https://github.com/Jude010/FKL-REG.git 
+  git fetch
   git checkout No_user
 	#$install_user_varsy
 	sudo -u postgres psql -c "CREATE ROLE flask PASSWORD 'open' ;"
