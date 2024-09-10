@@ -7,11 +7,11 @@ DROP TABLE IF EXISTS project;
 DROP TABLE IF EXISTS users CASCADE;
 
 -- create user table
-CREATE TABLE users (
-    user_id SERIAL PRIMARY KEY,
-    username TEXT UNIQUE NOT NULL,
-    password TEXT UNIQUE NOT NULL
-);
+--CREATE TABLE users (
+--    user_id SERIAL PRIMARY KEY,
+--   username TEXT UNIQUE NOT NULL,
+--    password TEXT UNIQUE NOT NULL
+--);
 
 -- create guide table
 CREATE TABLE guide (
@@ -26,7 +26,7 @@ CREATE TABLE project (
     pname VARCHAR (50),
     floors NUMERIC,
     privacy VARCHAR(20),
-    user_id SERIAL REFERENCES users(user_id)
+--    user_id SERIAL REFERENCES users(user_id)
 );
 
 -- create signatures table
@@ -54,12 +54,12 @@ CREATE TABLE proj_stair (
 );
 
 --add test user
-INSERT INTO users (username, password) VALUES ('test' , 'open');
-INSERT INTO users (username, password) VALUES ('test2' , 'open2');
+--INSERT INTO users (username, password) VALUES ('test' , 'open');
+--INSERT INTO users (username, password) VALUES ('test2' , 'open2');
 
 --add test project
-INSERT INTO project (pname , floors , privacy , user_id ) SELECT  'test', '1' , 'private' , user_id FROM users  WHERE username = 'test';
-INSERT INTO project (pname , floors , privacy , user_id ) SELECT  'test2', '1' , 'private' , user_id FROM users  WHERE username = 'test2';
+INSERT INTO project (pname , floors , privacy /*, user_id*/ ) SELECT  'test', '1' , 'private' /*, user_id FROM users  WHERE username = 'test'*/;
+INSERT INTO project (pname , floors , privacy /*, user_id*/ ) SELECT  'test2', '1' , 'private' /*, user_id FROM users  WHERE username = 'test'*/;
 
 -- insert 
 INSERT INTO guide (guide_name, diagram) VALUES

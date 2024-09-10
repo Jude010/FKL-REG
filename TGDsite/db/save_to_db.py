@@ -7,7 +7,8 @@ def save_to_db(project , user , signature , date):
     cur = conn.cursor()
 
     # insert project details into DB and recieve new project ID
-    cur.execute("INSERT INTO project (pname , privacy , floors , user_id) SELECT '" + project['name'] + "' ,'" + project['privacy'] + "' ,'"  + project['floors'] + "', user_id FROM users  WHERE username = '" + user + "' RETURNING proj_id ;")
+    ##cur.execute("INSERT INTO project (pname , privacy , floors , user_id) SELECT '" + project['name'] + "' ,'" + project['privacy'] + "' ,'"  + project['floors'] + "', user_id FROM users  WHERE username = '" + user + "' RETURNING proj_id ;")
+    cur.execute("INSERT INTO project (pname , privacy , floors ) SELECT '" + project['name'] + "' ,'" + project['privacy'] + "' ,'"  + project['floors'] + "';")
     pid = cur.fetchone()[0]
     conn.commit()
 
